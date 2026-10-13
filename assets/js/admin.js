@@ -228,4 +228,249 @@
 
   function renderField(k, v){
     const tipo = v.tipo || 'texto';
-    const valor = v.valor == null
+    const valor = v.valor == null ? '' : v.valor;
+    const isLong = tipo === 'texto' && String(valor).length > 90;
+
+    let input;
+    if (isLong){
+      input = `<textarea data-key="${esc(k)}" class="adm-field" rows="3">${esc(valor)}</textarea>`;
+    } else if (tipo === 'imagem' || tipo === 'video'){
+      input = `
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <input data-key="${esc(k)}" class="adm-field" value="${esc(valor)}"
+            style="flex:1;">
+          <button type="button" class="adm-btn" data-upload="${esc(k)}"
+            data-upload-tipo="${esc(tipo)}" style="white-space:nowrap;">Upload</button>
+        </div>`;
+    } else {
+      input = `<input data-key="${esc(k)}" class="adm-field" value="${esc(valor)}">`;
+    }
+
+    return `
+      <div>
+        <label class="adm-label">
+          ${esc(k)} <span style="opacity:.5;">(${esc(tipo)})</span>
+        </label>
+        ${input}
+      </div>`;
+  }
+
+  async function saveConteudo(){
+    const body = document.getElementById('tr-tab-body');
+    const itens = [];
+    body.querySelectorAll('[data-key]').forEach(el => {
+      const k = el.getAttribute('data-key');
+      const atual = CACHE.conteudo[k];
+      itens.push({ chave:k, valor:el.value, tipo: atual ? atual.tipo : 'texto' });
+    });
+    const r = await api('saveConteudo', { itens });
+    if (r.ok){
+      toast('Salvo com sucesso!');
+      const rr = await api('getAll');
+      CACHE.conteudo = rr.conteudo || {};
+      if (window.TR_refreshCMS) window.TR_refreshCMS();
+    } else {
+      toast(r.error || 'Erro', false);
+    }
+  }
+
+  // ============================================================
+  //  ABA: CURSOS
+  // ============================================================
+  function renderCursos(){
+    const body = document.getElementById('tr-tab-body');
+    body.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div class="adm-group-title" style="margin:0;">Cursos cadastrados</div>
+          <button id="tr-add-curso" class="adm-btn primary">+ Novo Curso</button>
+        </div>
+        <div id="tr-cursos-list"></div>
+      </div>`;
+
+    document.getElementById('tr-add-curso').addEventListener('click', async () => {
+      const novo = {
+        ordem: (CACHE.cursos.length + 1),
+        topic: 'Nova Categoria',
+        nome: 'Novo Curso',
+        descricao: 'Descrição do curso',
+        link_url: 'https://',
+        video_youtube_id: ''
+      };
+      const r = await api('saveCurso', { curso: novo });
+      if (r.ok){
+        toast('Curso criado');
+        const rr = await api('getAll');
+        CACHE.cursos = rr.cursos || [];
+        renderCursos();
+      }
+    });
+
+    const list = document.getElementById('tr-cursos-list');
+    list.innerHTML = CACHE.cursos.map(c => `
+      <div class="adm-course-row" data-curso-id="${esc(c.id)}">
+        <div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label class="adm-label">Ordem</label>
+            <input class="adm-field" data-field="ordem" value="${esc(c.ordem || '')}">
+          </div>
+          <div>
+            <label class="adm-label">Categoria</label>
+            <input class="adm-field" data-field="topic" value="${esc(c.topic || '')}">
+          </div>
+          <div>
+            <label class="adm-label">Nome</label>
+            <input class="adm-field" data-field="nome" value="${esc(c.nome || '')}">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label class="adm-label">Descrição</label>
+          <textarea class="adm-field" data-field="descricao" rows="2">${esc(c.descricao || '')}</textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label class="adm-label">Link</label>
+            <input class="adm-field" data-field="link_url" value="${esc(c.link_url || '')}">
+          </div>
+          <div>
+            <label class="adm-label">YouTube ID (só o código)</label>
+            <input class="adm-field" data-field="video_youtube_id"
+              value="${esc(c.video_youtube_id || '')}" placeholder="ex: pdoL5HBtW9Y">
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:flex-end;">
+          <button class="adm-btn danger" data-del>Excluir</button>
+          <button class="adm-btn primary" data-save>Salvar</button>
+        </div>
+      </div>
+    `).join('');
+
+    list.querySelectorAll('[data-curso-id]').forEach(row => {
+      const id = row.getAttribute('data-curso-id');
+      row.querySelector('[data-save]').addEventListener('click', async () => {
+        const curso = { id };
+        row.querySelectorAll('[data-field]').forEach(f => {
+          curso[f.getAttribute('data-field')] = f.value;
+        });
+        const r = await api('saveCurso', { curso });
+        if (r.ok){
+          toast('Curso atualizado');
+          const rr = await api('getAll');
+          CACHE.cursos = rr.cursos || [];
+          if (window.TR_refreshCMS) window.TR_refreshCMS();
+        }
+      });
+      row.querySelector('[data-del]').addEventListener('click', async () => {
+        if (!confirm('Excluir este curso?')) return;
+        const r = await api('deleteCurso', { id });
+        if (r.ok){
+          toast('Curso excluído');
+          const rr = await api('getAll');
+          CACHE.cursos = rr.cursos || [];
+          renderCursos();
+          if (window.TR_refreshCMS) window.TR_refreshCMS();
+        }
+      });
+    });
+  }
+
+  // ============================================================
+  //  ABA: MÍDIA (uploads)
+  // ============================================================
+  function renderMidia(){
+    const body = document.getElementById('tr-tab-body');
+    body.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="adm-card">
+          <div class="adm-group-title">Enviar arquivo</div>
+          <input type="file" id="tr-file" class="adm-field"
+            accept="image/*,video/*" style="padding:10px;">
+          <div id="tr-upload-progress"
+            style="margin-top:12px;font-size:13px;color:#8a8069;"></div>
+        </div>
+        <div class="adm-group-title" style="margin-top:18px;">Arquivos enviados</div>
+        <div id="tr-midia-list"></div>
+      </div>`;
+
+    const file = document.getElementById('tr-file');
+    const prog = document.getElementById('tr-upload-progress');
+
+    file.addEventListener('change', async e => {
+      const f = e.target.files[0];
+      if (!f) return;
+      prog.textContent = 'Lendo arquivo…';
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const b64 = reader.result.split(',')[1];
+        prog.textContent = 'Enviando para o Drive…';
+        const tipo = f.type.startsWith('image') ? 'imagem'
+                   : f.type.startsWith('video') ? 'video' : 'arquivo';
+        const r = await api('upload', {
+          fileName: f.name,
+          mimeType: f.type,
+          dataBase64: b64,
+          tipo
+        });
+        if (r.ok){
+          prog.innerHTML = `✅ Enviado! URL: <code style="color:#a69b84;
+            word-break:break-all;">${esc(r.url)}</code>`;
+          toast('Upload concluído!');
+          const m = await api('getMidia');
+          CACHE.midia = (m && m.dados) || [];
+          renderMidiaList();
+        } else {
+          prog.textContent = '❌ ' + (r.error || 'Falha no upload');
+        }
+        file.value = '';
+      };
+      reader.readAsDataURL(f);
+    });
+
+    renderMidiaList();
+  }
+
+  function renderMidiaList(){
+    const list = document.getElementById('tr-midia-list');
+    if (!list) return;
+    if (!CACHE.midia.length){
+      list.innerHTML = `<div style="color:#8a8069;font-size:13px;
+        padding:16px;text-align:center;">Nenhum arquivo enviado ainda.</div>`;
+      return;
+    }
+    list.innerHTML = CACHE.midia.map(m => `
+      <div class="adm-course-row" style="display:flex;gap:14px;align-items:center;">
+        <div style="flex:1;min-width:0;">
+          <div style="color:#efe6cd;font-size:14px;font-weight:600;
+               overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+            ${esc(m.nome)}
+          </div>
+          <div style="font-size:11px;color:#8a8069;margin-top:4px;
+               overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+            ${esc(m.url)}
+          </div>
+        </div>
+        <button class="adm-btn" data-copy="${esc(m.url)}">Copiar URL</button>
+        <button class="adm-btn danger" data-del-midia="${esc(m.id)}">Excluir</button>
+      </div>
+    `).join('');
+
+    list.querySelectorAll('[data-copy]').forEach(b => {
+      b.addEventListener('click', () => {
+        navigator.clipboard.writeText(b.getAttribute('data-copy'));
+        toast('URL copiada!');
+      });
+    });
+    list.querySelectorAll('[data-del-midia]').forEach(b => {
+      b.addEventListener('click', async () => {
+        if (!confirm('Excluir arquivo do Drive?')) return;
+        const r = await api('deleteMidia', { id: b.getAttribute('data-del-midia') });
+        if (r.ok){
+          toast('Arquivo excluído');
+          const m = await api('getMidia');
+          CACHE.midia = (m && m.dados) || [];
+          renderMidiaList();
+        }
+      });
+    });
+  }
+})();
