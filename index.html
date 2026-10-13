@@ -9,9 +9,6 @@
 <link rel="dns-prefetch" href="https://api.socialcounts.org">
 <link rel="preload" as="image" href="assets/img/img17.webp">
 <link rel="preload" as="image" href="assets/img/img18.webp">
-<link rel="preload" as="style" href="assets/css/fonts.css">
-<link rel="preload" as="style" href="assets/css/base.css">
-
 <title>Tales Ramiro — Mentor, Creator e Professor | Mentorias e Cursos Online</title>
 <meta name="description" content="Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países. Conheça as mentorias e os cursos online de IA, Motion, Design e posicionamento.">
 <meta name="author" content="Tales Ramiro">
@@ -19,7 +16,6 @@
 <meta name="theme-color" content="#0d1116">
 <link rel="canonical" href="https://www.talesramiro.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1116'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23a69b84' text-anchor='middle'%3ETR%3C/text%3E%3C/svg%3E">
-
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Tales Ramiro">
@@ -29,43 +25,283 @@
 <meta property="og:image" content="https://www.talesramiro.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="693">
+<meta property="og:image:alt" content="Tales Ramiro">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tales Ramiro — Mentorias e Cursos Online">
 <meta name="twitter:image" content="https://www.talesramiro.com/og-image.jpg">
+<meta name="twitter:description" content="Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tales Ramiro","jobTitle":"Mentor, Creator e Professor","description":"Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.","url":"https://www.talesramiro.com/","sameAs":["https://instagram.com/talesramiroart","https://youtube.com/talesramiroart"]}</script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tales Ramiro","jobTitle":"Mentor, Creator e Professor","url":"https://www.talesramiro.com/","sameAs":["https://instagram.com/talesramiroart","https://youtube.com/talesramiroart"]}</script>
+<!-- ============================================================
+     ESTILOS — CSS COMPLETO
+     ============================================================ -->
+<style>
+/* latin-ext Cinzel */
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:400 600;font-display:swap;src:local('Cinzel'),url('https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2') format('woff2');}
+/* Hanken Grotesk */
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 600;font-display:swap;src:local('Hanken Grotesk'),url('https://fonts.gstatic.com/s/hankengrotesk/v8/ieVn2YZDLWuGJpnzaiwFXS9tYtpY6O_1z2Y.woff2') format('woff2');}
+/* League Gothic */
+@font-face{font-family:'League Gothic';font-style:normal;font-weight:400;font-display:swap;src:local('League Gothic'),url('https://fonts.gstatic.com/s/leaguegothic/v11/qFdR35CBi4vxtRP4-3D5Fsv3mQ.woff2') format('woff2');}
 
-<!-- ESTILOS -->
-<link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/hero.css">
-<link rel="stylesheet" href="assets/css/sections.css">
-<link rel="stylesheet" href="assets/css/admin.css">
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;padding:0;background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;}
+img{display:block;}
+::selection{background:#a69b84;color:#0d1116;}
+a{text-decoration:none;}
+
+@keyframes tr-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes tr-fadeup{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+@keyframes tr-fadein{from{opacity:0;}to{opacity:1;}}
+@keyframes tr-flo1{0%{transform:translate(0,0) rotate(0);}33%{transform:translate(7px,-9px) rotate(.8deg);}66%{transform:translate(-5px,6px) rotate(-.7deg);}100%{transform:translate(0,0) rotate(0);}}
+@keyframes tr-flo2{0%{transform:translate(0,0) rotate(0);}25%{transform:translate(-8px,5px) rotate(-1deg);}55%{transform:translate(5px,10px) rotate(.6deg);}80%{transform:translate(7px,-4px) rotate(.5deg);}100%{transform:translate(0,0) rotate(0);}}
+@keyframes tr-flo3{0%{transform:translate(0,0) rotate(0);}40%{transform:translate(9px,7px) rotate(1deg);}72%{transform:translate(-6px,-8px) rotate(-.8deg);}100%{transform:translate(0,0) rotate(0);}}
+@keyframes tr-sweep{0%{transform:translateX(-110%);}100%{transform:translateX(330%);}}
+@keyframes gooVert{0%{transform:translateY(-24%)}50%{transform:translateY(24%)}100%{transform:translateY(-24%)}}
+@keyframes gooHoriz{0%{transform:translateX(-30%) translateY(-8%)}50%{transform:translateX(30%) translateY(8%)}100%{transform:translateX(-30%) translateY(-8%)}}
+@keyframes gooCircle{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
+@keyframes tr-ghostshift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+html.tr-bg *{animation-play-state:paused!important;}
+.cv-sec{content-visibility:auto;contain-intrinsic-size:auto 760px;}
+
+/* HERO */
+.hero-gooey{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;filter:blur(58px);opacity:1;animation:tr-fadein 1.8s ease both;}
+.goo-blob{position:absolute;width:74vmax;height:74vmax;top:calc(50% - 37vmax);left:calc(50% - 37vmax);border-radius:50%;mix-blend-mode:screen;will-change:transform;}
+.gb1{background:radial-gradient(circle at center,rgba(178,166,142,.78) 0,rgba(178,166,142,0) 62%);transform-origin:center center;animation:gooVert 6s ease infinite;}
+.gb2{background:radial-gradient(circle at center,rgba(135,110,82,.72) 0,rgba(135,110,82,0) 62%);transform-origin:calc(50% - 320px) center;animation:gooCircle 5.5s reverse infinite;}
+.gb3{background:radial-gradient(circle at center,rgba(104,124,134,.62) 0,rgba(104,124,134,0) 62%);transform-origin:calc(50% + 320px) center;animation:gooCircle 8s linear infinite;}
+.gb4{background:radial-gradient(circle at center,rgba(150,136,110,.6) 0,rgba(150,136,110,0) 62%);transform-origin:calc(50% - 180px) center;animation:gooHoriz 8s ease infinite;opacity:1;}
+.gb5{background:radial-gradient(circle at center,rgba(162,132,98,.64) 0,rgba(162,132,98,0) 62%);transform-origin:calc(50% - 680px) calc(50% + 680px);animation:gooCircle 5s ease infinite;}
+
+.hero-reveal{
+  position:absolute;bottom:0;left:50%;height:96%;width:auto;max-width:none;z-index:2;pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle var(--rv-r,0px) at var(--rv-x,-999px) var(--rv-y,-999px),#000 0%,#000 32%,rgba(0,0,0,0) 100%);
+  mask-image:radial-gradient(circle var(--rv-r,0px) at var(--rv-x,-999px) var(--rv-y,-999px),#000 0%,#000 32%,rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  transform:translateX(-50%);
+}
+.ghost-grad{
+  background-image:linear-gradient(100deg,#161d27 0%,#27313b 26%,#2c2a1e 50%,#1b2530 74%,#161d27 100%);
+  background-size:230% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  animation:tr-ghostshift 17s ease-in-out infinite;
+}
+
+.hpop-pill{
+  display:inline-block;padding:7px 15px;border-radius:999px;
+  background:rgba(30,34,40,.30);backdrop-filter:blur(7px) saturate(150%);-webkit-backdrop-filter:blur(7px) saturate(150%);
+  border:1px solid rgba(255,255,255,.16);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+  font-weight:600;font-size:14px;color:#efe6cd;letter-spacing:.01em;white-space:nowrap;
+}
+.hpop-pill.small{font-size:11px;padding:5px 12px;background:rgba(28,32,38,.34);}
+.hpop-pill.tiny{font-size:9.5px;padding:3px 9px;background:rgba(26,30,36,.38);}
+.hpop-pill.blur{filter:blur(.5px);}
+
+/* NAV */
+.nav-link{color:#a69b84;font-family:'Cinzel',serif;font-weight:500;letter-spacing:.3em;text-transform:uppercase;font-size:clamp(9px,.82vw,12px);display:inline-block;overflow:hidden;vertical-align:bottom;}
+.nav-roll{display:block;position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),color .5s ease;}
+.nav-roll::after{content:attr(data-w);position:absolute;left:0;top:100%;width:100%;color:#efe6cd;}
+.nav-link:hover .nav-roll{transform:translateY(-100%);color:#efe6cd;}
+
+.menu-link{color:#a69b84;font-family:'League Gothic','League Gothic Condensed',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.3vw,52px);line-height:.9;letter-spacing:.01em;display:block;}
+.menu-roll{display:block;overflow:hidden;}
+.menu-roll-in{display:block;position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),color .5s ease;}
+.menu-roll-in::after{content:attr(data-w);position:absolute;left:0;top:100%;width:100%;color:#efe6cd;}
+.menu-link:hover .menu-roll-in{transform:translateY(-100%);color:#efe6cd;}
+.menu-link:hover .menu-roll:nth-child(2) .menu-roll-in{transition-delay:.06s;}
+.menu-link:hover .menu-roll:nth-child(3) .menu-roll-in{transition-delay:.12s;}
+
+.social-ic{color:#a69b84;display:inline-flex;transition:color .5s ease;}
+.social-ic:hover{color:#efe6cd;}
+.ic-roll{display:inline-block;overflow:hidden;line-height:0;}
+.ic-roll-in{display:block;position:relative;transition:transform .55s cubic-bezier(.16,1,.3,1);}
+.ic-dup{position:absolute;left:0;top:100%;}
+.social-ic:hover .ic-roll-in{transform:translateY(-100%);}
+
+/* MENU FLUTUANTE */
+.fmenu{position:fixed;top:clamp(16px,2.4vw,28px);left:clamp(16px,3vw,40px);z-index:9998;opacity:0;transform:translateY(-14px);pointer-events:none;transition:opacity .5s ease,transform .55s cubic-bezier(.16,1,.3,1);}
+.fmenu.show{opacity:1;transform:none;pointer-events:auto;}
+.fmenu-btn{position:relative;width:clamp(44px,3.4vw,52px);height:clamp(44px,3.4vw,52px);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;background:rgba(20,24,29,.55);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.28);transition:border-color .35s ease,background .35s ease;}
+.fmenu-btn:hover{border-color:rgba(166,155,132,.55);background:rgba(26,30,36,.72);}
+.fmenu-btn span{position:absolute;display:block;width:20px;height:1.6px;background:#cdbf99;border-radius:2px;transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s ease;}
+.fmenu-btn span:nth-child(1){transform:translateY(-6px);}
+.fmenu-btn span:nth-child(3){transform:translateY(6px);}
+.fmenu.open .fmenu-btn span:nth-child(1){transform:rotate(45deg);}
+.fmenu.open .fmenu-btn span:nth-child(2){opacity:0;}
+.fmenu.open .fmenu-btn span:nth-child(3){transform:rotate(-45deg);}
+.fmenu-panel{position:absolute;top:calc(100% + 12px);left:0;min-width:248px;padding:clamp(18px,1.5vw,24px) clamp(20px,1.7vw,28px);border-radius:16px;background:rgba(16,20,25,.82);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(166,155,132,.18);box-shadow:0 18px 50px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:clamp(13px,1.1vw,18px);opacity:0;transform:translateY(-10px) scale(.97);transform-origin:top left;pointer-events:none;transition:opacity .4s ease,transform .45s cubic-bezier(.16,1,.3,1);}
+.fmenu.open .fmenu-panel{opacity:1;transform:none;pointer-events:auto;}
+.fmenu-link{font-family:'League Gothic','League Gothic Condensed',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,1.7vw,27px);line-height:1;letter-spacing:.015em;color:#a69b84;transition:color .35s ease,transform .35s ease;}
+.fmenu-link:hover{color:#efe6cd;transform:translateX(6px);}
+
+.gotop{position:fixed;right:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,38px);z-index:9998;width:clamp(46px,3.6vw,54px);height:clamp(46px,3.6vw,54px);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;background:rgba(20,24,29,.55);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.28);color:#cdbf99;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s ease,transform .55s cubic-bezier(.16,1,.3,1),border-color .35s ease,background .35s ease;}
+.gotop.show{opacity:1;transform:none;pointer-events:auto;}
+.gotop:hover{border-color:rgba(166,155,132,.55);background:rgba(26,30,36,.72);}
+
+/* REVEALS */
+.reveal{opacity:0;transform:translateY(34px);filter:blur(5px);transition:opacity 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1),filter 1.15s ease;}
+.reveal.in{opacity:1;transform:none;filter:blur(0);}
+.reveal-soft{opacity:0;transition:opacity 1.5s ease;}
+.reveal-soft.in{opacity:1;}
+.reveal-l{opacity:0;transform:translateX(-50px);filter:blur(5px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1),filter 1.2s ease;}
+.reveal-l.in{opacity:1;transform:none;filter:blur(0);}
+
+/* MARCAS */
+.marquee-track{display:flex;width:max-content;}
+.marquee-track:hover{animation-play-state:paused;}
+.logo-item{width:clamp(110px,12vw,168px);height:clamp(40px,4.4vw,58px);background-size:contain;background-position:center;background-repeat:no-repeat;opacity:.5;transition:opacity .45s ease;}
+.logo-item:hover{opacity:1;}
+.lg1{background-image:url(assets/img/img11.webp);}
+.lg2{background-image:url(assets/img/img12.webp);}
+.lg3{background-image:url(assets/img/img13.webp);}
+.lg4{background-image:url(assets/img/img14.webp);}
+.lg5{background-image:url(assets/img/img15.webp);}
+.lg6{background-image:url(assets/img/img16.webp);}
+
+/* FACES */
+.face-circle{width:clamp(86px,9vw,128px);height:clamp(86px,9vw,128px);border-radius:50%;overflow:hidden;border:1px solid rgba(166,155,132,.22);box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;}
+.face-circle:hover{border-color:rgba(166,155,132,.5);}
+.face-img{width:100%;height:100%;background-size:cover;background-position:center;filter:grayscale(.5) sepia(.55) saturate(.75) brightness(.86) contrast(.97);transition:filter .7s ease;}
+.face-circle:hover .face-img{filter:none;}
+.fi1{background-image:url(assets/img/img01.webp);}
+.fi2{background-image:url(assets/img/img02.webp);}
+.fi3{background-image:url(assets/img/img03.webp);}
+.fi4{background-image:url(assets/img/img04.webp);}
+.fi5{background-image:url(assets/img/img05.webp);}
+.fi6{background-image:url(assets/img/img06.webp);}
+.fi7{background-image:url(assets/img/img07.webp);}
+.fi8{background-image:url(assets/img/img08.webp);}
+.fi9{background-image:url(assets/img/img09.webp);}
+.fi10{background-image:url(assets/img/img10.webp);}
+
+/* STATS */
+.stat-item{opacity:0;transform:translateY(46px) scale(.86);filter:blur(8px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.34,1.56,.64,1),filter .9s ease;}
+.stat-item.in{opacity:1;transform:none;filter:blur(0);}
+.stat-item .stat-lbl{opacity:0;transform:translateY(8px);transition:opacity .7s ease .25s,transform .7s ease .25s;}
+.stat-item.in .stat-lbl{opacity:1;transform:none;}
+.stat-num{font-family:'League Gothic Cond','League Gothic',sans-serif;font-weight:400;line-height:.86;letter-spacing:-.01em;font-size:clamp(74px,13vw,210px);color:#a69b84;}
+.stat-lbl{font-family:'Hanken Grotesk',sans-serif;font-weight:500;letter-spacing:.26em;text-transform:uppercase;font-size:clamp(9px,1vw,13px);color:#bdb39a;}
+
+/* CURSOS */
+#cursos{background:#0d1116;padding:clamp(70px,9vw,140px) clamp(18px,4vw,56px);}
+.off-wrap{max-width:1560px;margin:0 auto;}
+.off-head{display:flex;flex-direction:column;gap:clamp(8px,1vw,14px);margin:0 0 clamp(34px,4vw,64px);}
+.off-eyebrow{font-family:'Hanken Grotesk',sans-serif;font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:clamp(10px,.95vw,13px);color:#8a8069;}
+.off-h2{font-family:'League Gothic','League Gothic Condensed',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6.5vw,104px);line-height:.94;letter-spacing:.02em;color:#efe6cd;margin:0;}
+.off-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(14px,1.5vw,24px);align-items:stretch;}
+.off-card{display:flex;flex-direction:column;background:#141920;border:1px solid rgba(166,155,132,.16);border-radius:20px;overflow:hidden;opacity:0;transform:translateY(70px) scale(.93);transition:border-color .5s ease,box-shadow .6s ease;will-change:transform,opacity;}
+.off-card.in{opacity:1;transform:none;transition:border-color .5s ease,box-shadow .6s ease,transform .55s cubic-bezier(.16,1,.3,1);}
+.off-card .off-media-in{transform:scale(1.14) translateY(4%);}
+.off-card.in .off-media-in{transform:scale(1.001);}
+.off-card:hover{border-color:rgba(166,155,132,.45);box-shadow:0 24px 60px -18px rgba(0,0,0,.65);}
+.off-card.in:hover{transform:translateY(-10px);}
+.off-media{position:relative;aspect-ratio:1/1.08;overflow:hidden;background:#0d1116;flex:none;}
+.off-media-in{position:absolute;inset:0;transform:scale(1.001);transition:transform 1s cubic-bezier(.16,1,.3,1);will-change:transform;}
+.off-card:hover .off-media-in{transform:scale(1.06);}
+.off-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(13,17,22,.42),rgba(13,17,22,0) 34%);}
+.off-body{display:flex;flex-direction:column;gap:clamp(10px,1.1vw,16px);padding:clamp(18px,1.8vw,28px) clamp(18px,1.8vw,26px) clamp(22px,2vw,30px);flex:1;}
+.off-topic{display:flex;align-items:center;gap:12px;font-family:'Hanken Grotesk',sans-serif;font-weight:600;letter-spacing:.26em;text-transform:uppercase;font-size:clamp(10px,.9vw,12px);color:#8a8069;}
+.off-num{opacity:.55;}
+.off-names{display:flex;flex-direction:column;gap:2px;}
+.off-name{font-size:clamp(24px,1.75vw,32px)!important;}
+.off-desc{font-family:'Hanken Grotesk',sans-serif;font-weight:400;line-height:1.5;font-size:clamp(13.5px,1vw,15.5px);color:rgba(205,192,155,.78);margin:0;}
+.off-btn{margin-top:auto;color:#a69b84;display:inline-flex;align-items:center;gap:.55em;font-family:'Hanken Grotesk',sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(11px,1vw,13px);padding:clamp(13px,1.1vw,17px) clamp(22px,2vw,30px);border-radius:100px;border:1px solid currentColor;transition:background .35s ease,color .35s ease,transform .35s ease;align-self:flex-start;}
+.off-btn:hover{background:#a69b84;color:#0d1116;transform:translateY(-2px);}
+.crs-name{font-family:'League Gothic','League Gothic Condensed',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(22px,2.5vw,38px);line-height:1.08;letter-spacing:.02em;color:#a69b84;width:max-content;max-width:100%;display:inline-flex;align-items:flex-start;gap:.14em;}
+.crs-roll{display:inline-block;overflow:hidden;vertical-align:top;}
+.crs-roll-in{display:block;position:relative;white-space:nowrap;transition:transform .5s cubic-bezier(.16,1,.3,1),color .5s ease;}
+.crs-roll-in::after{content:attr(data-w);position:absolute;left:0;top:100%;width:100%;color:#efe6cd;white-space:nowrap;}
+.crs-name:hover .crs-roll-in{transform:translateY(-100%);color:#efe6cd;}
+.crs-arrow{flex:none;width:.46em;height:.46em;margin-top:.16em;color:#a69b84;transition:color .5s ease,transform .45s cubic-bezier(.16,1,.3,1);}
+.crs-name:hover .crs-arrow{color:#efe6cd;transform:translate(2px,-2px);}
+.crs-cover{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;background:#1a1f26;border-radius:14px;}
+.crs-vid{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:0;pointer-events:none;}
+.courses-eyebrow{font-family:'Hanken Grotesk',sans-serif;font-weight:600;letter-spacing:.34em;text-transform:uppercase;font-size:clamp(10px,.9vw,13px);color:#a69b84;white-space:nowrap;}
+
+/* BIO */
+.bio-chip{display:inline-flex;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;font-weight:600;letter-spacing:.02em;color:#efe6cd;background:rgba(30,34,40,.34);backdrop-filter:blur(8px) saturate(150%);-webkit-backdrop-filter:blur(8px) saturate(150%);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 15px;font-size:clamp(12px,1.05vw,15px);white-space:nowrap;will-change:transform;transition:color .35s ease,border-color .35s ease;}
+.bio-chip:hover{color:#fff;border-color:rgba(255,255,255,.3);}
+.bio-chip.stat{font-size:clamp(13px,1.15vw,16px);color:#efe6cd;background:rgba(166,155,132,.18);border-color:rgba(166,155,132,.42);}
+.bio-chip-rep{display:inline-flex;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;}
+.bio-chips{display:flex;flex-wrap:wrap;gap:clamp(8px,1vw,13px);}
+.bio-p{transform:none;}
+
+/* VSS — vídeo scroll */
+.vss-track{position:relative;height:220vh;background:#000;}
+.vss-stage{position:absolute;top:0;left:0;width:100%;height:100vh;overflow:hidden;background:#000;}
+.vss-stage.vss-fixed{position:fixed;}
+.vss-stage.vss-end{position:absolute;top:auto;bottom:0;}
+.vss-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .5s ease;will-change:transform;}
+.vss-video.is-ready{opacity:1;}
+.vss-words{position:absolute;top:50%;left:6vw;transform:translateY(-50%);z-index:2;pointer-events:none;}
+.vss-line{display:flex;align-items:flex-start;font-family:'League Gothic','League Gothic Condensed',sans-serif;color:#a69b84;font-weight:400;font-size:clamp(56px,12vw,180px);line-height:.9;letter-spacing:.015em;}
+.vss-reel{display:inline-block;overflow:hidden;vertical-align:top;opacity:0;text-align:center;}
+.vss-strip{display:block;will-change:transform;}
+.vss-strip span{display:block;line-height:.9;}
+.vss-progress{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(166,155,132,.2);z-index:3;}
+.vss-progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#a69b84;}
+
+/* ADMIN */
+#tr-admin-lock{position:fixed;left:50%;bottom:clamp(16px,2.4vw,28px);transform:translateX(-50%);z-index:9997;width:48px;height:48px;border-radius:50%;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;background:rgba(20,24,29,.6);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.3);color:#cdbf99;transition:border-color .3s,background .3s,transform .3s;}
+#tr-admin-lock:hover{border-color:rgba(166,155,132,.6);background:rgba(26,30,36,.75);transform:translateX(-50%) scale(1.06);}
+#tr-admin-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(6,9,12,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;}
+#tr-admin-modal.open{display:flex;}
+#tr-admin-box{width:min(1180px,100%);background:#0f1318;border:1px solid rgba(166,155,132,.25);border-radius:18px;padding:clamp(20px,3vw,40px);color:#cdbf99;font-family:'Hanken Grotesk',sans-serif;box-shadow:0 30px 80px rgba(0,0,0,.75);margin:20px 0;}
+.adm-btn{padding:12px 24px;border-radius:100px;cursor:pointer;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-family:inherit;font-weight:600;transition:all .25s ease;border:1px solid rgba(166,155,132,.3);background:transparent;color:#a69b84;}
+.adm-btn:hover{background:rgba(166,155,132,.12);color:#efe6cd;border-color:rgba(166,155,132,.55);}
+.adm-btn.primary{background:#a69b84;color:#0d1116;border:0;}
+.adm-btn.primary:hover{background:#bdb39a;}
+.adm-btn.danger{border-color:rgba(229,115,115,.45);color:#e57373;}
+.adm-btn.danger:hover{background:rgba(229,115,115,.15);}
+.adm-field{width:100%;padding:11px 15px;border-radius:10px;background:#0d1116;border:1px solid rgba(166,155,132,.25);color:#efe6cd;font-family:inherit;font-size:14px;outline:none;box-sizing:border-box;transition:border-color .25s ease;}
+.adm-field:focus{border-color:rgba(166,155,132,.6);}
+.adm-label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8069;margin-bottom:6px;}
+.adm-card{background:#141920;border:1px solid rgba(166,155,132,.16);border-radius:14px;padding:22px;}
+.adm-group-title{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a8069;margin-bottom:16px;}
+.adm-tab{padding:11px 22px;border-radius:100px;cursor:pointer;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:inherit;transition:all .25s ease;border:1px solid rgba(166,155,132,.22);background:transparent;color:#a69b84;}
+.adm-tab.on{border-color:#a69b84;background:rgba(166,155,132,.16);color:#efe6cd;font-weight:600;}
+.adm-course-row{background:#141920;border:1px solid rgba(166,155,132,.16);border-radius:12px;padding:18px;margin-bottom:14px;}
+.adm-toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);padding:12px 24px;border-radius:100px;z-index:100002;background:#1f3a26;color:#efe6cd;font-weight:600;font-size:14px;border:1px solid rgba(166,155,132,.4);box-shadow:0 10px 30px rgba(0,0,0,.6);opacity:0;transition:opacity .3s ease;pointer-events:none;max-width:90vw;text-align:center;font-family:'Hanken Grotesk',sans-serif;}
+.adm-toast.err{background:#3a1f1f;}
+.adm-toast.show{opacity:1;}
+
+/* RESPONSIVO */
+@media (max-width:760px){
+  .goo-blob{animation:none!important;}
+  .ghost-grad{animation:none!important;}
+  .hpop-pill{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:rgba(18,23,29,.86)!important;}
+  .hero-gooey{filter:blur(22px)!important;opacity:.55!important;}
+  .about-photoblock{flex-direction:column!important;align-items:stretch!important;gap:16px!important;}
+  .about-vtext{writing-mode:horizontal-tb!important;transform:none!important;font-size:clamp(52px,13vw,86px)!important;line-height:.86!important;}
+  .hero-row{flex-direction:column!important;align-items:flex-start!important;}
+  .hero-social{padding-top:0!important;margin-top:clamp(26px,7vw,46px)!important;}
+  .off-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
+  .off-name{font-size:clamp(28px,7.4vw,38px)!important;}
+  .off-media{aspect-ratio:4/3.4;}
+  .vss-track{height:200vh;}
+  .vss-words{left:7vw;}
+}
+@media (prefers-reduced-motion:reduce){
+  .goo-blob,.ghost-grad{animation:none!important;}
+  .reveal,.reveal-l,.reveal-soft,.bio-p{opacity:1!important;transform:none!important;filter:none!important;}
+  *{scroll-behavior:auto!important;}
+}
+</style>
 </head>
 <body>
 
-<!-- ============================================================
-     LOADER
-     ============================================================ -->
-<div id="tr-loader" role="status" aria-label="Carregando"
-  style="position:fixed;inset:0;z-index:99999;background:#0d1116;
-         display:flex;align-items:center;justify-content:center;
-         transition:opacity .7s ease;">
-  <div style="position:absolute;top:50%;left:0;transform:translateY(-50%);
-              width:100%;height:3px;background:rgba(166,155,132,.1);overflow:hidden;">
-    <div style="position:absolute;top:0;left:0;height:100%;width:34%;
-                background:linear-gradient(90deg,transparent,#a69b84 22%,#cdbf99 50%,#a69b84 78%,transparent);
-                animation:tr-sweep 1.25s cubic-bezier(.55,0,.35,1) infinite;"></div>
+<!-- LOADER -->
+<div id="tr-loader" role="status" aria-label="Carregando" style="position:fixed;inset:0;z-index:99999;background:#0d1116;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease;">
+  <div style="position:absolute;top:50%;left:0;transform:translateY(-50%);width:100%;height:3px;background:rgba(166,155,132,.1);overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;height:100%;width:34%;background:linear-gradient(90deg,transparent,#a69b84 22%,#cdbf99 50%,#a69b84 78%,transparent);animation:tr-sweep 1.25s cubic-bezier(.55,0,.35,1) infinite;"></div>
   </div>
 </div>
 
-<!-- ============================================================
-     MENU FLUTUANTE
-     ============================================================ -->
+<!-- MENU FLUTUANTE -->
 <div class="fmenu" data-fmenu="">
-  <button class="fmenu-btn" type="button" aria-label="Abrir menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="fmenu-btn" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="fmenu-panel" aria-label="Menu">
     <a class="fmenu-link" href="https://form.talesramiro.com/analise" target="_blank" rel="noopener">Mentoria Premium</a>
     <a class="fmenu-link" href="#cursos">Cursos e Treinamentos</a>
@@ -74,26 +310,15 @@
   </nav>
 </div>
 
-<!-- BOTÃO VOLTAR AO TOPO -->
+<!-- BOTÃO TOPO -->
 <button class="gotop" data-gotop="" type="button" aria-label="Voltar ao topo">
-  <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 19V6"></path><path d="M6 11l6-6 6 6"></path>
-  </svg>
+  <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"></path><path d="M6 11l6-6 6 6"></path></svg>
 </button>
 
-<!-- ============================================================
-     WRAPPER
-     ============================================================ -->
-<div style="background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;
-            overflow-x:hidden;width:100%;">
+<div style="background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;">
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section id="tr-hero" style="position:fixed;top:0;left:0;width:100%;height:100svh;
-      z-index:1;overflow:hidden;
-      background:radial-gradient(120% 90% at 50% 32%,#3b454a 0%,#262e32 38%,#13181b 72%,#0d1116 100%);
-      display:flex;flex-direction:column;">
-
+  <!-- HERO -->
+  <section id="tr-hero" style="position:fixed;top:0;left:0;width:100%;height:100svh;z-index:1;overflow:hidden;background:radial-gradient(120% 90% at 50% 32%,#3b454a 0%,#262e32 38%,#13181b 72%,#0d1116 100%);display:flex;flex-direction:column;">
     <div class="hero-gooey" aria-hidden="true">
       <div class="goo-blob gb1"></div>
       <div class="goo-blob gb2"></div>
@@ -101,412 +326,1064 @@
       <div class="goo-blob gb4"></div>
       <div class="goo-blob gb5"></div>
     </div>
-
-    <div data-hero-ghost class="ghost-grad"
-      style="position:absolute;top:1.5%;left:50%;transform:translateX(-50%);
-             width:auto;text-align:center;white-space:nowrap;
-             font-family:'League Gothic Cond','League Gothic',sans-serif;
-             font-size:20vw;line-height:.82;letter-spacing:-0.02em;
-             color:#171d25;z-index:1;pointer-events:none;user-select:none;"
-      data-cms="hero.titulo">TALES RAMIRO</div>
-
-    <img fetchpriority="high" decoding="async" data-hero-photo
-      src="assets/img/img17.webp" alt="Tales Ramiro"
-      data-cms-src="hero.foto"
-      style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-             height:96%;width:auto;max-width:none;z-index:2;pointer-events:none;
-             animation:tr-fadein 1.2s ease both;">
-
-    <img decoding="async" data-hero-reveal src="assets/img/img18.webp" alt="" aria-hidden="true"
-      class="hero-reveal" data-cms-src="hero.foto_reveal"
-      style="transform:translateX(-50%);">
-
-    <div style="position:absolute;inset:0;z-index:3;pointer-events:none;
-                background:linear-gradient(90deg,rgba(13,17,22,.95) 0%,rgba(13,17,22,.6) 26%,rgba(13,17,22,0) 52%),
-                           linear-gradient(0deg,rgba(13,17,22,.85) 0%,rgba(13,17,22,0) 22%);"></div>
-
+    <div data-hero-ghost class="ghost-grad" style="position:absolute;top:1.5%;left:50%;transform:translateX(-50%);width:auto;text-align:center;white-space:nowrap;font-family:'League Gothic Cond','League Gothic',sans-serif;font-size:20vw;line-height:.82;letter-spacing:-0.02em;color:#171d25;z-index:1;pointer-events:none;user-select:none;">TALES RAMIRO</div>
+    <img fetchpriority="high" decoding="async" data-hero-photo src="assets/img/img17.webp" alt="Tales Ramiro" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:96%;width:auto;max-width:none;z-index:2;pointer-events:none;animation:tr-fadein 1.2s ease both;">
+    <img decoding="async" data-hero-reveal src="assets/img/img18.webp" alt="" aria-hidden="true" class="hero-reveal">
+    <div style="position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(13,17,22,.95) 0%,rgba(13,17,22,.6) 26%,rgba(13,17,22,0) 52%),linear-gradient(0deg,rgba(13,17,22,.85) 0%,rgba(13,17,22,0) 22%);"></div>
     <div data-hero-pops>
-      <div class="hpop" data-py=".10" style="position:absolute;z-index:4;top:28%;left:67%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".10" style="position:absolute;z-index:4;top:28%;left:67%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill">Inteligência Artificial</span>
+          <span class="hpop-pill" style="animation:tr-flo1 10s ease-in-out infinite;animation-delay:-5s;">Inteligência Artificial</span>
         </div>
       </div>
-      <div class="hpop" data-py=".095" style="position:absolute;z-index:4;top:36%;left:61%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".095" style="position:absolute;z-index:4;top:36%;left:61%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill">Negócios</span>
+          <span class="hpop-pill" style="animation:tr-flo2 8.5s ease-in-out infinite;animation-delay:-2s;">Negócios</span>
         </div>
       </div>
-      <div class="hpop" data-py=".07" style="position:absolute;z-index:1;top:34%;left:76%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".07" style="position:absolute;z-index:1;top:34%;left:76%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill small blur">Espiritualidade</span>
+          <span class="hpop-pill small blur" style="animation:tr-flo3 9.3s ease-in-out infinite;animation-delay:-3s;">Espiritualidade</span>
         </div>
       </div>
-      <div class="hpop" data-py=".05" style="position:absolute;z-index:1;top:44%;left:70%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".05" style="position:absolute;z-index:1;top:44%;left:70%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill tiny blur">Mentalidade</span>
+          <span class="hpop-pill tiny blur" style="animation:tr-flo1 7s ease-in-out infinite;animation-delay:0s;">Mentalidade</span>
         </div>
       </div>
-      <div class="hpop" data-py=".10" style="position:absolute;z-index:4;top:51%;left:63%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".10" style="position:absolute;z-index:4;top:51%;left:63%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill">Audiovisual</span>
+          <span class="hpop-pill" style="animation:tr-flo2 7.7s ease-in-out infinite;animation-delay:-4s;">Audiovisual</span>
         </div>
       </div>
-      <div class="hpop" data-py=".045" style="position:absolute;z-index:1;top:50%;left:76%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".045" style="position:absolute;z-index:1;top:50%;left:76%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill tiny blur">Posicionamento</span>
+          <span class="hpop-pill tiny blur" style="animation:tr-flo3 6.2s ease-in-out infinite;animation-delay:-1s;">Posicionamento</span>
         </div>
       </div>
-      <div class="hpop" data-py=".075" style="position:absolute;z-index:4;top:59%;left:68%;
-           pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);
-           transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
+      <div class="hpop" data-py=".075" style="position:absolute;z-index:4;top:59%;left:68%;pointer-events:none;will-change:transform;opacity:0;transform:scale(.82);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);">
         <div class="hpop-rep" style="transition:transform .6s cubic-bezier(.22,.61,.36,1);">
-          <span class="hpop-pill small">Estratégia</span>
+          <span class="hpop-pill small" style="animation:tr-flo2 8s ease-in-out infinite;animation-delay:-2.5s;">Estratégia</span>
         </div>
       </div>
     </div>
-
-    <nav data-hero-nav style="position:relative;z-index:5;display:flex;
-        justify-content:space-between;align-items:center;gap:16px;
-        padding:clamp(22px,3.5vw,44px) clamp(22px,5vw,72px);
-        animation:tr-fadeup .9s ease both;">
+    <nav data-hero-nav style="position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:clamp(22px,3.5vw,44px) clamp(22px,5vw,72px);animation:tr-fadeup .9s ease both;">
       <a href="" class="nav-link"><span class="nav-roll" data-w="Tales Ramiro">Tales Ramiro</span></a>
-      <a href="https://form.talesramiro.com/analise" target="_blank" rel="noopener" class="nav-link">
-        <span class="nav-roll" data-w="Romper">Romper</span></a>
+      <a href="https://form.talesramiro.com/analise" target="_blank" rel="noopener" class="nav-link"><span class="nav-roll" data-w="Romper">Romper</span></a>
     </nav>
-
-    <div data-hero-menu style="position:relative;z-index:5;flex:1;display:flex;
-         align-items:center;padding:0 clamp(22px,5vw,72px);">
-      <div class="hero-row" style="width:100%;display:flex;justify-content:space-between;
-           align-items:flex-start;gap:24px;">
-        <nav style="display:flex;flex-direction:column;gap:clamp(20px,2.6vw,40px);">
-          <a href="https://form.talesramiro.com/analise" target="_blank" rel="noopener" class="menu-link">
-            <span class="menu-roll"><span class="menu-roll-in" data-w="MENTORIA">MENTORIA</span></span>
-            <span class="menu-roll"><span class="menu-roll-in" data-w="PREMIUM">PREMIUM</span></span></a>
-          <a href="#cursos" class="menu-link">
-            <span class="menu-roll"><span class="menu-roll-in" data-w="CURSOS">CURSOS</span></span>
-            <span class="menu-roll"><span class="menu-roll-in" data-w="E TREINAMENTOS">E TREINAMENTOS</span></span></a>
-          <a href="https://form.talesramiro.com/job" target="_blank" rel="noopener" class="menu-link">
-            <span class="menu-roll"><span class="menu-roll-in" data-w="CONTATO PARA">CONTATO PARA</span></span>
-            <span class="menu-roll"><span class="menu-roll-in" data-w="TRABALHOS">TRABALHOS</span></span></a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=talesramiro1@gmail.com"
-             target="_blank" rel="noopener" class="menu-link">
-            <span class="menu-roll"><span class="menu-roll-in" data-w="EVENTOS/">EVENTOS/</span></span>
-            <span class="menu-roll"><span class="menu-roll-in" data-w="WORKSHOPS/">WORKSHOPS/</span></span>
-            <span class="menu-roll"><span class="menu-roll-in" data-w="PARCERIAS">PARCERIAS</span></span></a>
-        </nav>
-
-        <div class="hero-social" style="align-self:flex-start;display:flex;
-             align-items:center;gap:clamp(14px,1.4vw,22px);
-             padding-top:clamp(6px,1vw,16px);">
-          <a href="https://instagram.com/talesramiroart" target="_blank" rel="noopener"
-             aria-label="Instagram" class="social-ic">
-            <span class="ic-roll"><span class="ic-roll-in">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4.1"></circle>
-                <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-              </svg>
-              <svg class="ic-dup" width="34" height="34" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4.1"></circle>
-                <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-              </svg>
-            </span></span></a>
-          <a href="https://youtube.com/talesramiroart" target="_blank" rel="noopener"
-             aria-label="YouTube" class="social-ic">
-            <span class="ic-roll"><span class="ic-roll-in">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-                <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
-                <path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path>
-              </svg>
-              <svg class="ic-dup" width="34" height="34" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-                <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
-                <path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path>
-              </svg>
-            </span></span></a>
-        </div>
+    <div data-hero-menu style="position:relative;z-index:5;flex:1;display:flex;align-items:center;padding:0 clamp(22px,5vw,72px);">
+      <div class="hero-row" style="width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;">
+      <nav style="display:flex;flex-direction:column;gap:clamp(20px,2.6vw,40px);">
+        <a href="https://form.talesramiro.com/analise" target="_blank" rel="noopener" class="menu-link"><span class="menu-roll"><span class="menu-roll-in" data-w="MENTORIA">MENTORIA</span></span><span class="menu-roll"><span class="menu-roll-in" data-w="PREMIUM">PREMIUM</span></span></a>
+        <a href="#cursos" class="menu-link"><span class="menu-roll"><span class="menu-roll-in" data-w="CURSOS">CURSOS</span></span><span class="menu-roll"><span class="menu-roll-in" data-w="E TREINAMENTOS">E TREINAMENTOS</span></span></a>
+        <a href="https://form.talesramiro.com/job" target="_blank" rel="noopener" class="menu-link"><span class="menu-roll"><span class="menu-roll-in" data-w="CONTATO PARA">CONTATO PARA</span></span><span class="menu-roll"><span class="menu-roll-in" data-w="TRABALHOS">TRABALHOS</span></span></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=talesramiro1@gmail.com" target="_blank" rel="noopener" class="menu-link"><span class="menu-roll"><span class="menu-roll-in" data-w="EVENTOS/">EVENTOS/</span></span><span class="menu-roll"><span class="menu-roll-in" data-w="WORKSHOPS/">WORKSHOPS/</span></span><span class="menu-roll"><span class="menu-roll-in" data-w="PARCERIAS">PARCERIAS</span></span></a>
+      </nav>
+      <div class="hero-social" style="align-self:flex-start;display:flex;align-items:center;gap:clamp(14px,1.4vw,22px);padding-top:clamp(6px,1vw,16px);">
+        <a href="https://instagram.com/talesramiroart" target="_blank" rel="noopener" aria-label="Instagram" class="social-ic"><span class="ic-roll"><span class="ic-roll-in"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg><svg class="ic-dup" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></span></span></a>
+        <a href="https://youtube.com/talesramiroart" target="_blank" rel="noopener" aria-label="YouTube" class="social-ic"><span class="ic-roll"><span class="ic-roll-in"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path></svg><svg class="ic-dup" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path></svg></span></span></a>
+      </div>
       </div>
     </div>
   </section>
 
   <div aria-hidden="true" style="height:100svh;"></div>
 
-  <!-- RESTO DO SITE -->
   <div style="position:relative;z-index:2;background:#0d1116;">
 
-    <!-- ═══════════════ MARCAS ═══════════════ -->
-    <section class="cv-sec" style="background:#0a0d12;border-top:1px solid rgba(166,155,132,.07);
-        border-bottom:1px solid rgba(166,155,132,.07);padding:clamp(26px,4vw,46px) 0;overflow:hidden;">
+    <!-- MARCAS -->
+    <section style="background:#0a0d12;border-top:1px solid rgba(166,155,132,.07);border-bottom:1px solid rgba(166,155,132,.07);padding:clamp(26px,4vw,46px) 0;overflow:hidden;">
       <div style="padding:0 clamp(22px,5vw,72px);margin-bottom:clamp(22px,3vw,38px);">
         <div class="reveal" style="display:flex;align-items:center;gap:clamp(14px,2vw,24px);">
-          <span class="courses-eyebrow" data-cms="marcas.titulo">Algumas marcas e clientes atendidos</span>
+          <span class="courses-eyebrow">Algumas marcas e clientes atendidos</span>
           <span style="flex:1;height:1px;background:rgba(166,155,132,.18);"></span>
         </div>
       </div>
-      <div class="reveal" style="mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
-           -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);">
-        <div class="marquee-track" data-marquee="logos"
-             style="animation:tr-marquee 46s linear infinite;"></div>
+      <div class="reveal" style="mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);">
+        <div class="marquee-track" style="animation:tr-marquee 46s linear infinite;"><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg1" role="img" aria-label="Vivo"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg2" role="img" aria-label="Sebrae"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg3" role="img" aria-label="Ipiranga"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg4" role="img" aria-label="Eskimó"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg5" role="img" aria-label="Atomic"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg6" role="img" aria-label="Adobe"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg1" role="img" aria-label="Vivo"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg2" role="img" aria-label="Sebrae"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg3" role="img" aria-label="Ipiranga"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg4" role="img" aria-label="Eskimó"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg5" role="img" aria-label="Atomic"></div></div><div style="flex:none;width:clamp(150px,15vw,220px);display:flex;align-items:center;justify-content:center;"><div class="logo-item lg6" role="img" aria-label="Adobe"></div></div></div>
       </div>
     </section>
 
-    <!-- ═══════════════ VÍDEO + STATS ═══════════════ -->
-    <section style="position:relative;width:100%;height:clamp(360px,56vw,680px);
-        background:#0d1116;overflow:hidden;">
-      <div data-video-cover class="reveal"
-        style="position:absolute;inset:0;transform:scale(1.08);
-               transition:opacity 1.3s ease,transform 1.8s ease;">
-        <iframe data-video-iframe title="Vídeo de apresentação"
-          data-cms-src-yt="hero.video_youtube_id"
-          data-src="https://www.youtube-nocookie.com/embed/pdoL5HBtW9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=pdoL5HBtW9Y&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&enablejsapi=1"
-          frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"
-          referrerpolicy="strict-origin-when-cross-origin"
-          style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-                 width:100%;height:100%;border:0;pointer-events:none;"></iframe>
+    <!-- VÍDEO + STATS -->
+    <section style="position:relative;width:100%;height:clamp(360px,56vw,680px);background:#0d1116;overflow:hidden;">
+      <div data-video-cover="" class="reveal" style="position:absolute;inset:0;transform:scale(1.08);transition:opacity 1.3s ease,transform 1.8s ease;">
+        <iframe data-video-iframe="" title="Vídeo de apresentação" data-src="https://www.youtube-nocookie.com/embed/pdoL5HBtW9Y?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=pdoL5HBtW9Y&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;border:0;pointer-events:none;"></iframe>
       </div>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(8,11,15,.74);"></div>
-      <div data-grain style="position:absolute;inset:0;z-index:4;pointer-events:none;
-           mix-blend-mode:overlay;opacity:.78;
-           background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>');
-           background-size:160px 160px;"></div>
-      <div style="position:absolute;inset:0;z-index:4;pointer-events:none;
-           background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0px,rgba(0,0,0,.18) 1px,transparent 2px,transparent 4px);
-           opacity:.55;"></div>
-      <div style="position:absolute;inset:0;pointer-events:none;
-           background:linear-gradient(180deg,rgba(13,17,22,.72) 0%,rgba(13,17,22,0) 17%,
-                      rgba(13,17,22,0) 80%,rgba(13,17,22,.92) 100%);"></div>
-
-      <div data-stats class="reveal" style="position:absolute;inset:0;z-index:5;display:flex;
-           align-items:center;justify-content:center;gap:clamp(26px,7vw,110px);
-           flex-wrap:wrap;padding:0 clamp(22px,5vw,72px);text-align:center;">
-        <div class="stat-item">
-          <div class="stat-num" data-count="400" data-suffix="MIL" data-prefix="+"
-               data-cms-num="stat.1.numero" data-cms-prefix="stat.1.prefix"
-               data-cms-suffix="stat.1.sufixo">+0</div>
-          <div class="stat-lbl" data-cms="stat.1.label">Seguidores no Instagram</div>
+      <div data-grain="" style="position:absolute;inset:0;z-index:4;pointer-events:none;mix-blend-mode:overlay;opacity:.78;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>');background-size:160px 160px;"></div>
+      <div style="position:absolute;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0px,rgba(0,0,0,.18) 1px,transparent 2px,transparent 4px);opacity:.55;"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(13,17,22,.72) 0%,rgba(13,17,22,0) 17%,rgba(13,17,22,0) 80%,rgba(13,17,22,.92) 100%);"></div>
+      <div data-stats="" class="reveal" style="position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:clamp(26px,7vw,110px);flex-wrap:wrap;padding:0 clamp(22px,5vw,72px);text-align:center;">
+        <div class="stat-item" style="display:flex;flex-direction:column;align-items:center;gap:clamp(4px,.6vw,9px);">
+          <div class="stat-num" data-count="400" data-suffix="MIL" data-prefix="+">+0</div>
+          <div class="stat-lbl">Seguidores no Instagram</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="35" data-suffix="MIL" data-prefix="+"
-               data-cms-num="stat.2.numero" data-cms-prefix="stat.2.prefix"
-               data-cms-suffix="stat.2.sufixo">+0</div>
-          <div class="stat-lbl" data-cms="stat.2.label">Alunos formados</div>
+        <div class="stat-item" style="display:flex;flex-direction:column;align-items:center;gap:clamp(4px,.6vw,9px);">
+          <div class="stat-num" data-count="35" data-suffix="MIL" data-prefix="+">+0</div>
+          <div class="stat-lbl">Alunos formados</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="20" data-suffix="" data-prefix="+"
-               data-cms-num="stat.3.numero" data-cms-prefix="stat.3.prefix"
-               data-cms-suffix="stat.3.sufixo">+0</div>
-          <div class="stat-lbl" data-cms="stat.3.label">Países</div>
+        <div class="stat-item" style="display:flex;flex-direction:column;align-items:center;gap:clamp(4px,.6vw,9px);">
+          <div class="stat-num" data-count="20" data-suffix="" data-prefix="+">+0</div>
+          <div class="stat-lbl">Pa&iacute;ses</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="15" data-suffix="" data-prefix="+"
-               data-cms-num="stat.4.numero" data-cms-prefix="stat.4.prefix"
-               data-cms-suffix="stat.4.sufixo">+0</div>
-          <div class="stat-lbl" data-cms="stat.4.label">Anos no Audiovisual</div>
+        <div class="stat-item" style="display:flex;flex-direction:column;align-items:center;gap:clamp(4px,.6vw,9px);">
+          <div class="stat-num" data-count="15" data-suffix="" data-prefix="+">+0</div>
+          <div class="stat-lbl">Anos no Audiovisual</div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ FACES / CLIENTES ═══════════════ -->
+    <!-- FACES / CLIENTES -->
     <section class="cv-sec" style="background:#0d1116;padding:clamp(54px,8vw,110px) 0;overflow:hidden;">
-      <div class="reveal-soft" style="mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-           -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
-        <div class="marquee-track" data-marquee="faces"
-             style="animation:tr-marquee 50s linear infinite reverse;"></div>
+      <div class="reveal-soft" style="mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
+        <div class="marquee-track" style="animation:tr-marquee 50s linear infinite reverse;"><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div></div>
       </div>
     </section>
 
-    <!-- ═══════════════ CURSOS ═══════════════ -->
-    <section id="cursos" class="cv-sec" data-screen-label="Cursos e Eventos">
+    <!-- CURSOS -->
+    <section id="cursos" class="cv-sec">
       <div class="off-wrap">
         <div class="off-head">
-          <div class="off-eyebrow">Mentorias · Cursos · Eventos</div>
-          <h2 class="off-h2">Escolha o seu próximo passo</h2>
+          <div class="off-eyebrow">Mentorias &middot; Cursos &middot; Eventos</div>
+          <h2 class="off-h2">Escolha o seu pr&oacute;ximo passo</h2>
         </div>
         <div class="off-grid" data-cursos-grid>
-          <!-- preenchido pelo cms.js a partir da planilha -->
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><img decoding="async" loading="lazy" src="assets/img/img17.webp" alt="Romper Club" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">01</span><span>Mentoria</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://form.talesramiro.com/analise" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Romper Club">Romper Club</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Acompanhamento personalizado para escalar seu negócio de forma exponencial: posicionamento, mentalidade, vendas e conteúdo estratégico.</p>
+              <a class="off-btn" href="https://form.talesramiro.com/analise" target="_blank" rel="noopener">Fazer aplicação <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><img decoding="async" loading="lazy" src="assets/img/img18.webp" alt="Romper Criativo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">02</span><span>Eventos Presenciais</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://talesramiro.com/rompercriativo" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Romper Criativo">Romper Criativo</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Imersão presencial para romper o padrão: o método Romper ao vivo, prática e networking olho no olho.</p>
+              <a class="off-btn" href="https://talesramiro.com/rompercriativo" target="_blank" rel="noopener">Saber mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><iframe class="crs-vid" data-ar="1.7778" data-zoom="1.5" data-zoom-m="2.4" loading="lazy" data-src="https://www.youtube-nocookie.com/embed/CYAXYJaHTGo?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=CYAXYJaHTGo&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" title="vídeo do curso" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">03</span><span>Imersão Online</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://www.imersaoiavideo.com.br/" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Imersão de Vídeos com IA">Imersão de Vídeos com IA</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Dois dias ao vivo com o processo aberto sem cortes: estruturar o projeto, animar personagens consistentes e entregar para cliente real.</p>
+              <a class="off-btn" href="https://www.imersaoiavideo.com.br/" target="_blank" rel="noopener">Garantir vaga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><iframe class="crs-vid" data-ar="0.5625" loading="lazy" data-src="https://www.youtube-nocookie.com/embed/-9Ey5AxCPnc?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=-9Ey5AxCPnc&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" title="vídeo do curso" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">04</span><span>Curso de IA</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://www.otalesramiroart.com.br/formacaoiavideopro" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Formação IA Vídeo Pro">Formação IA Vídeo Pro</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Produza vídeos com inteligência artificial, do conceito à entrega final — como um estúdio inteiro sozinho.</p>
+              <a class="off-btn" href="https://www.otalesramiroart.com.br/formacaoiavideopro" target="_blank" rel="noopener">Conhecer curso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><iframe class="crs-vid" data-ar="0.5625" loading="lazy" data-src="https://www.youtube-nocookie.com/embed/aThGPHwqSCs?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=aThGPHwqSCs&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" title="vídeo do curso" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">05</span><span>Curso de IA</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://www.otalesramiroart.com.br/formacaoiavideopro" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Formação Anima IA Pro">Formação Anima IA Pro</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Animação com inteligência artificial na prática: personagens, cenas e movimento que parecem feitos por uma equipe.</p>
+              <a class="off-btn" href="https://www.otalesramiroart.com.br/formacaoiavideopro" target="_blank" rel="noopener">Conhecer curso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><iframe class="crs-vid" data-ar="1.7778" data-zoom="1.5" data-zoom-m="2.4" loading="lazy" data-src="https://www.youtube-nocookie.com/embed/69AODcJ3-pg?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=69AODcJ3-pg&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" title="vídeo do curso" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">06</span><span>Cursos de Motion</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://www.motionartpro.com/listaesperamap" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Motion Art Pro">Motion Art Pro</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a><a class="crs-name off-name" href="https://www.motionartpro.com/listaesperamap" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="ID Motion">ID Motion</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a><a class="crs-name off-name" href="https://www.motionartpro.com/listaesperamap" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Projeto Caixa Rápido">Projeto Caixa Rápido</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Do primeiro keyframe ao projeto entregue: técnica, identidade em movimento e fluxos que cortam horas da produção.</p>
+              <a class="off-btn" href="https://www.motionartpro.com/listaesperamap" target="_blank" rel="noopener">Entrar na lista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
+          <article class="off-card">
+            <div class="off-media"><div class="off-media-in"><iframe class="crs-vid" data-ar="0.5625" loading="lazy" data-src="https://www.youtube-nocookie.com/embed/ueI_0YTdmOo?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=ueI_0YTdmOo&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" title="vídeo do curso" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+            <div class="off-body">
+              <div class="off-topic"><span class="off-num">07</span><span>Curso de Design</span></div>
+              <div class="off-names"><a class="crs-name off-name" href="https://www.talesramiroart.com/listaesperatretapsd" target="_blank" rel="noopener"><span class="crs-roll"><span class="crs-roll-in" data-w="Treta.psd">Treta.psd</span></span><svg class="crs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+              <p class="off-desc">Composição, tipografia e direção de arte para peças que travam o scroll — nada de template, tudo com intenção.</p>
+              <a class="off-btn" href="https://www.talesramiroart.com/listaesperatretapsd" target="_blank" rel="noopener">Entrar na lista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:1.05em;height:1.05em;flex:none;"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ BIO ═══════════════ -->
-    <section data-bio-seq class="cv-sec"
-      style="background:#0d1116;padding:clamp(20px,4vw,60px) clamp(22px,5vw,72px) clamp(70px,9vw,130px);">
+    <!-- BIO -->
+    <section data-bio-seq class="cv-sec" style="background:#0d1116;padding:clamp(20px,4vw,60px) clamp(22px,5vw,72px) clamp(70px,9vw,130px);">
       <div style="max-width:1340px;margin:0 auto;">
         <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start;">
-          <div class="about-photoblock"
-            style="flex:2.4 1 460px;min-width:300px;display:flex;
-                   align-items:flex-start;gap:clamp(10px,1.4vw,22px);">
-            <div class="about-vtext" data-cms="bio.vtext"
-              style="writing-mode:vertical-rl;transform:rotate(180deg);
-                     font-family:'League Gothic','League Gothic Condensed',sans-serif;
-                     font-size:clamp(40px,5vw,92px);line-height:.78;letter-spacing:.01em;
-                     color:#a69b84;white-space:nowrap;">TALES RAMIRO</div>
-            <div class="bio-photo-wrap" style="flex:1;border-radius:16px;overflow:hidden;">
-              <div class="bio-stack" data-bio-stack
-                style="position:relative;width:100%;aspect-ratio:1200 / 778;
-                       border-radius:16px;overflow:hidden;">
-                <img decoding="async" data-bio-slide data-cms-src="bio.foto1"
-                  src="assets/img/img20.webp" alt="Tales Ramiro e família"
-                  style="position:absolute;inset:0;width:100%;height:100%;
-                         object-fit:cover;object-position:center 50%;display:block;">
-                <img decoding="async" data-bio-slide data-cms-src="bio.foto2"
-                  src="assets/img/img21.webp" alt="Tales Ramiro"
-                  style="position:absolute;inset:0;width:100%;height:100%;
-                         object-fit:cover;object-position:center 28%;display:block;
-                         opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
-                <img decoding="async" data-bio-slide data-cms-src="bio.foto3"
-                  src="assets/img/img22.webp" alt="Tales Ramiro"
-                  style="position:absolute;inset:0;width:100%;height:100%;
-                         object-fit:cover;object-position:center 32%;display:block;
-                         opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
-              </div>
-            </div>
+          <div class="about-photoblock" style="flex:2.4 1 460px;min-width:300px;display:flex;align-items:flex-start;gap:clamp(10px,1.4vw,22px);">
+            <div class="about-vtext" style="writing-mode:vertical-rl;transform:rotate(180deg);font-family:'League Gothic','League Gothic Condensed',sans-serif;font-size:clamp(40px,5vw,92px);line-height:.78;letter-spacing:.01em;color:#a69b84;white-space:nowrap;">TALES RAMIRO</div>
+            <div class="bio-photo-wrap" style="flex:1;border-radius:16px;overflow:hidden;"><div class="bio-stack" data-bio-stack style="position:relative;width:100%;aspect-ratio:1200 / 778;border-radius:16px;overflow:hidden;">
+              <img decoding="async" data-bio-slide src="assets/img/img20.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;">
+              <img decoding="async" data-bio-slide src="assets/img/img21.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
+              <img decoding="async" data-bio-slide src="assets/img/img22.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
+            </div></div>
           </div>
-
           <div class="bio-side" style="flex:1 1 200px;min-width:190px;">
-            <div class="bio-chips" style="margin-bottom:clamp(24px,2.8vw,40px);">
-              <span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo1 7s ease-in-out infinite;">MENTOR</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo2 8.5s ease-in-out infinite;animation-delay:-2s;">PROFESSOR</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo3 6.4s ease-in-out infinite;animation-delay:-1s;">CREATOR</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo2 7.7s ease-in-out infinite;animation-delay:-3.5s;">PASTOR</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo1 9s ease-in-out infinite;animation-delay:-4s;">TREINADOR COMPORTAMENTAL</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip stat" style="animation:tr-flo2 7.2s ease-in-out infinite;animation-delay:-1.5s;">+35 MIL ALUNOS</span></span>
-              <span class="bio-chip-rep"><span class="bio-chip stat" style="animation:tr-flo1 8.8s ease-in-out infinite;animation-delay:-3s;">+20 PAÍSES</span></span>
-            </div>
-
-            <div style="margin-top:clamp(20px,2.4vw,32px);display:flex;align-items:center;
-                 gap:clamp(16px,1.6vw,26px);flex-wrap:wrap;">
-              <span style="display:inline-flex;align-items:center;gap:10px;">
-                <a href="https://instagram.com/talesramiroart" target="_blank" rel="noopener"
-                   aria-label="Instagram" class="social-ic">
-                  <span class="ic-roll"><span class="ic-roll-in">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                      <circle cx="12" cy="12" r="4.1"></circle>
-                      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-                    </svg>
-                    <svg class="ic-dup" width="26" height="26" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                      <circle cx="12" cy="12" r="4.1"></circle>
-                      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-                    </svg>
-                  </span></span></a>
-                <span class="soc-count" data-soc-ig
-                  style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;
-                         font-size:clamp(12px,1vw,14px);letter-spacing:.06em;
-                         color:#bdb39a;white-space:nowrap;opacity:0;
-                         transition:opacity .6s ease;"></span>
-              </span>
-              <span style="display:inline-flex;align-items:center;gap:10px;">
-                <a href="https://youtube.com/talesramiroart" target="_blank" rel="noopener"
-                   aria-label="YouTube" class="social-ic">
-                  <span class="ic-roll"><span class="ic-roll-in">
-                    <svg width="28" height="26" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
-                      <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
-                      <path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path>
-                    </svg>
-                    <svg class="ic-dup" width="28" height="26" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
-                      <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect>
-                      <path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path>
-                    </svg>
-                  </span></span></a>
-                <span class="soc-count" data-soc-yt
-                  style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;
-                         font-size:clamp(12px,1vw,14px);letter-spacing:.06em;
-                         color:#bdb39a;white-space:nowrap;opacity:0;
-                         transition:opacity .6s ease;"></span>
-              </span>
+            <div class="bio-chips" style="margin-bottom:clamp(24px,2.8vw,40px);"><span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo1 7s ease-in-out infinite;">MENTOR</span></span><span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo2 8.5s ease-in-out infinite;animation-delay:-2s;">PROFESSOR</span></span><span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo3 6.4s ease-in-out infinite;animation-delay:-1s;">CREATOR</span></span><span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo2 7.7s ease-in-out infinite;animation-delay:-3.5s;">PASTOR</span></span><span class="bio-chip-rep"><span class="bio-chip" style="animation:tr-flo1 9s ease-in-out infinite;animation-delay:-4s;">TREINADOR COMPORTAMENTAL</span></span><span class="bio-chip-rep"><span class="bio-chip stat" style="animation:tr-flo2 7.2s ease-in-out infinite;animation-delay:-1.5s;">+35 MIL ALUNOS</span></span><span class="bio-chip-rep"><span class="bio-chip stat" style="animation:tr-flo1 8.8s ease-in-out infinite;animation-delay:-3s;">+20 PAÍSES</span></span></div>
+            <div style="margin-top:clamp(20px,2.4vw,32px);display:flex;align-items:center;gap:clamp(16px,1.6vw,26px);flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:10px;"><a href="https://instagram.com/talesramiroart" target="_blank" rel="noopener" aria-label="Instagram" class="social-ic"><span class="ic-roll"><span class="ic-roll-in"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg><svg class="ic-dup" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></span></span></a><span class="soc-count" data-soc-ig style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:clamp(12px,1vw,14px);letter-spacing:.06em;color:#bdb39a;white-space:nowrap;opacity:0;transition:opacity .6s ease;"></span></span>
+              <span style="display:inline-flex;align-items:center;gap:10px;"><a href="https://youtube.com/talesramiroart" target="_blank" rel="noopener" aria-label="YouTube" class="social-ic"><span class="ic-roll"><span class="ic-roll-in"><svg width="28" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path></svg><svg class="ic-dup" width="28" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.4 9.1 L15.4 12 L10.4 14.9 Z" fill="currentColor" stroke="none"></path></svg></span></span></a><span class="soc-count" data-soc-yt style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:clamp(12px,1vw,14px);letter-spacing:.06em;color:#bdb39a;white-space:nowrap;opacity:0;transition:opacity .6s ease;"></span></span>
             </div>
           </div>
         </div>
-
-        <div data-seq class="bio-wrap"
-          style="margin-top:clamp(36px,4.5vw,72px);
-                 column-width:clamp(260px,23vw,360px);
-                 column-gap:clamp(34px,4vw,60px);">
-          <p class="bio-p" data-cms="bio.paragrafo1"
-             style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;
-                    font-family:'Hanken Grotesk',sans-serif;font-weight:400;
-                    font-size:clamp(15px,1.15vw,18px);line-height:1.62;
-                    color:rgba(196,186,164,.95);">Tales Ramiro é, antes de qualquer título, um filho amado de Deus, pai e esposo. É daí que vem tudo.</p>
-          <p class="bio-p" data-cms="bio.paragrafo2"
-             style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;
-                    font-family:'Hanken Grotesk',sans-serif;font-weight:400;
-                    font-size:clamp(15px,1.15vw,18px);line-height:1.62;
-                    color:rgba(196,186,164,.95);">Um "Resolvedor de tretas", ele enxerga caminho onde a maioria vê problema sem saída. Atua como creator, professor, mentor e treinador comportamental.</p>
-          <p class="bio-p" data-cms="bio.paragrafo3"
-             style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;
-                    font-family:'Hanken Grotesk',sans-serif;font-weight:400;
-                    font-size:clamp(15px,1.15vw,18px);line-height:1.62;
-                    color:rgba(196,186,164,.95);">Há mais de 15 anos materializando ideias através do audiovisual, já transformou profissionalmente mais de 35 mil alunos em mais de 20 países.</p>
+        <div data-seq class="bio-wrap" style="margin-top:clamp(36px,4.5vw,72px);column-width:clamp(260px,23vw,360px);column-gap:clamp(34px,4vw,60px);">
+          <p class="bio-p" style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:clamp(15px,1.15vw,18px);line-height:1.62;color:rgba(196,186,164,.95);">Tales Ramiro é, antes de qualquer título, um filho amado de Deus, pai e esposo. É daí que vem tudo.</p>
+          <p class="bio-p" style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:clamp(15px,1.15vw,18px);line-height:1.62;color:rgba(196,186,164,.95);">Um "Resolvedor de tretas", ele enxerga caminho onde a maioria vê problema sem saída. Atua como creator, professor, mentor e treinador comportamental, ajudando pessoas a romper profissionalmente e a ativar o propósito que estava travado dentro delas.</p>
+          <p class="bio-p" style="margin:0 0 clamp(14px,1.4vw,22px);break-inside:avoid;font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:clamp(15px,1.15vw,18px);line-height:1.62;color:rgba(196,186,164,.95);">Há mais de 15 anos materializando ideias através do audiovisual, já transformou profissionalmente, através do ensino, mais de 35 mil alunos em mais de 20 países. Porque o que o move não é a ferramenta, é gente. Acredita que ninguém foi criado pra viver na mediocridade, e seu trabalho é fazer cada pessoa enxergar a verdadeira grandeza e potencial do que carrega.</p>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ VÍDEO SCROLL ═══════════════ -->
+    <!-- VÍDEO SCROLL -->
     <section class="vss-track" data-vss data-screen-label="Tretas" data-words="TRETAS|VÃO|ROLAR">
       <div class="vss-stage">
-        <video class="vss-video" muted playsinline webkit-playsinline preload="none"
-               data-cms-video="video_scroll.url"></video>
+        <video class="vss-video" muted playsinline webkit-playsinline preload="none"></video>
         <div class="vss-words"></div>
         <div class="vss-progress"><div class="vss-progress-fill"></div></div>
-        <div style="position:absolute;left:0;right:0;bottom:clamp(16px,2.4vw,30px);
-             z-index:4;text-align:center;font-family:'Hanken Grotesk',sans-serif;
-             font-weight:400;letter-spacing:.14em;text-transform:uppercase;
-             font-size:clamp(8px,.8vw,10px);color:rgba(214,205,180,.72);
-             text-shadow:0 1px 10px rgba(0,0,0,.6);pointer-events:none;"
-             data-cms="footer.copyright">© 2026 Tales Ramiro — Todos os direitos reservados</div>
+        <div style="position:absolute;left:0;right:0;bottom:clamp(16px,2.4vw,30px);z-index:4;text-align:center;font-family:'Hanken Grotesk',sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(8px,.8vw,10px);color:rgba(214,205,180,.72);text-shadow:0 1px 10px rgba(0,0,0,.6);pointer-events:none;">&copy; 2026 Tales Ramiro &mdash; Todos os direitos reservados</div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============================================================
-     BOTÃO CADEADO ADMIN
-     ============================================================ -->
+<!-- BOTÃO ADMIN -->
 <button id="tr-admin-lock" type="button" aria-label="Painel administrativo">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="11" width="16" height="10" rx="2"></rect>
     <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
   </svg>
 </button>
-
-<!-- MODAL ADMIN -->
-<div id="tr-admin-modal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div id="tr-admin-box"></div>
-</div>
+<div id="tr-admin-modal" role="dialog" aria-modal="true"><div id="tr-admin-box"></div></div>
 
 <!-- ============================================================
-     SCRIPTS (ordem importa)
+     JAVASCRIPT — TUDO INLINE (nada de 404)
      ============================================================ -->
-<script src="config.js"></script>
-<script src="assets/js/cms.js" defer></script>
-<script src="assets/js/hero.js" defer></script>
-<script src="assets/js/marquee.js" defer></script>
-<script src="assets/js/scroll-video.js" defer></script>
-<script src="assets/js/bio.js" defer></script>
-<script src="assets/js/admin.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+<script>
+/* ============================================================
+   1. LOADER
+   ============================================================ */
+(function(){
+  var l = document.getElementById('tr-loader');
+  if (!l) return;
+  var hidden = false, start = Date.now();
+  function hide(){
+    if (hidden) return; hidden = true;
+    var wait = Math.max(0, 650 - (Date.now() - start));
+    setTimeout(function(){ l.style.opacity='0'; setTimeout(function(){ l.style.display='none'; }, 760); }, wait);
+  }
+  if (document.readyState === 'complete') hide(); else window.addEventListener('load', hide);
+  setTimeout(hide, 6000);
+})();
+
+/* ============================================================
+   2. REVEAL DO HERO — círculo que segue o mouse
+   ============================================================ */
+(function(){
+  var sec = document.querySelector('#tr-hero');
+  var rev = document.querySelector('[data-hero-reveal]');
+  if (!sec || !rev){ console.warn('[reveal] não achou elementos'); return; }
+  var R = 165, hideTimer;
+  function move(e){
+    var pt = e.touches ? e.touches[0] : e;
+    if (!pt) return;
+    var r = rev.getBoundingClientRect();
+    rev.style.setProperty('--rv-x', (pt.clientX - r.left) + 'px');
+    rev.style.setProperty('--rv-y', (pt.clientY - r.top) + 'px');
+    rev.style.setProperty('--rv-r', R + 'px');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function(){ rev.style.setProperty('--rv-r', '0px'); }, 2200);
+  }
+  function leave(){ rev.style.setProperty('--rv-r', '0px'); }
+  sec.addEventListener('mousemove', move, { passive: true });
+  sec.addEventListener('mouseleave', leave);
+  sec.addEventListener('touchmove', move, { passive: true });
+  sec.addEventListener('touchend', leave);
+  console.log('[reveal] efeito ativado ✓');
+})();
+
+/* ============================================================
+   3. HERO — digitação do ghost + flashes iniciais + parallax + pops
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var heroSec = document.querySelector('#tr-hero');
+    if (!heroSec) return;
+    var photo = document.querySelector('[data-hero-photo]');
+    var ghost = document.querySelector('[data-hero-ghost]');
+    var menu  = document.querySelector('[data-hero-menu]');
+    var nav   = document.querySelector('[data-hero-nav]');
+    var rev   = document.querySelector('[data-hero-reveal]');
+    var goo   = document.querySelector('.hero-gooey');
+    var full  = ghost ? ghost.textContent : '';
+    var links = menu ? [].slice.call(menu.querySelectorAll('.menu-link')) : [];
+
+    links.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(22px)'; l.style.transition='opacity .55s ease, transform .75s cubic-bezier(.16,1,.3,1)'; });
+    if (ghost){ ghost.style.visibility='hidden'; }
+    if (photo){ photo.style.opacity='0'; }
+    if (rev){ rev.style.opacity='0'; }
+
+    var started = false;
+    function typeGhost(){
+      if (!ghost || !full) return;
+      window.__heroTyping = true;
+      ghost.style.visibility='visible';
+      ghost.textContent='';
+      var pos = 0;
+      (function t(){
+        pos++;
+        ghost.textContent = full.slice(0, pos);
+        if (pos < full.length) setTimeout(t, 100);
+        else window.__heroTyping = false;
+      })();
+    }
+    function revealMenu(){
+      links.forEach(function(l, i){ setTimeout(function(){ l.style.opacity='1'; l.style.transform='none'; }, i*240); });
+    }
+    function flash(cb){
+      if (!photo){ cb&&cb(); return; }
+      var f = 'brightness(0) invert(1)';
+      photo.style.transition = 'none';
+      var steps = [
+        [0,   function(){ photo.style.opacity='1'; photo.style.filter=f; }],
+        [110, function(){ photo.style.filter='none'; }],
+        [210, function(){ photo.style.filter=f; }],
+        [310, function(){ photo.style.filter='none'; }],
+        [410, function(){ photo.style.filter=f; }],
+        [510, function(){ photo.style.filter='none'; photo.style.transition='filter .18s ease'; if(rev) rev.style.opacity='1'; cb&&cb(); }]
+      ];
+      steps.forEach(function(s){ setTimeout(s[1], s[0]); });
+    }
+    function start(){ if (started) return; started=true; flash(function(){ typeGhost(); revealMenu(); }); }
+    if (document.readyState === 'complete') setTimeout(start, 650);
+    else window.addEventListener('load', function(){ setTimeout(start, 650); });
+
+    // Parallax scroll
+    var raf = 0;
+    function onScroll(){
+      if (raf) return;
+      raf = requestAnimationFrame(function(){
+        raf = 0;
+        var y = window.scrollY || window.pageYOffset || 0, vh = window.innerHeight || 1;
+        var p = Math.min(y/vh, 1);
+        if (ghost){ ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')'; ghost.style.opacity = String(Math.max(0, 1-p*0.5)); }
+        var phY = y * -0.70;
+        if (photo){ photo.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)'; }
+        if (rev){ rev.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)'; }
+        if (goo && window.innerWidth > 760){ goo.style.transform = 'translate3d(0,' + (y*0.04) + 'px,0)'; }
+        if (menu){ menu.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; menu.style.opacity = String(Math.max(0, 1-p*1.05)); }
+        if (nav){ nav.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; nav.style.opacity = String(Math.max(0, 1-p*1.4)); }
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Pops — reveal e repulsão
+    var wrap = document.querySelector('[data-hero-pops]');
+    if (wrap){
+      var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
+      var timers = [], shown = false, atTop = false;
+      function clearT(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers=[]; }
+      function hide(){ clearT(); shown=false; pops.forEach(function(p){ p.style.opacity='0'; p.style.transform='scale(.82)'; }); }
+      function play(){ if (shown) return; shown=true; clearT(); pops.forEach(function(p, k){ timers.push(setTimeout(function(){ p.style.opacity='1'; p.style.transform='none'; }, 260 + k*500)); }); }
+      function check(){
+        var r = heroSec.getBoundingClientRect(), vh = window.innerHeight || 1;
+        var near = (r.top > -r.height*0.5) && (r.bottom > vh*0.4);
+        if (near && !atTop){ atTop=true; play(); }
+        else if (!near && atTop){ atTop=false; hide(); }
+      }
+      check(); setTimeout(check, 260);
+      var _pp=0;
+      window.addEventListener('scroll', function(){ if(_pp) return; _pp=1; requestAnimationFrame(function(){ _pp=0; check(); }); }, { passive: true });
+      setTimeout(check, 1100);
+
+      // Repulsão
+      var items = pops.map(function(w){ return { w: w, rep: w.querySelector('.hpop-rep'), py: parseFloat(w.getAttribute('data-py'))||0 }; });
+      var mx = -99999, my = -99999, rafM = 0;
+      function applyRepel(){
+        rafM = 0;
+        for (var i=0;i<items.length;i++){
+          var it = items[i], r = it.rep.getBoundingClientRect();
+          var cx = r.left + r.width/2, cy = r.top + r.height/2;
+          var dx = cx-mx, dy = cy-my, dist = Math.sqrt(dx*dx+dy*dy), R = 140;
+          if (dist < R){
+            var f = 1-dist/R, push = f*30;
+            var nx = dist>0?dx/dist:0, ny = dist>0?dy/dist:-1;
+            it.rep.style.transform = 'translate(' + (nx*push).toFixed(1) + 'px,' + (ny*push).toFixed(1) + 'px)';
+          } else it.rep.style.transform = 'translate(0,0)';
+        }
+      }
+      window.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
+    }
+  });
+})();
+
+/* ============================================================
+   4. MENU FLUTUANTE + BOTÃO TOPO + VISIBILIDADE
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    document.addEventListener('visibilitychange', function(){ document.documentElement.classList.toggle('tr-bg', document.hidden); });
+
+    var fm = document.querySelector('[data-fmenu]');
+    if (fm){
+      var btn = fm.querySelector('.fmenu-btn');
+      function close(){ fm.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click', function(e){ e.stopPropagation(); fm.classList.toggle('open'); btn.setAttribute('aria-expanded', fm.classList.contains('open')); });
+      [].slice.call(fm.querySelectorAll('.fmenu-link')).forEach(function(a){ a.addEventListener('click', close); });
+      document.addEventListener('click', function(e){ if (fm.classList.contains('open') && !fm.contains(e.target)) close(); });
+      document.addEventListener('keydown', function(e){ if (e.key==='Escape'||e.keyCode===27) close(); });
+      var shown=null, r=0;
+      function chk(){ var y=window.pageYOffset||0, vh=window.innerHeight||1, s=y>vh*0.9; if (s!==shown){ shown=s; fm.classList.toggle('show', s); if(!s) close(); } }
+      window.addEventListener('scroll', function(){ if(r) return; r=1; requestAnimationFrame(function(){ r=0; chk(); }); }, { passive:true });
+      chk();
+    }
+
+    var gt = document.querySelector('[data-gotop]');
+    if (gt){
+      gt.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+      var shown=null, r=0;
+      function chk(){ var y=window.pageYOffset||0, vh=window.innerHeight||1, s=y>vh*1.25; if (s!==shown){ shown=s; gt.classList.toggle('show', s); } }
+      window.addEventListener('scroll', function(){ if(r) return; r=1; requestAnimationFrame(function(){ r=0; chk(); }); }, { passive:true });
+      chk();
+    }
+  });
+})();
+
+/* ============================================================
+   5. REVEALS GENÉRICOS (IntersectionObserver)
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var els = [].slice.call(document.querySelectorAll('.reveal,.reveal-l,.reveal-soft'));
+    if (!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -7% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  });
+})();
+
+/* ============================================================
+   6. STATS — contadores animados
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var wrap = document.querySelector('[data-stats]');
+    if (!wrap) return;
+    var nums = [].slice.call(wrap.querySelectorAll('.stat-num'));
+    var done = false;
+    function vh(){ return window.innerHeight || 800; }
+    function inView(el){ var r=el.getBoundingClientRect(); if(r.height===0&&r.width===0) return false; return r.top < vh()*0.82 && r.bottom > vh()*0.08; }
+    function run(){
+      if (done) return; done = true;
+      var items = [].slice.call(wrap.querySelectorAll('.stat-item'));
+      items.forEach(function(it, k){ setTimeout(function(){ it.classList.add('in'); }, k*150); });
+      nums.forEach(function(el){
+        var target = parseFloat(el.getAttribute('data-count')) || 0;
+        var suf = el.getAttribute('data-suffix') || '';
+        var pre = el.getAttribute('data-prefix') || '';
+        var dur = 2900, t0 = null;
+        function frame(ts){
+          if (!t0) t0 = ts;
+          var p = Math.min((ts-t0)/dur, 1);
+          var e = 1-Math.pow(1-p, 3);
+          el.textContent = pre + Math.round(target*e) + suf;
+          if (p < 1) requestAnimationFrame(frame);
+          else el.textContent = pre + target + suf;
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+    function check(){ if (!done && inView(wrap)) run(); }
+    check();
+    var iv = setInterval(function(){ check(); if (done) clearInterval(iv); }, 140);
+    window.addEventListener('scroll', check, { passive: true });
+  });
+})();
+
+/* ============================================================
+   7. CURSOS — animação de entrada dos cards + iframes YouTube
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var cards = [].slice.call(document.querySelectorAll('.off-card'));
+    if (!cards.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce){ cards.forEach(function(c){ c.classList.add('in'); }); }
+    else {
+      var revealScroll = function(){
+        var vh = window.innerHeight || 800;
+        cards.forEach(function(c){
+          if (c.classList.contains('in')) return;
+          var r = c.getBoundingClientRect();
+          if (r.top < vh*0.92 && r.bottom > 0) c.classList.add('in');
+        });
+      };
+      revealScroll();
+      window.addEventListener('scroll', revealScroll, { passive: true });
+    }
+
+    // Vídeos YouTube dos cards — carrega só quando perto
+    var vids = [].slice.call(document.querySelectorAll('.crs-vid[data-src]'));
+    var loaded = false;
+    function near(){ var grid = document.querySelector('[data-cursos-grid]'); if(!grid) return true; var r=grid.getBoundingClientRect(); var vh=window.innerHeight||800; return r.top < vh*1.4 && r.bottom > -vh*0.4; }
+    function withOrigin(s){ try{ if(/^https?:/.test(location.origin) && s.indexOf('origin=')<0){ return s + '&origin=' + encodeURIComponent(location.origin); } }catch(e){} return s; }
+    function load(){
+      if (loaded || !near()) return; loaded = true;
+      vids.forEach(function(f){ var s = f.getAttribute('data-src'); if (s){ f.src = withOrigin(s); f.removeAttribute('data-src'); } });
+    }
+    var iv = setInterval(load, 200);
+    window.addEventListener('scroll', load, { passive: true });
+    load();
+  });
+})();
+
+/* ============================================================
+   8. HERO — vídeo iframe lazy load + auto play
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var hv = document.querySelector('[data-video-iframe][data-src]');
+    if (!hv) return;
+    function withOrigin(s){ try{ if(/^https?:/.test(location.origin) && s.indexOf('origin=')<0){ return s + '&origin=' + encodeURIComponent(location.origin); } }catch(e){} return s; }
+    var box = hv.closest('section') || hv;
+    function lv(){ var r = box.getBoundingClientRect(), vh = window.innerHeight || 1; if (r.top < vh*1.5 && r.bottom > -vh*0.5){ hv.src = withOrigin(hv.getAttribute('data-src')); hv.removeAttribute('data-src'); window.removeEventListener('scroll', lv); clearInterval(hvi); } }
+    var hvi = setInterval(lv, 250);
+    window.addEventListener('scroll', lv, { passive: true });
+    lv();
+
+    // Redimensiona iframe pra cobrir a section (efeito cover)
+    function sizeVideo(){
+      var wrap = document.querySelector('[data-video-cover]');
+      var f = document.querySelector('[data-video-iframe]');
+      if (!wrap || !f) return;
+      var w = wrap.clientWidth, h = wrap.clientHeight;
+      if (!w || !h) return;
+      var ar = 16/9, scale = 1.03, fw, fh;
+      if (w/h > ar){ fw = w; fh = w/ar; } else { fh = h; fw = h*ar; }
+      f.style.width = Math.ceil(fw*scale) + 'px';
+      f.style.height = Math.ceil(fh*scale) + 'px';
+    }
+    window.addEventListener('resize', sizeVideo);
+    sizeVideo();
+    setTimeout(sizeVideo, 500); setTimeout(sizeVideo, 1600);
+  });
+})();
+
+/* ============================================================
+   9. BIO — slideshow das fotos
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var slides = [].slice.call(document.querySelectorAll('[data-bio-slide]'));
+    if (slides.length < 2) return;
+    var i = 0;
+    setInterval(function(){
+      i = (i+1) % slides.length;
+      for (var k=1;k<slides.length;k++) slides[k].style.opacity = (k===i) ? '1' : '0';
+    }, 4800);
+  });
+})();
+
+/* ============================================================
+   10. BIO — chips reveal + repulsão + parágrafos sequenciais
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    // Chips reveal
+    var reps = [].slice.call(document.querySelectorAll('.bio-chip-rep'));
+    var chipTimers = [], chipsShown = false;
+    function chipsPlay(){ if(chipsShown) return; chipsShown=true; chipTimers.forEach(clearTimeout); chipTimers=[]; reps.forEach(function(c,k){ chipTimers.push(setTimeout(function(){ c.style.opacity='1'; c.style.transform='none'; }, 120+k*140)); }); }
+    function chipsHide(){ if(!chipsShown) return; chipsShown=false; chipTimers.forEach(clearTimeout); chipTimers=[]; reps.forEach(function(c){ c.style.opacity='0'; c.style.transform='scale(.8)'; }); }
+    reps.forEach(function(c){ c.style.opacity='0'; c.style.transform='scale(.8)'; c.style.transition='opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1)'; });
+
+    var bioSec = document.querySelector('[data-bio-seq]');
+    function checkChips(){
+      if (!bioSec) return;
+      var r = bioSec.getBoundingClientRect(), vh = window.innerHeight || 1;
+      if (r.top < vh*0.82 && r.bottom > vh*0.18) chipsPlay(); else chipsHide();
+    }
+    var chipRaf = 0;
+    window.addEventListener('scroll', function(){ if(chipRaf) return; chipRaf=1; requestAnimationFrame(function(){ chipRaf=0; checkChips(); }); }, { passive:true });
+    checkChips();
+
+    // Repulsão das chips
+    var mx = -99999, my = -99999, rafM = 0;
+    function applyRepel(){
+      rafM = 0;
+      for (var i=0;i<reps.length;i++){
+        var el = reps[i], r = el.getBoundingClientRect();
+        var cx = r.left+r.width/2, cy = r.top+r.height/2;
+        var dx = cx-mx, dy = cy-my, dist = Math.sqrt(dx*dx+dy*dy), R = 125;
+        if (dist < R){
+          var f = 1-dist/R, push = f*28;
+          var nx = dist>0?dx/dist:0, ny = dist>0?dy/dist:-1;
+          el.style.transform = 'translate(' + (nx*push).toFixed(1) + 'px,' + (ny*push).toFixed(1) + 'px)';
+        } else el.style.transform = 'translate(0,0)';
+      }
+    }
+    window.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
+
+    // Parágrafos bio — reveal sequencial
+    var wrap = document.querySelector('.bio-wrap');
+    if (!wrap) return;
+    var paras = [].slice.call(wrap.querySelectorAll('.bio-p'));
+    if (!paras.length) return;
+    var RMt = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (RMt) return;
+    paras.forEach(function(p){ p.style.opacity='0'; p.style.transform='translateY(26px)'; p.style.transition='opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)'; });
+    var revealing = false, queue = [];
+    function reveal(p){ p.style.opacity='1'; p.style.transform='none'; p.__in=true; }
+    function pump(){
+      if (revealing) return;
+      var next = queue.shift();
+      if (!next) return;
+      revealing = true; reveal(next);
+      setTimeout(function(){ revealing=false; pump(); }, 200);
+    }
+    function vh(){ return window.innerHeight || 800; }
+    function check(){
+      var h = vh();
+      for (var i=0;i<paras.length;i++){
+        var p = paras[i];
+        if (p.__in || p.__q) continue;
+        var r = p.getBoundingClientRect();
+        if (r.top < h*0.92 && r.bottom > 0){ p.__q = true; queue.push(p); }
+      }
+      pump();
+    }
+    check();
+    var iv = setInterval(function(){ check(); if (paras.every(function(p){ return p.__in; })) clearInterval(iv); }, 200);
+    window.addEventListener('scroll', check, { passive: true });
+  });
+})();
+
+/* ============================================================
+   11. MARCAS — velocidade do marquee baseada no scroll
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var tracks = [].slice.call(document.querySelectorAll('.marquee-track'));
+    if (!tracks.length) return;
+    var lastY = window.pageYOffset || 0, energy = 0, cur = 1;
+    var MAX = 22, K = 0.06, EASE = 0.22, DECAY = 0.92, CAP = 520;
+    function getAnim(el){ var a = el.getAnimations && el.getAnimations(); return a && a[0]; }
+    window.addEventListener('scroll', function(){ var y = window.pageYOffset || 0; energy = Math.min(energy + Math.abs(y-lastY), CAP); lastY = y; }, { passive:true });
+    window.addEventListener('wheel', function(e){ energy = Math.min(energy + Math.abs(e.deltaY)*0.55, CAP); }, { passive:true });
+    window.addEventListener('touchmove', function(){ energy = Math.min(energy + 40, CAP); }, { passive:true });
+    function loop(){
+      var target = 1 + Math.min(MAX, energy*K);
+      cur += (target - cur) * EASE;
+      energy *= DECAY; if (energy < 0.4) energy = 0;
+      for (var i=0;i<tracks.length;i++){ var a = getAnim(tracks[i]); if (a){ try{ a.playbackRate = cur; }catch(e){} } }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  });
+})();
+
+/* ============================================================
+   12. VSS — vídeo scroll (TRETAS VÃO ROLAR)
+   ============================================================ */
+(function(){
+  var VIDEO_SRC = 'assets/video/scroll-video.mp4';
+  var EASE = 0.16;
+  var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
+  var SPIN = 20, DUR = 0.22;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    document.querySelectorAll('[data-vss]').forEach(function(track){
+      var video = track.querySelector('.vss-video'), wordsEl = track.querySelector('.vss-words'),
+          bar = track.querySelector('.vss-progress-fill'), stage = track.querySelector('.vss-stage');
+      var duration=0, target=0, current=0, targetP=0, smoothP=0, seeking=false, running=false, loaded=false;
+      var reels = [];
+      (function buildReels(){
+        var words = (track.getAttribute('data-words')||'').split('|');
+        var total = words.join('').length, step = 0.5/Math.max(1, total-1), gi = 0;
+        words.forEach(function(word){
+          var line = document.createElement('div'); line.className='vss-line';
+          word.split('').forEach(function(ch){
+            var reel = document.createElement('div'); reel.className='vss-reel';
+            var strip = document.createElement('div'); strip.className='vss-strip';
+            for (var k=0;k<SPIN;k++){ var g=document.createElement('span'); g.textContent = GLYPHS[(Math.random()*GLYPHS.length)|0]; strip.appendChild(g); }
+            var fin = document.createElement('span'); fin.textContent = ch; strip.appendChild(fin);
+            reel.appendChild(strip); line.appendChild(reel);
+            reels.push({ reel:reel, strip:strip, n:SPIN, start:gi*step, dur:DUR, reelH:0, ch:ch }); gi++;
+          });
+          wordsEl.appendChild(line);
+        });
+      })();
+      function measureReels(){
+        var maxW = 0, probe = document.createElement('span');
+        probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;line-height:.9;';
+        if (wordsEl.firstChild) wordsEl.firstChild.appendChild(probe);
+        reels.forEach(function(r){ probe.textContent = r.ch; maxW = Math.max(maxW, probe.getBoundingClientRect().width); });
+        probe.remove();
+        var cellW = Math.ceil(maxW*0.82);
+        reels.forEach(function(r){ var gh = r.strip.firstChild.getBoundingClientRect().height; if (gh){ r.reelH = gh; r.reel.style.height = gh+'px'; } if (cellW) r.reel.style.width = cellW+'px'; });
+        updateReels(smoothP);
+      }
+      function updateReels(p){
+        reels.forEach(function(r){
+          var t = r.dur>0 ? (p - r.start)/r.dur : 1;
+          t = Math.max(0, Math.min(1, t));
+          var e = 1-Math.pow(1-t, 3);
+          r.reel.style.opacity = t>0 ? '1' : '0';
+          r.strip.style.transform = 'translateY(' + (-e*r.n*r.reelH) + 'px)';
+        });
+      }
+      measureReels();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureReels);
+      video.muted = true;
+      video.addEventListener('seeked', function(){ seeking = false; });
+      video.addEventListener('error', function(){ seeking = false; });
+      video.addEventListener('loadedmetadata', function(){
+        if (duration) return;
+        if (isFinite(video.duration) && video.duration > 0){
+          duration = video.duration;
+          video.classList.add('is-ready');
+          update(); tick();
+        }
+      });
+      function load(){
+        if (loaded) return; loaded = true;
+        fetch(VIDEO_SRC).then(function(r){ return r.blob(); }).then(function(blob){ video.src = URL.createObjectURL(blob); video.load(); }).catch(function(){ video.src = VIDEO_SRC; video.load(); });
+      }
+      function maybeLoad(){ if (loaded) return; var rect = track.getBoundingClientRect(), margin = window.innerHeight*1.5; if (rect.top < window.innerHeight+margin && rect.bottom > -margin) load(); }
+      function update(){
+        var rect = track.getBoundingClientRect(), vh = window.innerHeight;
+        if (rect.top <= 0 && rect.bottom >= vh){ stage.classList.add('vss-fixed'); stage.classList.remove('vss-end'); }
+        else if (rect.bottom < vh){ stage.classList.remove('vss-fixed'); stage.classList.add('vss-end'); }
+        else { stage.classList.remove('vss-fixed'); stage.classList.remove('vss-end'); }
+        var t = rect.height - vh, p = t>0 ? Math.min(1, Math.max(0, -rect.top/t)) : 0;
+        targetP = p; target = p*(duration||0);
+      }
+      function tick(){ if (!running){ running=true; requestAnimationFrame(loop); } }
+      function loop(){
+        var k = reduceMotion ? 1 : EASE;
+        smoothP += (targetP - smoothP)*k;
+        current += (target - current)*k;
+        updateReels(smoothP);
+        if (bar) bar.style.width = (Math.max(0, Math.min(1, smoothP))*100) + '%';
+        if (duration && !seeking && Math.abs(current - (video.currentTime||0)) > 0.01){ seeking = true; try{ video.currentTime = current; }catch(e){ seeking=false; } }
+        if (Math.abs(target-current) > 0.001 || Math.abs(targetP-smoothP) > 0.0005) requestAnimationFrame(loop);
+        else running = false;
+      }
+      window.addEventListener('scroll', function(){ maybeLoad(); update(); tick(); }, { passive:true });
+      window.addEventListener('resize', function(){ measureReels(); update(); tick(); }, { passive:true });
+      window.addEventListener('load', function(){ update(); tick(); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measureReels(); update(); tick(); });
+      if ('ResizeObserver' in window){ var ro = new ResizeObserver(function(){ update(); tick(); }); ro.observe(document.body); }
+      [400,1500,3500].forEach(function(ms){ setTimeout(function(){ update(); tick(); }, ms); });
+      maybeLoad(); update(); tick();
+    });
+  });
+})();
+
+/* ============================================================
+   13. REDES SOCIAIS — contadores (opcional)
+   ============================================================ */
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var igEl = document.querySelector('[data-soc-ig]'), ytEl = document.querySelector('[data-soc-yt]');
+    if (!igEl && !ytEl) return;
+    function fmt(n){
+      if (!n || n<=0) return null;
+      if (n>=1e6){ var m = n/1e6; return (m>=10?Math.round(m):(Math.round(m*10)/10)).toString().replace('.',',') + ' mi'; }
+      if (n>=1e3){ return Math.round(n/1e3) + ' mil'; }
+      return String(n);
+    }
+    function show(el, n, suffix){ var t = fmt(n); if (el && t){ el.textContent = t + ' ' + suffix; el.style.opacity = '1'; } }
+    var YT_CHANNEL_ID = 'UCFRGJe1AhYLGycsTOczweiQ';
+    fetch('https://api.socialcounts.org/instagram-live-follower-count/talesramiroart')
+      .then(function(r){ return r.json(); })
+      .then(function(d){ var n = d && (d.API_sub||d.est_sub||d.followerCount); if (n){ show(igEl, n, 'seguidores'); } else { show(igEl, 401000, 'seguidores'); } })
+      .catch(function(){ show(igEl, 401000, 'seguidores'); });
+    fetch('https://api.socialcounts.org/youtube-live-subscriber-count/' + YT_CHANNEL_ID)
+      .then(function(r){ return r.json(); })
+      .then(function(d){ var n = d && (d.API_sub||d.est_sub); if (n) show(ytEl, n, 'inscritos'); })
+      .catch(function(){});
+  });
+})();
+
+/* ============================================================
+   14. PAINEL ADMIN — login + edição
+   ============================================================ */
+(function(){
+  'use strict';
+  var API_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+  var lock = document.getElementById('tr-admin-lock');
+  var modal = document.getElementById('tr-admin-modal');
+  var box = document.getElementById('tr-admin-box');
+  if (!lock || !modal || !box) return;
+
+  var TOKEN = sessionStorage.getItem('tr_admin_token') || '';
+  var CACHE = { conteudo:{}, cursos:[], midia:[] };
+  var TAB = 'conteudo';
+
+  async function api(action, payload){
+    payload = payload || {};
+    var res = await fetch(API_URL, {
+      method:'POST',
+      body: JSON.stringify(Object.assign({ action:action, token:TOKEN }, payload)),
+      headers: { 'Content-Type':'text/plain;charset=utf-8' },
+      redirect:'follow'
+    });
+    return res.json();
+  }
+  function esc(s){
+    return String(s==null?'':s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  function toast(msg, ok){
+    ok = ok !== false;
+    var t = document.createElement('div');
+    t.className = 'adm-toast' + (ok?'':' err');
+    t.textContent = msg;
+    document.body.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('show'); });
+    setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 350); }, 2600);
+  }
+  function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  lock.addEventListener('click', function(){ openModal(); TOKEN ? renderDashboard() : renderLogin(); });
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+
+  function renderLogin(){
+    box.innerHTML = '<div style="max-width:400px;margin:50px auto;text-align:center;">' +
+      '<div style="font-family:\'League Gothic\',sans-serif;font-size:46px;text-transform:uppercase;letter-spacing:.03em;color:#efe6cd;line-height:1;">Painel Admin</div>' +
+      '<p style="color:#8a8069;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:12px 0 32px;">Acesso restrito</p>' +
+      '<input id="tr-pwd" class="adm-field" type="password" placeholder="Senha" style="padding:15px 20px;font-size:16px;margin-bottom:14px;">' +
+      '<button id="tr-login-btn" class="adm-btn primary" style="width:100%;padding:15px;font-size:13px;letter-spacing:.18em;">Entrar</button>' +
+      '<div id="tr-login-msg" style="color:#e57373;font-size:13px;margin-top:14px;min-height:18px;"></div>' +
+      '<button id="tr-login-cancel" style="margin-top:22px;background:transparent;color:#8a8069;border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:inherit;">Fechar</button>' +
+      '</div>';
+    var pwd = document.getElementById('tr-pwd');
+    var btn = document.getElementById('tr-login-btn');
+    var msg = document.getElementById('tr-login-msg');
+    pwd.focus();
+    async function doLogin(){
+      msg.textContent = 'Verificando…'; msg.style.color = '#8a8069';
+      try {
+        var r = await api('login', { senha: pwd.value });
+        if (r.ok){ TOKEN = r.token; sessionStorage.setItem('tr_admin_token', TOKEN); renderDashboard(); }
+        else { msg.textContent = r.error || 'Falha no login'; msg.style.color = '#e57373'; }
+      } catch(err){ msg.textContent = 'Erro de conexão'; msg.style.color = '#e57373'; }
+    }
+    btn.addEventListener('click', doLogin);
+    pwd.addEventListener('keydown', function(e){ if (e.key === 'Enter') doLogin(); });
+    document.getElementById('tr-login-cancel').addEventListener('click', closeModal);
+  }
+
+  async function renderDashboard(){
+    box.innerHTML = '<div style="padding:80px;text-align:center;color:#8a8069;">Carregando dados…</div>';
+    try {
+      var results = await Promise.all([ api('getAll'), api('getMidia') ]);
+      var r = results[0], m = results[1];
+      if (!r.ok){ TOKEN=''; sessionStorage.removeItem('tr_admin_token'); toast(r.error||'Sessão expirada', false); return renderLogin(); }
+      CACHE.conteudo = r.conteudo || {};
+      CACHE.cursos = r.cursos || [];
+      CACHE.midia = (m && m.dados) || [];
+      renderTabs();
+    } catch(err){
+      box.innerHTML = '<div style="padding:60px;text-align:center;color:#e57373;">Erro ao carregar. Verifique a URL do Apps Script.<br><br><small style="color:#8a8069;">' + esc(String(err)) + '</small></div>';
+    }
+  }
+
+  function renderTabs(){
+    var tabs = [
+      { id:'conteudo', label:'Textos & Imagens' },
+      { id:'cursos', label:'Cursos' },
+      { id:'midia', label:'Uploads' }
+    ];
+    box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid rgba(166,155,132,.2);">' +
+      '<div><div style="font-family:\'League Gothic\',sans-serif;font-size:40px;text-transform:uppercase;color:#efe6cd;line-height:1;">Painel Admin</div>' +
+      '<div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a8069;margin-top:6px;">Tales Ramiro CMS</div></div>' +
+      '<div style="display:flex;gap:10px;">' +
+      '<button id="tr-logout" class="adm-btn">Sair</button>' +
+      '<button id="tr-close" class="adm-btn primary">Fechar</button></div></div>' +
+      '<div style="display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;">' +
+      tabs.map(function(t){ return '<button data-tab="' + t.id + '" class="adm-tab ' + (t.id===TAB?'on':'') + '">' + t.label + '</button>'; }).join('') +
+      '</div><div id="tr-tab-body"></div>';
+
+    document.getElementById('tr-close').addEventListener('click', closeModal);
+    document.getElementById('tr-logout').addEventListener('click', function(){ TOKEN=''; sessionStorage.removeItem('tr_admin_token'); renderLogin(); });
+    box.querySelectorAll('[data-tab]').forEach(function(b){ b.addEventListener('click', function(){ TAB = b.getAttribute('data-tab'); renderTabs(); }); });
+
+    if (TAB === 'conteudo') renderConteudo();
+    if (TAB === 'cursos') renderCursos();
+    if (TAB === 'midia') renderMidia();
+  }
+
+  function renderConteudo(){
+    var body = document.getElementById('tr-tab-body');
+    var entradas = Object.entries(CACHE.conteudo || {});
+    var grupos = [
+      { pref:'hero.', titulo:'Hero (Topo)' },
+      { pref:'stat.', titulo:'Estatísticas' },
+      { pref:'bio.', titulo:'Biografia' },
+      { pref:'marcas.', titulo:'Seção de Marcas' },
+      { pref:'video_scroll.', titulo:'Vídeo Scroll' },
+      { pref:'footer.', titulo:'Rodapé' }
+    ];
+    var grouped = {};
+    grupos.forEach(function(g){ grouped[g.pref] = []; });
+    entradas.forEach(function(pair){
+      var k = pair[0], v = pair[1];
+      var g = grupos.find(function(g){ return k.indexOf(g.pref) === 0; });
+      if (g) grouped[g.pref].push(pair);
+    });
+    var html = '<div style="display:flex;flex-direction:column;gap:24px;">';
+    grupos.forEach(function(g){
+      var items = grouped[g.pref];
+      if (!items.length) return;
+      html += '<div class="adm-card"><div class="adm-group-title">' + g.titulo + '</div><div style="display:flex;flex-direction:column;gap:14px;">';
+      items.forEach(function(pair){
+        var k = pair[0], v = pair[1];
+        var tipo = v.tipo || 'texto';
+        var valor = v.valor == null ? '' : v.valor;
+        var isLong = tipo === 'texto' && String(valor).length > 90;
+        var input;
+        if (isLong) input = '<textarea data-key="' + esc(k) + '" class="adm-field" rows="3">' + esc(valor) + '</textarea>';
+        else if (tipo === 'imagem' || tipo === 'video') input = '<div style="display:flex;gap:10px;align-items:flex-start;"><input data-key="' + esc(k) + '" class="adm-field" value="' + esc(valor) + '" style="flex:1;"></div>';
+        else input = '<input data-key="' + esc(k) + '" class="adm-field" value="' + esc(valor) + '">';
+        html += '<div><label class="adm-label">' + esc(k) + ' <span style="opacity:.5;">(' + esc(tipo) + ')</span></label>' + input + '</div>';
+      });
+      html += '</div></div>';
+    });
+    html += '<div style="display:flex;gap:10px;justify-content:flex-end;"><button id="tr-save-conteudo" class="adm-btn primary" style="padding:14px 30px;font-size:13px;">Salvar Alterações</button></div></div>';
+    body.innerHTML = html;
+
+    document.getElementById('tr-save-conteudo').addEventListener('click', async function(){
+      var itens = [];
+      body.querySelectorAll('[data-key]').forEach(function(el){
+        var k = el.getAttribute('data-key');
+        var atual = CACHE.conteudo[k];
+        itens.push({ chave:k, valor:el.value, tipo: atual ? atual.tipo : 'texto' });
+      });
+      var r = await api('saveConteudo', { itens: itens });
+      if (r.ok){ toast('Salvo com sucesso!'); var rr = await api('getAll'); CACHE.conteudo = rr.conteudo || {}; }
+      else toast(r.error || 'Erro', false);
+    });
+  }
+
+  function renderCursos(){
+    var body = document.getElementById('tr-tab-body');
+    body.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;"><div class="adm-group-title" style="margin:0;">Cursos cadastrados</div>' +
+      '<button id="tr-add-curso" class="adm-btn primary">+ Novo Curso</button></div><div id="tr-cursos-list"></div></div>';
+
+    document.getElementById('tr-add-curso').addEventListener('click', async function(){
+      var novo = { ordem: CACHE.cursos.length+1, topic:'Nova Categoria', nome:'Novo Curso', descricao:'Descrição do curso', link_url:'https://', video_youtube_id:'' };
+      var r = await api('saveCurso', { curso:novo });
+      if (r.ok){ toast('Curso criado'); var rr = await api('getAll'); CACHE.cursos = rr.cursos || []; renderCursos(); }
+    });
+
+    var list = document.getElementById('tr-cursos-list');
+    list.innerHTML = CACHE.cursos.map(function(c){
+      return '<div class="adm-course-row" data-curso-id="' + esc(c.id) + '">' +
+        '<div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:12px;margin-bottom:12px;">' +
+        '<div><label class="adm-label">Ordem</label><input class="adm-field" data-field="ordem" value="' + esc(c.ordem||'') + '"></div>' +
+        '<div><label class="adm-label">Categoria</label><input class="adm-field" data-field="topic" value="' + esc(c.topic||'') + '"></div>' +
+        '<div><label class="adm-label">Nome</label><input class="adm-field" data-field="nome" value="' + esc(c.nome||'') + '"></div></div>' +
+        '<div style="margin-bottom:12px;"><label class="adm-label">Descrição</label><textarea class="adm-field" data-field="descricao" rows="2">' + esc(c.descricao||'') + '</textarea></div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">' +
+        '<div><label class="adm-label">Link</label><input class="adm-field" data-field="link_url" value="' + esc(c.link_url||'') + '"></div>' +
+        '<div><label class="adm-label">YouTube ID</label><input class="adm-field" data-field="video_youtube_id" value="' + esc(c.video_youtube_id||'') + '" placeholder="ex: pdoL5HBtW9Y"></div></div>' +
+        '<div style="display:flex;gap:10px;justify-content:flex-end;">' +
+        '<button class="adm-btn danger" data-del>Excluir</button>' +
+        '<button class="adm-btn primary" data-save>Salvar</button></div></div>';
+    }).join('');
+
+    list.querySelectorAll('[data-curso-id]').forEach(function(row){
+      var id = row.getAttribute('data-curso-id');
+      row.querySelector('[data-save]').addEventListener('click', async function(){
+        var curso = { id:id };
+        row.querySelectorAll('[data-field]').forEach(function(f){ curso[f.getAttribute('data-field')] = f.value; });
+        var r = await api('saveCurso', { curso:curso });
+        if (r.ok){ toast('Curso atualizado'); var rr = await api('getAll'); CACHE.cursos = rr.cursos || []; }
+      });
+      row.querySelector('[data-del]').addEventListener('click', async function(){
+        if (!confirm('Excluir este curso?')) return;
+        var r = await api('deleteCurso', { id:id });
+        if (r.ok){ toast('Curso excluído'); var rr = await api('getAll'); CACHE.cursos = rr.cursos || []; renderCursos(); }
+      });
+    });
+  }
+
+  function renderMidia(){
+    var body = document.getElementById('tr-tab-body');
+    body.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;">' +
+      '<div class="adm-card"><div class="adm-group-title">Enviar arquivo</div>' +
+      '<input type="file" id="tr-file" class="adm-field" accept="image/*,video/*" style="padding:10px;">' +
+      '<div id="tr-upload-progress" style="margin-top:12px;font-size:13px;color:#8a8069;"></div></div>' +
+      '<div class="adm-group-title" style="margin-top:18px;">Arquivos enviados</div>' +
+      '<div id="tr-midia-list"></div></div>';
+
+    var file = document.getElementById('tr-file');
+    var prog = document.getElementById('tr-upload-progress');
+    file.addEventListener('change', async function(e){
+      var f = e.target.files[0]; if (!f) return;
+      prog.textContent = 'Lendo arquivo…';
+      var reader = new FileReader();
+      reader.onload = async function(){
+        var b64 = reader.result.split(',')[1];
+        prog.textContent = 'Enviando para o Drive…';
+        var tipo = f.type.indexOf('image')===0 ? 'imagem' : f.type.indexOf('video')===0 ? 'video' : 'arquivo';
+        var r = await api('upload', { fileName:f.name, mimeType:f.type, dataBase64:b64, tipo:tipo });
+        if (r.ok){ prog.innerHTML = '✅ Enviado! URL: <code style="color:#a69b84;word-break:break-all;">' + esc(r.url) + '</code>'; toast('Upload concluído!'); var m = await api('getMidia'); CACHE.midia = (m&&m.dados)||[]; renderMidiaList(); }
+        else prog.textContent = '❌ ' + (r.error || 'Falha no upload');
+        file.value = '';
+      };
+      reader.readAsDataURL(f);
+    });
+    renderMidiaList();
+  }
+
+  function renderMidiaList(){
+    var list = document.getElementById('tr-midia-list');
+    if (!list) return;
+    if (!CACHE.midia.length){ list.innerHTML = '<div style="color:#8a8069;font-size:13px;padding:16px;text-align:center;">Nenhum arquivo enviado ainda.</div>'; return; }
+    list.innerHTML = CACHE.midia.map(function(m){
+      return '<div class="adm-course-row" style="display:flex;gap:14px;align-items:center;">' +
+        '<div style="flex:1;min-width:0;"><div style="color:#efe6cd;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + esc(m.nome) + '</div>' +
+        '<div style="font-size:11px;color:#8a8069;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + esc(m.url) + '</div></div>' +
+        '<button class="adm-btn" data-copy="' + esc(m.url) + '">Copiar URL</button>' +
+        '<button class="adm-btn danger" data-del-midia="' + esc(m.id) + '">Excluir</button></div>';
+    }).join('');
+    list.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ navigator.clipboard.writeText(b.getAttribute('data-copy')); toast('URL copiada!'); }); });
+    list.querySelectorAll('[data-del-midia]').forEach(function(b){
+      b.addEventListener('click', async function(){
+        if (!confirm('Excluir arquivo do Drive?')) return;
+        var r = await api('deleteMidia', { id:b.getAttribute('data-del-midia') });
+        if (r.ok){ toast('Arquivo excluído'); var m = await api('getMidia'); CACHE.midia = (m&&m.dados)||[]; renderMidiaList(); }
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
