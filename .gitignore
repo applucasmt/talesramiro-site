@@ -1,0 +1,27 @@
+# Dependências (caso adicione no futuro)
+node_modules/
+package-lock.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporários
+*.tmp
+*.log
+.env
+.env.local
+
+# Builds
+dist/
+build/
+
+# Uploads grandes locais (a pasta real fica no Drive)
+assets/tmp/
