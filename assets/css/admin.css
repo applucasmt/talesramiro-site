@@ -1,0 +1,99 @@
+/* ============================================================
+   PAINEL ADMIN — Tales Ramiro CMS
+   ============================================================ */
+
+#tr-admin-lock{
+  position:fixed;left:50%;bottom:clamp(16px,2.4vw,28px);transform:translateX(-50%);
+  z-index:9997;width:48px;height:48px;border-radius:50%;cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(20,24,29,.6);
+  backdrop-filter:blur(10px) saturate(140%);
+  -webkit-backdrop-filter:blur(10px) saturate(140%);
+  border:1px solid rgba(166,155,132,.3);color:#cdbf99;
+  transition:border-color .3s, background .3s, transform .3s;
+}
+#tr-admin-lock:hover{
+  border-color:rgba(166,155,132,.6);
+  background:rgba(26,30,36,.75);
+  transform:translateX(-50%) scale(1.06);
+}
+
+#tr-admin-modal{
+  display:none;position:fixed;inset:0;z-index:100000;
+  background:rgba(6,9,12,.94);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  align-items:flex-start;justify-content:center;
+  padding:24px;overflow-y:auto;
+}
+#tr-admin-modal.open{display:flex;}
+
+#tr-admin-box{
+  width:min(1180px,100%);
+  background:#0f1318;border:1px solid rgba(166,155,132,.25);
+  border-radius:18px;
+  padding:clamp(20px,3vw,40px);
+  color:#cdbf99;
+  font-family:'Hanken Grotesk',sans-serif;
+  box-shadow:0 30px 80px rgba(0,0,0,.75);
+  margin:20px 0;
+}
+
+/* Botões internos do painel */
+.adm-btn{
+  padding:12px 24px;border-radius:100px;cursor:pointer;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-family:inherit;font-weight:600;transition:all .25s ease;
+  border:1px solid rgba(166,155,132,.3);background:transparent;color:#a69b84;
+}
+.adm-btn:hover{background:rgba(166,155,132,.12);color:#efe6cd;border-color:rgba(166,155,132,.55);}
+.adm-btn.primary{background:#a69b84;color:#0d1116;border:0;}
+.adm-btn.primary:hover{background:#bdb39a;}
+.adm-btn.danger{border-color:rgba(229,115,115,.45);color:#e57373;}
+.adm-btn.danger:hover{background:rgba(229,115,115,.15);}
+
+.adm-field{
+  width:100%;padding:11px 15px;border-radius:10px;
+  background:#0d1116;border:1px solid rgba(166,155,132,.25);
+  color:#efe6cd;font-family:inherit;font-size:14px;
+  outline:none;box-sizing:border-box;
+  transition:border-color .25s ease;
+}
+.adm-field:focus{border-color:rgba(166,155,132,.6);}
+.adm-label{
+  display:block;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:#8a8069;margin-bottom:6px;
+}
+.adm-card{
+  background:#141920;border:1px solid rgba(166,155,132,.16);
+  border-radius:14px;padding:22px;
+}
+.adm-group-title{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:#8a8069;margin-bottom:16px;
+}
+.adm-tab{
+  padding:11px 22px;border-radius:100px;cursor:pointer;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-family:inherit;transition:all .25s ease;
+  border:1px solid rgba(166,155,132,.22);
+  background:transparent;color:#a69b84;
+}
+.adm-tab.on{
+  border-color:#a69b84;background:rgba(166,155,132,.16);
+  color:#efe6cd;font-weight:600;
+}
+.adm-course-row{
+  background:#141920;border:1px solid rgba(166,155,132,.16);
+  border-radius:12px;padding:18px;margin-bottom:14px;
+}
+.adm-toast{
+  position:fixed;left:50%;bottom:30px;transform:translateX(-50%);
+  padding:12px 24px;border-radius:100px;z-index:100002;
+  background:#1f3a26;color:#efe6cd;font-weight:600;font-size:14px;
+  border:1px solid rgba(166,155,132,.4);
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  opacity:0;transition:opacity .3s ease;pointer-events:none;
+  max-width:90vw;text-align:center;font-family:'Hanken Grotesk',sans-serif;
+}
+.adm-toast.err{background:#3a1f1f;}
+.adm-toast.show{opacity:1;}
