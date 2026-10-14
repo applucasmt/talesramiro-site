@@ -6,8 +6,6 @@
 <link rel="preconnect" href="https://www.youtube-nocookie.com">
 <link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://s.ytimg.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://api.socialcounts.org">
 <link rel="preload" as="image" href="assets/img/img17.webp">
 <link rel="preload" as="image" href="assets/img/img18.webp">
@@ -34,10 +32,14 @@
 <meta name="twitter:description" content="Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tales Ramiro","jobTitle":"Mentor, Creator e Professor","description":"Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.","url":"https://www.talesramiro.com/","sameAs":["https://instagram.com/talesramiroart","https://youtube.com/talesramiroart"]}</script>
 
-<!-- FONTES — via Google Fonts (à prova de falhas) -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..600&family=Hanken+Grotesk:wght@300..600&family=League+Gothic&display=swap" rel="stylesheet">
-
 <style>
+/* ============================================================
+   FONTES
+   ============================================================ */
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:400 600;font-display:swap;src:url(https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2) format('woff2');}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 600;font-display:swap;src:url(https://fonts.gstatic.com/s/hankengrotesk/v8/ieVn2YZDLWuGJpnzaiwFXS9tYtpY6O_1z2Y.woff2) format('woff2');}
+@font-face{font-family:'League Gothic';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/leaguegothic/v11/qFdR35CBi4vxtRP4-3D5Fsv3mQ.woff2) format('woff2');}
+
 /* ============================================================
    RESET + BASE
    ============================================================ */
@@ -163,7 +165,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .lg6{background-image:url(assets/img/img16.webp);}
 
 /* FACES */
-.face-circle{width:clamp(86px,9vw,128px);height:clamp(86px,9vw,128px);border-radius:50%;overflow:hidden;border:1px solid rgba(166,155,132,.22);box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;background:rgba(20,24,29,.4);}
+.face-circle{width:clamp(86px,9vw,128px);height:clamp(86px,9vw,128px);border-radius:50%;overflow:hidden;border:1px solid rgba(166,155,132,.22);box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;}
 .face-circle:hover{border-color:rgba(166,155,132,.5);}
 .face-img{width:100%;height:100%;background-size:cover;background-position:center;filter:grayscale(.5) sepia(.55) saturate(.75) brightness(.86) contrast(.97);transition:filter .7s ease;}
 .face-circle:hover .face-img{filter:none;}
@@ -321,7 +323,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 <div style="background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;">
 
-  <!-- HERO -->
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
   <section id="tr-hero" style="position:fixed;top:0;left:0;width:100%;height:100svh;z-index:1;overflow:hidden;background:radial-gradient(120% 90% at 50% 32%,#3b454a 0%,#262e32 38%,#13181b 72%,#0d1116 100%);display:flex;flex-direction:column;">
     <div class="hero-gooey" aria-hidden="true">
       <div class="goo-blob gb1"></div>
@@ -395,7 +399,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 
   <div style="position:relative;z-index:2;background:#0d1116;">
 
-    <!-- MARCAS -->
+    <!-- ============================================================
+         MARCAS
+         ============================================================ -->
     <section style="background:#0a0d12;border-top:1px solid rgba(166,155,132,.07);border-bottom:1px solid rgba(166,155,132,.07);padding:clamp(26px,4vw,46px) 0;overflow:hidden;">
       <div style="padding:0 clamp(22px,5vw,72px);margin-bottom:clamp(22px,3vw,38px);">
         <div class="reveal" style="display:flex;align-items:center;gap:clamp(14px,2vw,24px);">
@@ -408,7 +414,9 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- VÍDEO + STATS -->
+    <!-- ============================================================
+         VÍDEO + STATS
+         ============================================================ -->
     <section style="position:relative;width:100%;height:clamp(360px,56vw,680px);background:#0d1116;overflow:hidden;">
       <div data-video-cover="" class="reveal" style="position:absolute;inset:0;transform:scale(1.08);transition:opacity 1.3s ease,transform 1.8s ease;">
         <iframe data-video-iframe="" title="Vídeo de apresentação" data-src="https://www.youtube-nocookie.com/embed/pdoL5HBtW9Y?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=pdoL5HBtW9Y&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;border:0;pointer-events:none;"></iframe>
@@ -437,14 +445,18 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- FACES / CLIENTES -->
+    <!-- ============================================================
+         FACES / CLIENTES
+         ============================================================ -->
     <section class="cv-sec" style="background:#0d1116;padding:clamp(54px,8vw,110px) 0;overflow:hidden;">
       <div class="reveal-soft" style="mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
         <div class="marquee-track" style="animation:tr-marquee 50s linear infinite reverse;"><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div></div>
       </div>
     </section>
 
-    <!-- CURSOS -->
+    <!-- ============================================================
+         CURSOS
+         ============================================================ -->
     <section id="cursos" class="cv-sec">
       <div class="off-wrap">
         <div class="off-head">
@@ -519,13 +531,15 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- BIO -->
+    <!-- ============================================================
+         BIO
+         ============================================================ -->
     <section data-bio-seq class="cv-sec" style="background:#0d1116;padding:clamp(20px,4vw,60px) clamp(22px,5vw,72px) clamp(70px,9vw,130px);">
       <div style="max-width:1340px;margin:0 auto;">
         <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start;">
           <div class="about-photoblock" style="flex:2.4 1 460px;min-width:300px;display:flex;align-items:flex-start;gap:clamp(10px,1.4vw,22px);">
             <div class="about-vtext" style="writing-mode:vertical-rl;transform:rotate(180deg);font-family:'League Gothic','League Gothic Condensed',sans-serif;font-size:clamp(40px,5vw,92px);line-height:.78;letter-spacing:.01em;color:#a69b84;white-space:nowrap;">TALES RAMIRO</div>
-            <div class="bio-photo-wrap" style="flex:1;border-radius:16px;overflow:hidden;"><div class="bio-stack" data-bio-stack style="position:relative;width:100%;aspect-ratio:1200 / 778;border-radius:16px;overflow:hidden;background:#1a1f26;">
+            <div class="bio-photo-wrap" style="flex:1;border-radius:16px;overflow:hidden;"><div class="bio-stack" data-bio-stack style="position:relative;width:100%;aspect-ratio:1200 / 778;border-radius:16px;overflow:hidden;">
               <img decoding="async" data-bio-slide src="assets/img/img20.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;">
               <img decoding="async" data-bio-slide src="assets/img/img21.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
               <img decoding="async" data-bio-slide src="assets/img/img22.webp" alt="Tales Ramiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;opacity:0;transition:opacity 1.9s cubic-bezier(.4,0,.2,1);">
@@ -547,8 +561,10 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- VÍDEO SCROLL (com fallback invisível se não tiver vídeo) -->
-    <section class="vss-track" data-vss data-screen-label="Tretas" data-words="TRETAS|VÃO|ROLAR" style="display:none;">
+    <!-- ============================================================
+         VÍDEO SCROLL
+         ============================================================ -->
+    <section class="vss-track" data-vss data-screen-label="Tretas" data-words="TRETAS|VÃO|ROLAR">
       <div class="vss-stage">
         <video class="vss-video" muted playsinline webkit-playsinline preload="none"></video>
         <div class="vss-words"></div>
@@ -559,7 +575,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   </div>
 </div>
 
-<!-- BOTÃO ADMIN + MODAL -->
+<!-- ============================================================
+     BOTÃO ADMIN + MODAL
+     ============================================================ -->
 <button id="tr-admin-lock" type="button" aria-label="Painel administrativo">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="11" width="16" height="10" rx="2"></rect>
@@ -568,7 +586,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 </button>
 <div id="tr-admin-modal" role="dialog" aria-modal="true"><div id="tr-admin-box"></div></div>
 
-<!-- JAVASCRIPT -->
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
 <script>
 /* ============================================================
    1. LOADER
@@ -587,7 +607,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   2. REVEAL DO HERO
+   2. REVEAL DO HERO — círculo que segue o mouse
    ============================================================ */
 (function(){
   var sec = document.querySelector('#tr-hero');
@@ -613,7 +633,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   3. HERO — digitação + flash + parallax + pops
+   3. HERO — digitação ghost + flash + parallax + pops
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -641,9 +661,16 @@ html.tr-bg *{animation-play-state:paused!important;}
       ghost.style.visibility='visible';
       ghost.textContent='';
       var pos = 0;
-      (function t(){ pos++; ghost.textContent = full.slice(0, pos); if (pos < full.length) setTimeout(t, 100); else window.__heroTyping = false; })();
+      (function t(){
+        pos++;
+        ghost.textContent = full.slice(0, pos);
+        if (pos < full.length) setTimeout(t, 100);
+        else window.__heroTyping = false;
+      })();
     }
-    function revealMenu(){ links.forEach(function(l, i){ setTimeout(function(){ l.style.opacity='1'; l.style.transform='none'; }, i*240); }); }
+    function revealMenu(){
+      links.forEach(function(l, i){ setTimeout(function(){ l.style.opacity='1'; l.style.transform='none'; }, i*240); });
+    }
     function flash(cb){
       if (!photo){ cb&&cb(); return; }
       var f = 'brightness(0) invert(1)';
@@ -662,6 +689,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     if (document.readyState === 'complete') setTimeout(start, 650);
     else window.addEventListener('load', function(){ setTimeout(start, 650); });
 
+    // Parallax
     var raf = 0;
     function onScroll(){
       if (raf) return;
@@ -681,6 +709,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
+    // Pops
     var wrap = document.querySelector('[data-hero-pops]');
     if (wrap){
       var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
@@ -699,7 +728,7 @@ html.tr-bg *{animation-play-state:paused!important;}
       window.addEventListener('scroll', function(){ if(_pp) return; _pp=1; requestAnimationFrame(function(){ _pp=0; check(); }); }, { passive: true });
       setTimeout(check, 1100);
 
-      var items = pops.map(function(w){ return { w: w, rep: w.querySelector('.hpop-rep') }; });
+      var items = pops.map(function(w){ return { w: w, rep: w.querySelector('.hpop-rep'), py: parseFloat(w.getAttribute('data-py'))||0 }; });
       var mx = -99999, my = -99999, rafM = 0;
       function applyRepel(){
         rafM = 0;
@@ -768,7 +797,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   6. STATS
+   6. STATS — contadores
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -828,6 +857,7 @@ html.tr-bg *{animation-play-state:paused!important;}
       revealScroll();
       window.addEventListener('scroll', revealScroll, { passive: true });
     }
+
     var vids = [].slice.call(document.querySelectorAll('.crs-vid[data-src]'));
     var loaded = false;
     function near(){ var grid = document.querySelector('[data-cursos-grid]'); if(!grid) return true; var r=grid.getBoundingClientRect(); var vh=window.innerHeight||800; return r.top < vh*1.4 && r.bottom > -vh*0.4; }
@@ -843,7 +873,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   8. HERO — vídeo iframe lazy + cover
+   8. HERO — vídeo iframe lazy + redimensiona cover
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -856,6 +886,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     var hvi = setInterval(lv, 250);
     window.addEventListener('scroll', lv, { passive: true });
     lv();
+
     function sizeVideo(){
       var wrap = document.querySelector('[data-video-cover]');
       var f = document.querySelector('[data-video-iframe]');
@@ -874,7 +905,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   9. BIO slideshow
+   9. BIO — slideshow
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -936,11 +967,22 @@ html.tr-bg *{animation-play-state:paused!important;}
     paras.forEach(function(p){ p.style.opacity='0'; p.style.transform='translateY(26px)'; p.style.transition='opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)'; });
     var revealing = false, queue = [];
     function reveal(p){ p.style.opacity='1'; p.style.transform='none'; p.__in=true; }
-    function pump(){ if (revealing) return; var next = queue.shift(); if (!next) return; revealing = true; reveal(next); setTimeout(function(){ revealing=false; pump(); }, 200); }
+    function pump(){
+      if (revealing) return;
+      var next = queue.shift();
+      if (!next) return;
+      revealing = true; reveal(next);
+      setTimeout(function(){ revealing=false; pump(); }, 200);
+    }
     function vh(){ return window.innerHeight || 800; }
     function check(){
       var h = vh();
-      for (var i=0;i<paras.length;i++){ var p = paras[i]; if (p.__in || p.__q) continue; var r = p.getBoundingClientRect(); if (r.top < h*0.92 && r.bottom > 0){ p.__q = true; queue.push(p); } }
+      for (var i=0;i<paras.length;i++){
+        var p = paras[i];
+        if (p.__in || p.__q) continue;
+        var r = p.getBoundingClientRect();
+        if (r.top < h*0.92 && r.bottom > 0){ p.__q = true; queue.push(p); }
+      }
       pump();
     }
     check();
@@ -950,7 +992,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   11. MARCAS marquee velocidade por scroll
+   11. MARCAS — marquee com velocidade por scroll
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -976,41 +1018,137 @@ html.tr-bg *{animation-play-state:paused!important;}
 })();
 
 /* ============================================================
-   12. REDES SOCIAIS (com fallback silencioso)
+   12. VSS — vídeo scroll
+   ============================================================ */
+(function(){
+  var VIDEO_SRC = 'assets/video/scroll-video.mp4';
+  var EASE = 0.16;
+  var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
+  var SPIN = 20, DUR = 0.22;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    document.querySelectorAll('[data-vss]').forEach(function(track){
+      var video = track.querySelector('.vss-video'), wordsEl = track.querySelector('.vss-words'),
+          bar = track.querySelector('.vss-progress-fill'), stage = track.querySelector('.vss-stage');
+      var duration=0, target=0, current=0, targetP=0, smoothP=0, seeking=false, running=false, loaded=false;
+      var reels = [];
+      (function buildReels(){
+        var words = (track.getAttribute('data-words')||'').split('|');
+        var total = words.join('').length, step = 0.5/Math.max(1, total-1), gi = 0;
+        words.forEach(function(word){
+          var line = document.createElement('div'); line.className='vss-line';
+          word.split('').forEach(function(ch){
+            var reel = document.createElement('div'); reel.className='vss-reel';
+            var strip = document.createElement('div'); strip.className='vss-strip';
+            for (var k=0;k<SPIN;k++){ var g=document.createElement('span'); g.textContent = GLYPHS[(Math.random()*GLYPHS.length)|0]; strip.appendChild(g); }
+            var fin = document.createElement('span'); fin.textContent = ch; strip.appendChild(fin);
+            reel.appendChild(strip); line.appendChild(reel);
+            reels.push({ reel:reel, strip:strip, n:SPIN, start:gi*step, dur:DUR, reelH:0, ch:ch }); gi++;
+          });
+          wordsEl.appendChild(line);
+        });
+      })();
+      function measureReels(){
+        var maxW = 0, probe = document.createElement('span');
+        probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;line-height:.9;';
+        if (wordsEl.firstChild) wordsEl.firstChild.appendChild(probe);
+        reels.forEach(function(r){ probe.textContent = r.ch; maxW = Math.max(maxW, probe.getBoundingClientRect().width); });
+        probe.remove();
+        var cellW = Math.ceil(maxW*0.82);
+        reels.forEach(function(r){ var gh = r.strip.firstChild.getBoundingClientRect().height; if (gh){ r.reelH = gh; r.reel.style.height = gh+'px'; } if (cellW) r.reel.style.width = cellW+'px'; });
+        updateReels(smoothP);
+      }
+      function updateReels(p){
+        reels.forEach(function(r){
+          var t = r.dur>0 ? (p - r.start)/r.dur : 1;
+          t = Math.max(0, Math.min(1, t));
+          var e = 1-Math.pow(1-t, 3);
+          r.reel.style.opacity = t>0 ? '1' : '0';
+          r.strip.style.transform = 'translateY(' + (-e*r.n*r.reelH) + 'px)';
+        });
+      }
+      measureReels();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureReels);
+      video.muted = true;
+      video.addEventListener('seeked', function(){ seeking = false; });
+      video.addEventListener('error', function(){ seeking = false; });
+      video.addEventListener('loadedmetadata', function(){
+        if (duration) return;
+        if (isFinite(video.duration) && video.duration > 0){
+          duration = video.duration;
+          video.classList.add('is-ready');
+          update(); tick();
+        }
+      });
+      function load(){
+        if (loaded) return; loaded = true;
+        fetch(VIDEO_SRC).then(function(r){ return r.blob(); }).then(function(blob){ video.src = URL.createObjectURL(blob); video.load(); }).catch(function(){ video.src = VIDEO_SRC; video.load(); });
+      }
+      function maybeLoad(){ if (loaded) return; var rect = track.getBoundingClientRect(), margin = window.innerHeight*1.5; if (rect.top < window.innerHeight+margin && rect.bottom > -margin) load(); }
+      function update(){
+        var rect = track.getBoundingClientRect(), vh = window.innerHeight;
+        if (rect.top <= 0 && rect.bottom >= vh){ stage.classList.add('vss-fixed'); stage.classList.remove('vss-end'); }
+        else if (rect.bottom < vh){ stage.classList.remove('vss-fixed'); stage.classList.add('vss-end'); }
+        else { stage.classList.remove('vss-fixed'); stage.classList.remove('vss-end'); }
+        var t = rect.height - vh, p = t>0 ? Math.min(1, Math.max(0, -rect.top/t)) : 0;
+        targetP = p; target = p*(duration||0);
+      }
+      function tick(){ if (!running){ running=true; requestAnimationFrame(loop); } }
+      function loop(){
+        var k = reduceMotion ? 1 : EASE;
+        smoothP += (targetP - smoothP)*k;
+        current += (target - current)*k;
+        updateReels(smoothP);
+        if (bar) bar.style.width = (Math.max(0, Math.min(1, smoothP))*100) + '%';
+        if (duration && !seeking && Math.abs(current - (video.currentTime||0)) > 0.01){ seeking = true; try{ video.currentTime = current; }catch(e){ seeking=false; } }
+        if (Math.abs(target-current) > 0.001 || Math.abs(targetP-smoothP) > 0.0005) requestAnimationFrame(loop);
+        else running = false;
+      }
+      window.addEventListener('scroll', function(){ maybeLoad(); update(); tick(); }, { passive:true });
+      window.addEventListener('resize', function(){ measureReels(); update(); tick(); }, { passive:true });
+      window.addEventListener('load', function(){ update(); tick(); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measureReels(); update(); tick(); });
+      if ('ResizeObserver' in window){ var ro = new ResizeObserver(function(){ update(); tick(); }); ro.observe(document.body); }
+      [400,1500,3500].forEach(function(ms){ setTimeout(function(){ update(); tick(); }, ms); });
+      maybeLoad(); update(); tick();
+    });
+  });
+})();
+
+/* ============================================================
+   13. REDES SOCIAIS — contadores
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
     var igEl = document.querySelector('[data-soc-ig]'), ytEl = document.querySelector('[data-soc-yt]');
     if (!igEl && !ytEl) return;
-    // Valores fallback (aparecem mesmo se a API falhar)
-    if (igEl){ igEl.textContent = '401 mil seguidores'; igEl.style.opacity = '1'; }
-    if (ytEl){ ytEl.textContent = '85 mil inscritos'; ytEl.style.opacity = '1'; }
-    // Tenta atualizar via API (silenciosamente ignora CORS)
     function fmt(n){
       if (!n || n<=0) return null;
       if (n>=1e6){ var m = n/1e6; return (m>=10?Math.round(m):(Math.round(m*10)/10)).toString().replace('.',',') + ' mi'; }
       if (n>=1e3){ return Math.round(n/1e3) + ' mil'; }
       return String(n);
     }
+    function show(el, n, suffix){ var t = fmt(n); if (el && t){ el.textContent = t + ' ' + suffix; el.style.opacity = '1'; } }
     var YT_CHANNEL_ID = 'UCFRGJe1AhYLGycsTOczweiQ';
-    fetch('https://api.socialcounts.org/instagram-live-follower-count/talesramiroart', { mode:'cors' })
+    fetch('https://api.socialcounts.org/instagram-live-follower-count/talesramiroart')
       .then(function(r){ return r.json(); })
-      .then(function(d){ var n = d && (d.API_sub||d.est_sub||d.followerCount); if (n && igEl){ var t = fmt(n); if (t) igEl.textContent = t + ' seguidores'; } })
-      .catch(function(){});
-    fetch('https://api.socialcounts.org/youtube-live-subscriber-count/' + YT_CHANNEL_ID, { mode:'cors' })
+      .then(function(d){ var n = d && (d.API_sub||d.est_sub||d.followerCount); if (n){ show(igEl, n, 'seguidores'); } else { show(igEl, 401000, 'seguidores'); } })
+      .catch(function(){ show(igEl, 401000, 'seguidores'); });
+    fetch('https://api.socialcounts.org/youtube-live-subscriber-count/' + YT_CHANNEL_ID)
       .then(function(r){ return r.json(); })
-      .then(function(d){ var n = d && (d.API_sub||d.est_sub); if (n && ytEl){ var t = fmt(n); if (t) ytEl.textContent = t + ' inscritos'; } })
+      .then(function(d){ var n = d && (d.API_sub||d.est_sub); if (n) show(ytEl, n, 'inscritos'); })
       .catch(function(){});
   });
 })();
 
 /* ============================================================
-   13. PAINEL ADMIN — Login + Upload direto pro Drive
+   14. PAINEL ADMIN — Login + Upload direto pro Drive
    ============================================================ */
 (function(){
   'use strict';
-  // ⚠️ COLE A URL DO SEU APPS SCRIPT NA LINHA ABAIXO:
+  // ⚠️ COLE A URL DO SEU APPS SCRIPT NA LINHA ABAIXO
   var API_URL = 'https://script.google.com/macros/s/AKfycbwhya0vhAuPei9Bf2rOjf3KTGYjYrs8yMkdzk-vX01FUGuCUG7rUq9eyXW4XTDPcvaIRg/exec';
 
   var lock = document.getElementById('tr-admin-lock');
@@ -1178,9 +1316,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     return renderMediaField(k, valor, tipo);
   }
 
-  /* 🔧 CORRIGIDO: label agora é definido dentro da função */
   function renderMediaField(k, valor, tipo){
-    var label = '<label class="adm-label">' + esc(k) + ' <span style="opacity:.5;">(' + esc(tipo) + ')</span></label>';
     var accept = tipo === 'imagem' ? 'image/*' : (tipo === 'video' ? 'video/*' : 'image/*,video/*');
     var preview = '';
     if (valor){
@@ -1238,7 +1374,10 @@ html.tr-bg *{animation-play-state:paused!important;}
           drop.style.color = '#8a8069';
         });
       });
-      drop.addEventListener('drop', function(e){ var f = e.dataTransfer.files[0]; if (f) handleUpload(f, key, tipo); });
+      drop.addEventListener('drop', function(e){
+        var f = e.dataTransfer.files[0];
+        if (f) handleUpload(f, key, tipo);
+      });
     });
   }
 
@@ -1246,6 +1385,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     var MAX_MB = 45;
     var tamanhoMB = file.size / (1024 * 1024);
     if (tamanhoMB > MAX_MB){ toast('Arquivo muito grande (' + tamanhoMB.toFixed(1) + ' MB). Máx: ' + MAX_MB + ' MB', false); return; }
+
     var isImg = file.type.indexOf('image/') === 0;
     var isVid = file.type.indexOf('video/') === 0;
     if (tipo === 'imagem' && !isImg){ toast('Precisa ser uma imagem', false); return; }
@@ -1264,7 +1404,9 @@ html.tr-bg *{animation-play-state:paused!important;}
     if (drop) drop.style.display = 'none';
 
     var fakeProgress = 5;
-    var fakeTimer = setInterval(function(){ if (fakeProgress < 40){ fakeProgress += 3; if (progBar) progBar.style.width = fakeProgress + '%'; } }, 120);
+    var fakeTimer = setInterval(function(){
+      if (fakeProgress < 40){ fakeProgress += 3; if (progBar) progBar.style.width = fakeProgress + '%'; }
+    }, 120);
 
     var reader = new FileReader();
     reader.onload = async function(){
