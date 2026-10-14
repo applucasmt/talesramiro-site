@@ -57,18 +57,6 @@ a{text-decoration:none;}
 @keyframes gooCircle{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
 @keyframes tr-ghostshift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 
-/* ✨ NOVO — animação de reveal automático mobile */
-@keyframes tr-auto-reveal{
-  0%   { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
-  10%  { --rv-r: 130px; }
-  25%  { --rv-x: 70%; --rv-y: 40%; --rv-r: 130px; }
-  40%  { --rv-x: 55%; --rv-y: 65%; --rv-r: 130px; }
-  60%  { --rv-x: 35%; --rv-y: 55%; --rv-r: 130px; }
-  80%  { --rv-x: 65%; --rv-y: 45%; --rv-r: 130px; }
-  90%  { --rv-r: 0px; }
-  100% { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
-}
-
 html.tr-bg *{animation-play-state:paused!important;}
 .cv-sec{content-visibility:auto;contain-intrinsic-size:auto 760px;}
 
@@ -273,123 +261,92 @@ html.tr-bg *{animation-play-state:paused!important;}
 .adm-toast.err{background:#3a1f1f;}
 .adm-toast.show{opacity:1;}
 
-/* ============================================================
-   RESPONSIVO — MOBILE
-   ============================================================ */
+/* RESPONSIVO — MOBILE */
 @media (max-width:760px){
-  /* Hero background estático pra economizar bateria */
   .goo-blob{animation:none!important;}
   .ghost-grad{animation:none!important;}
   .hpop-pill{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:rgba(18,23,29,.86)!important;}
   .hero-gooey{filter:blur(22px)!important;opacity:.55!important;}
 
-  /* ✨ HERO MOBILE — layout respirável */
   #tr-hero{
     padding-top:env(safe-area-inset-top) !important;
     padding-bottom:env(safe-area-inset-bottom) !important;
   }
 
-  /* Foto do hero — reduzida, encostada embaixo, com margem à direita */
+  /* Foto do hero — posicionada à direita, deixando espaço pro menu */
   [data-hero-photo]{
     height:88% !important;
     left:55% !important;
-    transform:translateX(-55%) !important;
     opacity:0.92 !important;
   }
   [data-hero-reveal]{
     height:88% !important;
     left:55% !important;
-    transform:translateX(-55%) !important;
-    animation:tr-auto-reveal 14s ease-in-out infinite !important;
+    /* JS cuida da animação agora */
   }
 
-  /* Ghost (TALES RAMIRO gigante) — menor */
   [data-hero-ghost]{
     font-size:34vw !important;
     top:3% !important;
     opacity:.5 !important;
   }
 
-  /* Menu links do hero — compacto e respirável */
-  [data-hero-menu] nav{
-    gap:clamp(14px,4vw,20px) !important;
-  }
-  .menu-link{
-    font-size:clamp(22px,7.5vw,34px) !important;
-    line-height:.95 !important;
-  }
+  [data-hero-menu] nav{ gap:clamp(14px,4vw,20px) !important; }
+  .menu-link{ font-size:clamp(22px,7.5vw,34px) !important; line-height:.95 !important; }
+  [data-hero-nav]{ padding:clamp(18px,4.5vw,26px) clamp(18px,4.5vw,26px) !important; }
+  .nav-link{ font-size:9px !important; }
 
-  /* Nav topo — respiro */
-  [data-hero-nav]{
-    padding:clamp(18px,4.5vw,26px) clamp(18px,4.5vw,26px) !important;
-  }
-  .nav-link{font-size:9px !important;}
+  /* Esconde as pills flutuantes */
+  [data-hero-pops]{ display:none !important; }
+  .hero-social{ display:none !important; }
 
-  /* Esconde os "pops" (pills flutuantes) no mobile — bagunçavam */
-  [data-hero-pops]{display:none !important;}
+  .hero-row{ flex-direction:column !important; align-items:flex-start !important; gap:16px !important; }
 
-  /* Redes sociais do hero — coluna à direita, escondida */
-  .hero-social{display:none !important;}
+  /* Menu flutuante + botões */
+  .fmenu{ top:clamp(12px,3.5vw,18px) !important; left:clamp(12px,3.5vw,18px) !important; }
+  .fmenu-btn{ width:44px !important; height:44px !important; }
+  .fmenu-panel{ min-width:220px !important; padding:18px 20px !important; }
+  .fmenu-link{ font-size:clamp(18px,4.5vw,22px) !important; }
 
-  /* Menu hero layout — coluna única */
-  .hero-row{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:16px !important;
-  }
-
-  /* ═══ MENU FLUTUANTE ═══ */
-  .fmenu{top:clamp(12px,3.5vw,18px) !important; left:clamp(12px,3.5vw,18px) !important;}
-  .fmenu-btn{width:44px !important; height:44px !important;}
-  .fmenu-panel{min-width:220px !important; padding:18px 20px !important;}
-  .fmenu-link{font-size:clamp(18px,4.5vw,22px) !important;}
-
-  /* ═══ BOTÃO TOPO + CADEADO — espaçados ═══ */
   .gotop{
     right:clamp(14px,4vw,20px) !important;
     bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
-    width:46px !important;
-    height:46px !important;
+    width:46px !important; height:46px !important;
   }
   #tr-admin-lock{
     left:auto !important;
     right:calc(clamp(14px,4vw,20px) + 60px) !important;
     bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
     transform:none !important;
-    width:46px !important;
-    height:46px !important;
+    width:46px !important; height:46px !important;
   }
-  #tr-admin-lock:hover{transform:scale(1.06) !important;}
+  #tr-admin-lock:hover{ transform:scale(1.06) !important; }
 
-  /* ═══ SEÇÕES ═══ */
-  .about-photoblock{flex-direction:column!important;align-items:stretch!important;gap:16px!important;}
-  .about-vtext{writing-mode:horizontal-tb!important;transform:none!important;font-size:clamp(52px,13vw,86px)!important;line-height:.86!important;}
+  .about-photoblock{ flex-direction:column!important; align-items:stretch!important; gap:16px!important; }
+  .about-vtext{ writing-mode:horizontal-tb!important; transform:none!important; font-size:clamp(52px,13vw,86px)!important; line-height:.86!important; }
 
-  .off-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
-  .off-name{font-size:clamp(28px,7.4vw,38px)!important;}
-  .off-media{aspect-ratio:4/3.4;}
+  .off-grid{ grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+  .off-name{ font-size:clamp(28px,7.4vw,38px)!important; }
+  .off-media{ aspect-ratio:4/3.4; }
 
-  .vss-track{height:200vh;}
-  .vss-words{left:7vw;}
+  .vss-track{ height:200vh; }
+  .vss-words{ left:7vw; }
 
-  /* Stats — 2 colunas */
   [data-stats]{
     gap:clamp(24px,7vw,40px) clamp(28px,9vw,46px) !important;
     padding:clamp(30px,9vw,60px) clamp(18px,5vw,32px) !important;
   }
-  [data-stats] .stat-num{font-size:clamp(52px,15vw,88px) !important;}
-  [data-stats] .stat-lbl{font-size:9px !important; letter-spacing:.18em !important;}
+  [data-stats] .stat-num{ font-size:clamp(52px,15vw,88px) !important; }
+  [data-stats] .stat-lbl{ font-size:9px !important; letter-spacing:.18em !important; }
 
-  /* Cursos — header menor */
-  .off-h2{font-size:clamp(38px,10vw,68px) !important;}
-  .off-eyebrow{font-size:10px !important; letter-spacing:.22em !important;}
+  .off-h2{ font-size:clamp(38px,10vw,68px) !important; }
+  .off-eyebrow{ font-size:10px !important; letter-spacing:.22em !important; }
 }
 
-/* Telas muito estreitas (iPhone SE) */
 @media (max-width:380px){
-  .menu-link{font-size:clamp(20px,7vw,28px) !important;}
-  [data-hero-ghost]{font-size:36vw !important;}
-  .off-name{font-size:26px !important;}
+  .menu-link{ font-size:clamp(20px,7vw,28px) !important; }
+  [data-hero-ghost]{ font-size:36vw !important; }
+  .off-name{ font-size:26px !important; }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -675,7 +632,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 <!-- JAVASCRIPT -->
 <script>
-/* 1. LOADER */
+/* ============================================================
+   1. LOADER
+   ============================================================ */
 (function(){
   var l = document.getElementById('tr-loader');
   if (!l) return;
@@ -689,54 +648,96 @@ html.tr-bg *{animation-play-state:paused!important;}
   setTimeout(hide, 6000);
 })();
 
-/* 2. REVEAL DO HERO — mouse no desktop / automático no mobile */
-(function(){
-  var sec = document.querySelector('#tr-hero');
-  var rev = document.querySelector('[data-hero-reveal]');
-  if (!sec || !rev){ console.warn('[reveal] não achou elementos'); return; }
-
-  // Se for mobile (touch), não ativa o mouse — o CSS animation cuida
-  var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 760;
-  if (isTouch){
-    console.log('[reveal] mobile detectado — animação automática via CSS');
-    return;
-  }
-
-  var R = 165, hideTimer;
-  function move(e){
-    var pt = e.touches ? e.touches[0] : e;
-    if (!pt) return;
-    var r = rev.getBoundingClientRect();
-    rev.style.setProperty('--rv-x', (pt.clientX - r.left) + 'px');
-    rev.style.setProperty('--rv-y', (pt.clientY - r.top) + 'px');
-    rev.style.setProperty('--rv-r', R + 'px');
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(function(){ rev.style.setProperty('--rv-r', '0px'); }, 2200);
-  }
-  function leave(){ rev.style.setProperty('--rv-r', '0px'); }
-  sec.addEventListener('mousemove', move, { passive: true });
-  sec.addEventListener('mouseleave', leave);
-  sec.addEventListener('touchmove', move, { passive: true });
-  sec.addEventListener('touchend', leave);
-  console.log('[reveal] efeito desktop ativado ✓');
-})();
-
-/* 3. HERO — digitação + flash + parallax + pops */
+/* ============================================================
+   2. HERO — REVEAL + PARALLAX + DIGITAÇÃO + FLASH + POPS
+   (Único bloco que cuida de tudo do hero, desktop e mobile)
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
     var heroSec = document.querySelector('#tr-hero');
-    if (!heroSec) return;
+    var rev = document.querySelector('[data-hero-reveal]');
     var photo = document.querySelector('[data-hero-photo]');
     var ghost = document.querySelector('[data-hero-ghost]');
     var menu  = document.querySelector('[data-hero-menu]');
     var nav   = document.querySelector('[data-hero-nav]');
-    var rev   = document.querySelector('[data-hero-reveal]');
     var goo   = document.querySelector('.hero-gooey');
-    var full  = ghost ? ghost.textContent : '';
-    var links = menu ? [].slice.call(menu.querySelectorAll('.menu-link')) : [];
-    var isMobile = window.innerWidth <= 760;
+    if (!heroSec || !rev) return;
 
+    var isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 760;
+    var full = ghost ? ghost.textContent : '';
+
+    /* ---------- REVEAL: mouse (desktop) ou auto (mobile) ---------- */
+    var R = 165;
+    var autoActive = isMobile;   // mobile: revelação automática
+    var mx = -999, my = -999;    // última posição do mouse
+    var autoT = 0;               // tempo da animação automática
+    var autoR = 0;               // raio atual (para fade in/out)
+    var autoActiveFlag = 1;      // 1 = círculo visível, 0 = escondido
+    var autoCycleT = 0;          // tempo de ciclo
+    var lastTs = 0;
+
+    // Define posição via variável CSS
+    function setReveal(x, y, r){
+      rev.style.setProperty('--rv-x', x + 'px');
+      rev.style.setProperty('--rv-y', y + 'px');
+      rev.style.setProperty('--rv-r', r + 'px');
+    }
+
+    // Desktop: mousemove
+    if (!isMobile){
+      var hideTimer;
+      function move(e){
+        var pt = e.touches ? e.touches[0] : e;
+        if (!pt) return;
+        var r = rev.getBoundingClientRect();
+        setReveal(pt.clientX - r.left, pt.clientY - r.top, R);
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function(){ setReveal(-999, -999, 0); }, 2200);
+      }
+      heroSec.addEventListener('mousemove', move, { passive:true });
+      heroSec.addEventListener('mouseleave', function(){ setReveal(-999, -999, 0); });
+      heroSec.addEventListener('touchmove', move, { passive:true });
+      heroSec.addEventListener('touchend', function(){ setReveal(-999, -999, 0); });
+      console.log('[reveal] modo desktop (mouse) ativo');
+    } else {
+      console.log('[reveal] modo mobile (auto) ativo');
+    }
+
+    /* ---------- Loop unificado (reveal auto + parallax via scroll) ---------- */
+    function loop(ts){
+      var dt = lastTs ? Math.min((ts - lastTs)/1000, 0.05) : 0.016;
+      lastTs = ts;
+
+      // Reveal automático no mobile — movimento contínuo tipo seno
+      if (autoActive){
+        var rect = rev.getBoundingClientRect();
+        var w = rect.width  || window.innerWidth;
+        var h = rect.height || window.innerHeight;
+
+        // Avança tempo (mais lento = mais suave)
+        autoCycleT += dt * 0.35; // ciclo completo ~ 2.85s por "vaga"
+        autoT += dt * 0.6;
+
+        // Caminho tipo Lissajous (movimento contínuo, sem saltos)
+        var cx = w/2 + Math.sin(autoT * 0.9) * (w * 0.22) + Math.sin(autoT * 1.7) * (w * 0.05);
+        var cy = h*0.62 + Math.cos(autoT * 1.1) * (h * 0.14);
+
+        // Fade in/out suave do raio (visível 80% do tempo, oculto 20%)
+        var cycle = (Math.sin(autoCycleT) + 1) / 2; // 0..1
+        var visibility = Math.min(1, cycle * 1.3);
+        var targetR = R * visibility;
+        autoR += (targetR - autoR) * 0.10;
+
+        setReveal(cx, cy, autoR);
+      }
+
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    /* ---------- Digitação ghost + flash inicial ---------- */
+    var links = menu ? [].slice.call(menu.querySelectorAll('.menu-link')) : [];
     links.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(22px)'; l.style.transition='opacity .55s ease, transform .75s cubic-bezier(.16,1,.3,1)'; });
     if (ghost){ ghost.style.visibility='hidden'; }
     if (photo){ photo.style.opacity='0'; }
@@ -777,6 +778,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     if (document.readyState === 'complete') setTimeout(start, 650);
     else window.addEventListener('load', function(){ setTimeout(start, 650); });
 
+    /* ---------- Parallax do scroll ---------- */
     var raf = 0;
     function onScroll(){
       if (raf) return;
@@ -784,22 +786,21 @@ html.tr-bg *{animation-play-state:paused!important;}
         raf = 0;
         var y = window.scrollY || window.pageYOffset || 0, vh = window.innerHeight || 1;
         var p = Math.min(y/vh, 1);
-        if (ghost){ ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')'; ghost.style.opacity = String(Math.max(0, 1-p*0.5)); }
+
+        if (ghost){
+          ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')';
+          ghost.style.opacity = String(Math.max(0, 1-p*0.5));
+        }
         var phY = y * -0.70;
         if (photo){
           if (isMobile){
+            // mobile: mantém o "left" customizado e aplica o parallax
             photo.style.transform = 'translateX(-55%) translate3d(0,' + phY + 'px,0)';
           } else {
             photo.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
           }
         }
-        if (rev){
-          if (isMobile){
-            // não sobrescreve o transform do reveal (o CSS animation cuida da mask)
-          } else {
-            rev.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
-          }
-        }
+        // NÃO mexe no transform do rev — o JS do reveal cuida da posição via CSS vars
         if (goo && window.innerWidth > 760){ goo.style.transform = 'translate3d(0,' + (y*0.04) + 'px,0)'; }
         if (menu){ menu.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; menu.style.opacity = String(Math.max(0, 1-p*1.05)); }
         if (nav){ nav.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; nav.style.opacity = String(Math.max(0, 1-p*1.4)); }
@@ -808,6 +809,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
+    /* ---------- Pops (só desktop) ---------- */
     var wrap = document.querySelector('[data-hero-pops]');
     if (wrap && !isMobile){
       var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
@@ -827,26 +829,28 @@ html.tr-bg *{animation-play-state:paused!important;}
       setTimeout(check, 1100);
 
       var items = pops.map(function(w){ return { w: w, rep: w.querySelector('.hpop-rep'), py: parseFloat(w.getAttribute('data-py'))||0 }; });
-      var mx = -99999, my = -99999, rafM = 0;
+      var mxx = -99999, myy = -99999, rafM = 0;
       function applyRepel(){
         rafM = 0;
         for (var i=0;i<items.length;i++){
           var it = items[i], r = it.rep.getBoundingClientRect();
           var cx = r.left + r.width/2, cy = r.top + r.height/2;
-          var dx = cx-mx, dy = cy-my, dist = Math.sqrt(dx*dx+dy*dy), R = 140;
-          if (dist < R){
-            var f = 1-dist/R, push = f*30;
+          var dx = cx-mxx, dy = cy-myy, dist = Math.sqrt(dx*dx+dy*dy), RR = 140;
+          if (dist < RR){
+            var f = 1-dist/RR, push = f*30;
             var nx = dist>0?dx/dist:0, ny = dist>0?dy/dist:-1;
             it.rep.style.transform = 'translate(' + (nx*push).toFixed(1) + 'px,' + (ny*push).toFixed(1) + 'px)';
           } else it.rep.style.transform = 'translate(0,0)';
         }
       }
-      window.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
+      window.addEventListener('mousemove', function(e){ mxx=e.clientX; myy=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
     }
   });
 })();
 
-/* 4. MENU FLUTUANTE + BOTÃO TOPO */
+/* ============================================================
+   3. MENU FLUTUANTE + BOTÃO TOPO
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -877,7 +881,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 5. REVEALS GENÉRICOS */
+/* ============================================================
+   4. REVEALS GENÉRICOS
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -890,7 +896,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 6. STATS — contadores */
+/* ============================================================
+   5. STATS — contadores
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -927,7 +935,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 7. CURSOS */
+/* ============================================================
+   6. CURSOS
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -962,7 +972,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 8. HERO — vídeo iframe lazy */
+/* ============================================================
+   7. HERO — vídeo iframe lazy
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -992,7 +1004,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 9. BIO — slideshow */
+/* ============================================================
+   8. BIO — slideshow
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1006,7 +1020,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 10. BIO — chips + parágrafos */
+/* ============================================================
+   9. BIO — chips + parágrafos
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1075,7 +1091,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 11. MARCAS */
+/* ============================================================
+   10. MARCAS
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1099,7 +1117,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 12. VSS — vídeo scroll */
+/* ============================================================
+   11. VSS — vídeo scroll
+   ============================================================ */
 (function(){
   var VIDEO_SRC = 'assets/video/scroll-video.mp4';
   var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
@@ -1185,9 +1205,7 @@ html.tr-bg *{animation-play-state:paused!important;}
           video.preload = 'auto';
           video.src = VIDEO_SRC;
           video.load();
-        }).catch(function(){
-          track.style.display = 'none';
-        });
+        }).catch(function(){ track.style.display = 'none'; });
       }
       function maybeLoad(){
         if (loaded) return;
@@ -1230,7 +1248,6 @@ html.tr-bg *{animation-play-state:paused!important;}
           video.loop = true;
           video.currentTime = 0;
           try { video.play().catch(function(){}); } catch(e){}
-          console.log('[VSS] Modo fallback ativado. Re-encode o vídeo com keyint=10.');
         }
       }
 
@@ -1319,7 +1336,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 13. REDES SOCIAIS */
+/* ============================================================
+   12. REDES SOCIAIS
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1346,7 +1365,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 14. PAINEL ADMIN */
+/* ============================================================
+   13. PAINEL ADMIN
+   ============================================================ */
 (function(){
   'use strict';
   var API_URL = 'https://script.google.com/macros/s/AKfycbwhya0vhAuPei9Bf2rOjf3KTGYjYrs8yMkdzk-vX01FUGuCUG7rUq9eyXW4XTDPcvaIRg/exec';
