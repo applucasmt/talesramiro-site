@@ -33,10 +33,14 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tales Ramiro","jobTitle":"Mentor, Creator e Professor","description":"Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.","url":"https://www.talesramiro.com/","sameAs":["https://instagram.com/talesramiroart","https://youtube.com/talesramiroart"]}</script>
 
 <style>
-/* FONTES */
+/* ============================================================
+   FONTES
+   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..600&family=Hanken+Grotesk:wght@300..600&family=League+Gothic&display=swap');
 
-/* RESET + BASE */
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{margin:0;padding:0;background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;}
@@ -44,7 +48,9 @@ img{display:block;}
 ::selection{background:#a69b84;color:#0d1116;}
 a{text-decoration:none;}
 
-/* ANIMAÇÕES */
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
 @keyframes tr-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @keyframes tr-fadeup{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
 @keyframes tr-fadein{from{opacity:0;}to{opacity:1;}}
@@ -57,22 +63,12 @@ a{text-decoration:none;}
 @keyframes gooCircle{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
 @keyframes tr-ghostshift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 
-/* ✨ NOVO — animação de reveal automático mobile */
-@keyframes tr-auto-reveal{
-  0%   { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
-  10%  { --rv-r: 130px; }
-  25%  { --rv-x: 70%; --rv-y: 40%; --rv-r: 130px; }
-  40%  { --rv-x: 55%; --rv-y: 65%; --rv-r: 130px; }
-  60%  { --rv-x: 35%; --rv-y: 55%; --rv-r: 130px; }
-  80%  { --rv-x: 65%; --rv-y: 45%; --rv-r: 130px; }
-  90%  { --rv-r: 0px; }
-  100% { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
-}
-
 html.tr-bg *{animation-play-state:paused!important;}
 .cv-sec{content-visibility:auto;contain-intrinsic-size:auto 760px;}
 
-/* HERO */
+/* ============================================================
+   HERO
+   ============================================================ */
 .hero-gooey{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;filter:blur(58px);opacity:1;animation:tr-fadein 1.8s ease both;}
 .goo-blob{position:absolute;width:74vmax;height:74vmax;top:calc(50% - 37vmax);left:calc(50% - 37vmax);border-radius:50%;mix-blend-mode:screen;will-change:transform;}
 .gb1{background:radial-gradient(circle at center,rgba(178,166,142,.78) 0,rgba(178,166,142,0) 62%);transform-origin:center center;animation:gooVert 6s ease infinite;}
@@ -249,7 +245,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 .vss-progress{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(166,155,132,.2);z-index:3;}
 .vss-progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#a69b84;}
 
-/* ADMIN */
+/* ============================================================
+   ADMIN
+   ============================================================ */
 #tr-admin-lock{position:fixed;left:50%;bottom:clamp(16px,2.4vw,28px);transform:translateX(-50%);z-index:9997;width:48px;height:48px;border-radius:50%;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;background:rgba(20,24,29,.6);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.3);color:#cdbf99;transition:border-color .3s,background .3s,transform .3s;}
 #tr-admin-lock:hover{border-color:rgba(166,155,132,.6);background:rgba(26,30,36,.75);transform:translateX(-50%) scale(1.06);}
 #tr-admin-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(6,9,12,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;}
@@ -273,125 +271,22 @@ html.tr-bg *{animation-play-state:paused!important;}
 .adm-toast.err{background:#3a1f1f;}
 .adm-toast.show{opacity:1;}
 
-/* ============================================================
-   RESPONSIVO — MOBILE
-   ============================================================ */
+/* RESPONSIVO */
 @media (max-width:760px){
-  /* Hero background estático pra economizar bateria */
   .goo-blob{animation:none!important;}
   .ghost-grad{animation:none!important;}
   .hpop-pill{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:rgba(18,23,29,.86)!important;}
   .hero-gooey{filter:blur(22px)!important;opacity:.55!important;}
-
-  /* ✨ HERO MOBILE — layout respirável */
-  #tr-hero{
-    padding-top:env(safe-area-inset-top) !important;
-    padding-bottom:env(safe-area-inset-bottom) !important;
-  }
-
-  /* Foto do hero — reduzida, encostada embaixo, com margem à direita */
-  [data-hero-photo]{
-    height:88% !important;
-    left:55% !important;
-    transform:translateX(-55%) !important;
-    opacity:0.92 !important;
-  }
-  [data-hero-reveal]{
-    height:88% !important;
-    left:55% !important;
-    transform:translateX(-55%) !important;
-    animation:tr-auto-reveal 14s ease-in-out infinite !important;
-  }
-
-  /* Ghost (TALES RAMIRO gigante) — menor */
-  [data-hero-ghost]{
-    font-size:34vw !important;
-    top:3% !important;
-    opacity:.5 !important;
-  }
-
-  /* Menu links do hero — compacto e respirável */
-  [data-hero-menu] nav{
-    gap:clamp(14px,4vw,20px) !important;
-  }
-  .menu-link{
-    font-size:clamp(22px,7.5vw,34px) !important;
-    line-height:.95 !important;
-  }
-
-  /* Nav topo — respiro */
-  [data-hero-nav]{
-    padding:clamp(18px,4.5vw,26px) clamp(18px,4.5vw,26px) !important;
-  }
-  .nav-link{font-size:9px !important;}
-
-  /* Esconde os "pops" (pills flutuantes) no mobile — bagunçavam */
-  [data-hero-pops]{display:none !important;}
-
-  /* Redes sociais do hero — coluna à direita, escondida */
-  .hero-social{display:none !important;}
-
-  /* Menu hero layout — coluna única */
-  .hero-row{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:16px !important;
-  }
-
-  /* ═══ MENU FLUTUANTE ═══ */
-  .fmenu{top:clamp(12px,3.5vw,18px) !important; left:clamp(12px,3.5vw,18px) !important;}
-  .fmenu-btn{width:44px !important; height:44px !important;}
-  .fmenu-panel{min-width:220px !important; padding:18px 20px !important;}
-  .fmenu-link{font-size:clamp(18px,4.5vw,22px) !important;}
-
-  /* ═══ BOTÃO TOPO + CADEADO — espaçados ═══ */
-  .gotop{
-    right:clamp(14px,4vw,20px) !important;
-    bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
-    width:46px !important;
-    height:46px !important;
-  }
-  #tr-admin-lock{
-    left:auto !important;
-    right:calc(clamp(14px,4vw,20px) + 60px) !important;
-    bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
-    transform:none !important;
-    width:46px !important;
-    height:46px !important;
-  }
-  #tr-admin-lock:hover{transform:scale(1.06) !important;}
-
-  /* ═══ SEÇÕES ═══ */
   .about-photoblock{flex-direction:column!important;align-items:stretch!important;gap:16px!important;}
   .about-vtext{writing-mode:horizontal-tb!important;transform:none!important;font-size:clamp(52px,13vw,86px)!important;line-height:.86!important;}
-
+  .hero-row{flex-direction:column!important;align-items:flex-start!important;}
+  .hero-social{padding-top:0!important;margin-top:clamp(26px,7vw,46px)!important;}
   .off-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
   .off-name{font-size:clamp(28px,7.4vw,38px)!important;}
   .off-media{aspect-ratio:4/3.4;}
-
   .vss-track{height:200vh;}
   .vss-words{left:7vw;}
-
-  /* Stats — 2 colunas */
-  [data-stats]{
-    gap:clamp(24px,7vw,40px) clamp(28px,9vw,46px) !important;
-    padding:clamp(30px,9vw,60px) clamp(18px,5vw,32px) !important;
-  }
-  [data-stats] .stat-num{font-size:clamp(52px,15vw,88px) !important;}
-  [data-stats] .stat-lbl{font-size:9px !important; letter-spacing:.18em !important;}
-
-  /* Cursos — header menor */
-  .off-h2{font-size:clamp(38px,10vw,68px) !important;}
-  .off-eyebrow{font-size:10px !important; letter-spacing:.22em !important;}
 }
-
-/* Telas muito estreitas (iPhone SE) */
-@media (max-width:380px){
-  .menu-link{font-size:clamp(20px,7vw,28px) !important;}
-  [data-hero-ghost]{font-size:36vw !important;}
-  .off-name{font-size:26px !important;}
-}
-
 @media (prefers-reduced-motion:reduce){
   .goo-blob,.ghost-grad{animation:none!important;}
   .reveal,.reveal-l,.reveal-soft,.bio-p{opacity:1!important;transform:none!important;filter:none!important;}
@@ -426,7 +321,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 <div style="background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;">
 
-  <!-- HERO -->
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
   <section id="tr-hero" style="position:fixed;top:0;left:0;width:100%;height:100svh;z-index:1;overflow:hidden;background:radial-gradient(120% 90% at 50% 32%,#3b454a 0%,#262e32 38%,#13181b 72%,#0d1116 100%);display:flex;flex-direction:column;">
     <div class="hero-gooey" aria-hidden="true">
       <div class="goo-blob gb1"></div>
@@ -500,7 +397,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 
   <div style="position:relative;z-index:2;background:#0d1116;">
 
-    <!-- MARCAS -->
+    <!-- ============================================================
+         MARCAS
+         ============================================================ -->
     <section style="background:#0a0d12;border-top:1px solid rgba(166,155,132,.07);border-bottom:1px solid rgba(166,155,132,.07);padding:clamp(26px,4vw,46px) 0;overflow:hidden;">
       <div style="padding:0 clamp(22px,5vw,72px);margin-bottom:clamp(22px,3vw,38px);">
         <div class="reveal" style="display:flex;align-items:center;gap:clamp(14px,2vw,24px);">
@@ -513,7 +412,9 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- VÍDEO + STATS -->
+    <!-- ============================================================
+         VÍDEO + STATS
+         ============================================================ -->
     <section style="position:relative;width:100%;height:clamp(360px,56vw,680px);background:#0d1116;overflow:hidden;">
       <div data-video-cover="" class="reveal" style="position:absolute;inset:0;transform:scale(1.08);transition:opacity 1.3s ease,transform 1.8s ease;">
         <iframe data-video-iframe="" title="Vídeo de apresentação" data-src="https://www.youtube-nocookie.com/embed/pdoL5HBtW9Y?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=pdoL5HBtW9Y&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;border:0;pointer-events:none;"></iframe>
@@ -542,14 +443,18 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- FACES / CLIENTES -->
+    <!-- ============================================================
+         FACES / CLIENTES
+         ============================================================ -->
     <section class="cv-sec" style="background:#0d1116;padding:clamp(54px,8vw,110px) 0;overflow:hidden;">
       <div class="reveal-soft" style="mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
         <div class="marquee-track" style="animation:tr-marquee 50s linear infinite reverse;"><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div></div>
       </div>
     </section>
 
-    <!-- CURSOS -->
+    <!-- ============================================================
+         CURSOS
+         ============================================================ -->
     <section id="cursos" class="cv-sec">
       <div class="off-wrap">
         <div class="off-head">
@@ -624,7 +529,9 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- BIO -->
+    <!-- ============================================================
+         BIO
+         ============================================================ -->
     <section data-bio-seq class="cv-sec" style="background:#0d1116;padding:clamp(20px,4vw,60px) clamp(22px,5vw,72px) clamp(70px,9vw,130px);">
       <div style="max-width:1340px;margin:0 auto;">
         <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start;">
@@ -652,7 +559,9 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
-    <!-- VÍDEO SCROLL -->
+    <!-- ============================================================
+         VÍDEO SCROLL
+         ============================================================ -->
     <section class="vss-track" data-vss data-screen-label="Tretas" data-words="TRETAS|VÃO|ROLAR">
       <div class="vss-stage">
         <video class="vss-video" muted playsinline webkit-playsinline preload="auto"></video>
@@ -664,7 +573,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   </div>
 </div>
 
-<!-- BOTÃO ADMIN + MODAL -->
+<!-- ============================================================
+     BOTÃO ADMIN + MODAL
+     ============================================================ -->
 <button id="tr-admin-lock" type="button" aria-label="Painel administrativo">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="11" width="16" height="10" rx="2"></rect>
@@ -673,9 +584,13 @@ html.tr-bg *{animation-play-state:paused!important;}
 </button>
 <div id="tr-admin-modal" role="dialog" aria-modal="true"><div id="tr-admin-box"></div></div>
 
-<!-- JAVASCRIPT -->
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
 <script>
-/* 1. LOADER */
+/* ============================================================
+   1. LOADER
+   ============================================================ */
 (function(){
   var l = document.getElementById('tr-loader');
   if (!l) return;
@@ -689,19 +604,13 @@ html.tr-bg *{animation-play-state:paused!important;}
   setTimeout(hide, 6000);
 })();
 
-/* 2. REVEAL DO HERO — mouse no desktop / automático no mobile */
+/* ============================================================
+   2. REVEAL DO HERO — círculo que segue o mouse
+   ============================================================ */
 (function(){
   var sec = document.querySelector('#tr-hero');
   var rev = document.querySelector('[data-hero-reveal]');
   if (!sec || !rev){ console.warn('[reveal] não achou elementos'); return; }
-
-  // Se for mobile (touch), não ativa o mouse — o CSS animation cuida
-  var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 760;
-  if (isTouch){
-    console.log('[reveal] mobile detectado — animação automática via CSS');
-    return;
-  }
-
   var R = 165, hideTimer;
   function move(e){
     var pt = e.touches ? e.touches[0] : e;
@@ -718,10 +627,12 @@ html.tr-bg *{animation-play-state:paused!important;}
   sec.addEventListener('mouseleave', leave);
   sec.addEventListener('touchmove', move, { passive: true });
   sec.addEventListener('touchend', leave);
-  console.log('[reveal] efeito desktop ativado ✓');
+  console.log('[reveal] efeito ativado ✓');
 })();
 
-/* 3. HERO — digitação + flash + parallax + pops */
+/* ============================================================
+   3. HERO — digitação ghost + flash + parallax + pops
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -735,7 +646,6 @@ html.tr-bg *{animation-play-state:paused!important;}
     var goo   = document.querySelector('.hero-gooey');
     var full  = ghost ? ghost.textContent : '';
     var links = menu ? [].slice.call(menu.querySelectorAll('.menu-link')) : [];
-    var isMobile = window.innerWidth <= 760;
 
     links.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(22px)'; l.style.transition='opacity .55s ease, transform .75s cubic-bezier(.16,1,.3,1)'; });
     if (ghost){ ghost.style.visibility='hidden'; }
@@ -786,20 +696,8 @@ html.tr-bg *{animation-play-state:paused!important;}
         var p = Math.min(y/vh, 1);
         if (ghost){ ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')'; ghost.style.opacity = String(Math.max(0, 1-p*0.5)); }
         var phY = y * -0.70;
-        if (photo){
-          if (isMobile){
-            photo.style.transform = 'translateX(-55%) translate3d(0,' + phY + 'px,0)';
-          } else {
-            photo.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
-          }
-        }
-        if (rev){
-          if (isMobile){
-            // não sobrescreve o transform do reveal (o CSS animation cuida da mask)
-          } else {
-            rev.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
-          }
-        }
+        if (photo){ photo.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)'; }
+        if (rev){ rev.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)'; }
         if (goo && window.innerWidth > 760){ goo.style.transform = 'translate3d(0,' + (y*0.04) + 'px,0)'; }
         if (menu){ menu.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; menu.style.opacity = String(Math.max(0, 1-p*1.05)); }
         if (nav){ nav.style.transform = 'translate3d(0,' + (y*-1.18) + 'px,0)'; nav.style.opacity = String(Math.max(0, 1-p*1.4)); }
@@ -809,7 +707,7 @@ html.tr-bg *{animation-play-state:paused!important;}
     onScroll();
 
     var wrap = document.querySelector('[data-hero-pops]');
-    if (wrap && !isMobile){
+    if (wrap){
       var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
       var timers = [], shown = false, atTop = false;
       function clearT(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers=[]; }
@@ -846,7 +744,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 4. MENU FLUTUANTE + BOTÃO TOPO */
+/* ============================================================
+   4. MENU FLUTUANTE + BOTÃO TOPO
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -877,7 +777,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 5. REVEALS GENÉRICOS */
+/* ============================================================
+   5. REVEALS GENÉRICOS
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -890,7 +792,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 6. STATS — contadores */
+/* ============================================================
+   6. STATS — contadores
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -927,7 +831,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 7. CURSOS */
+/* ============================================================
+   7. CURSOS — animação + YouTube lazy
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -962,7 +868,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 8. HERO — vídeo iframe lazy */
+/* ============================================================
+   8. HERO — vídeo iframe lazy + redimensiona cover
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -992,7 +900,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 9. BIO — slideshow */
+/* ============================================================
+   9. BIO — slideshow
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1006,7 +916,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 10. BIO — chips + parágrafos */
+/* ============================================================
+   10. BIO — chips + parágrafos sequenciais
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1075,7 +987,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 11. MARCAS */
+/* ============================================================
+   11. MARCAS — marquee com velocidade por scroll
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1099,7 +1013,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 12. VSS — vídeo scroll */
+/* ============================================================
+   12. VSS — vídeo scroll  (v4 — fluido)
+   ============================================================ */
 (function(){
   var VIDEO_SRC = 'assets/video/scroll-video.mp4';
   var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
@@ -1111,11 +1027,18 @@ html.tr-bg *{animation-play-state:paused!important;}
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
     document.querySelectorAll('[data-vss]').forEach(function(track){
-      var video = track.querySelector('.vss-video'), wordsEl = track.querySelector('.vss-words'),
-          bar = track.querySelector('.vss-progress-fill'), stage = track.querySelector('.vss-stage');
-      var duration = 0, targetP = 0, smoothP = 0, target = 0, current = 0;
-      var seeking = false, seekStart = 0, loaded = false, available = false, running = false;
-      var stuckCount = 0, fallbackMode = false;
+      var video = track.querySelector('.vss-video'),
+          wordsEl = track.querySelector('.vss-words'),
+          bar = track.querySelector('.vss-progress-fill'),
+          stage = track.querySelector('.vss-stage');
+      var duration = 0;
+      var targetP = 0, smoothP = 0;
+      var target = 0, current = 0;
+      var seeking = false, seekStart = 0;
+      var loaded = false, available = false;
+      var running = false;
+      var stuckCount = 0;
+      var fallbackMode = false;
       var rvfcSupported = 'requestVideoFrameCallback' in HTMLVideoElement.prototype;
 
       var reels = [];
@@ -1230,7 +1153,7 @@ html.tr-bg *{animation-play-state:paused!important;}
           video.loop = true;
           video.currentTime = 0;
           try { video.play().catch(function(){}); } catch(e){}
-          console.log('[VSS] Modo fallback ativado. Re-encode o vídeo com keyint=10.');
+          console.log('[VSS] Vídeo travando — modo fallback ativado. Re-encode com keyint=10 para scrub fluido.');
         }
       }
 
@@ -1319,7 +1242,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 13. REDES SOCIAIS */
+/* ============================================================
+   13. REDES SOCIAIS — contadores
+   ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1346,7 +1271,9 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* 14. PAINEL ADMIN */
+/* ============================================================
+   14. PAINEL ADMIN — Login + Upload direto pro Drive
+   ============================================================ */
 (function(){
   'use strict';
   var API_URL = 'https://script.google.com/macros/s/AKfycbwhya0vhAuPei9Bf2rOjf3KTGYjYrs8yMkdzk-vX01FUGuCUG7rUq9eyXW4XTDPcvaIRg/exec';
