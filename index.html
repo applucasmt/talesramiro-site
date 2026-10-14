@@ -1019,7 +1019,11 @@ html.tr-bg *{animation-play-state:paused!important;}
    ============================================================ */
 (function(){
   var VIDEO_SRC = 'assets/video/scroll-video.mp4';
-  var EASE = 0.16;
+  var BASE_EASE = 0.16;         // suavização base
+  var FAST_EASE = 0.30;         // quando o scroll está acelerado
+  var SLOW_EASE = 0.10;         // quando o scroll está lento
+  var MIN_SEEK_DELTA = 0.033;   // 1 frame @30fps — só seek se valer a pena
+  var STUCK_THRESHOLD = 0.35;   // se ficar pendurado > 350ms, destrava
   var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
   var SPIN = 20, DUR = 0.22;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1028,7 +1032,11 @@ html.tr-bg *{animation-play-state:paused!important;}
     document.querySelectorAll('[data-vss]').forEach(function(track){
       var video = track.querySelector('.vss-video'), wordsEl = track.querySelector('.vss-words'),
           bar = track.querySelector('.vss-progress-fill'), stage = track.querySelector('.vss-stage');
-      var duration=0, target=0, current=0, targetP=0, smoothP=0, seeking=false, running=false, loaded=false;
+      var duration=0, target=0, current=0, targetP=0, smoothP=0;
+      var seeking=false, seekStart=0, loaded=false, available=false;
+      var running=false, lastP=0, velocity=0;
+
+      // ---------- REELS DE PALAVRAS ----------
       var reels = [];
       (function buildReels(){
         var words = (track.getAttribute('data-words')||'').split('|');
@@ -1046,6 +1054,7 @@ html.tr-bg *{animation-play-state:paused!important;}
           wordsEl.appendChild(line);
         });
       })();
+
       function measureReels(){
         var maxW = 0, probe = document.createElement('span');
         probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;line-height:.9;';
@@ -1053,64 +1062,145 @@ html.tr-bg *{animation-play-state:paused!important;}
         reels.forEach(function(r){ probe.textContent = r.ch; maxW = Math.max(maxW, probe.getBoundingClientRect().width); });
         probe.remove();
         var cellW = Math.ceil(maxW*0.82);
-        reels.forEach(function(r){ var gh = r.strip.firstChild.getBoundingClientRect().height; if (gh){ r.reelH = gh; r.reel.style.height = gh+'px'; } if (cellW) r.reel.style.width = cellW+'px'; });
+        reels.forEach(function(r){
+          var gh = r.strip.firstChild.getBoundingClientRect().height;
+          if (gh){ r.reelH = gh; r.reel.style.height = gh+'px'; }
+          if (cellW) r.reel.style.width = cellW+'px';
+        });
         updateReels(smoothP);
       }
       function updateReels(p){
-        reels.forEach(function(r){
+        for (var i=0;i<reels.length;i++){
+          var r = reels[i];
           var t = r.dur>0 ? (p - r.start)/r.dur : 1;
-          t = Math.max(0, Math.min(1, t));
+          if (t < 0) t = 0; else if (t > 1) t = 1;
           var e = 1-Math.pow(1-t, 3);
           r.reel.style.opacity = t>0 ? '1' : '0';
-          r.strip.style.transform = 'translateY(' + (-e*r.n*r.reelH) + 'px)';
-        });
+          r.strip.style.transform = 'translate3d(0,' + (-e*r.n*r.reelH) + 'px,0)';
+        }
       }
       measureReels();
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureReels);
+
+      // ---------- VÍDEO ----------
       video.muted = true;
-      video.addEventListener('seeked', function(){ seeking = false; });
-      video.addEventListener('error', function(){ seeking = false; });
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      // ✅ CORREÇÃO B: usa URL direta (não blob) → seek muito mais rápido
+      // O blob força o browser a carregar 100% em memória antes de permitir seek.
+      // A URL direta com preload=metadata faz range requests → seek instantâneo.
+      function load(){
+        if (loaded) return; loaded = true;
+        // Testa existência com HEAD
+        fetch(VIDEO_SRC, { method:'HEAD' }).then(function(r){
+          if (!r.ok) throw new Error('video ausente');
+          available = true;
+          video.preload = 'metadata';
+          video.src = VIDEO_SRC;
+          video.load();
+        }).catch(function(){
+          track.style.display = 'none';
+        });
+      }
+      function maybeLoad(){
+        if (loaded) return;
+        var rect = track.getBoundingClientRect(), margin = window.innerHeight*1.5;
+        if (rect.top < window.innerHeight+margin && rect.bottom > -margin) load();
+      }
+
       video.addEventListener('loadedmetadata', function(){
         if (duration) return;
         if (isFinite(video.duration) && video.duration > 0){
           duration = video.duration;
           video.classList.add('is-ready');
+          // Prime: pausa e vai pro frame 0 — deixa o buffer pronto pra seek
+          try { video.pause(); } catch(e){}
+          try { video.currentTime = 0; } catch(e){}
           update(); tick();
         }
       });
-      // CORREÇÃO #3: verifica se o vídeo existe antes de baixar. Se não, esconde a seção.
-      function load(){
-        if (loaded) return; loaded = true;
-        fetch(VIDEO_SRC, { method:'HEAD' }).then(function(r){
-          if (!r.ok) throw new Error('video ausente');
-          return fetch(VIDEO_SRC);
-        }).then(function(r){ return r.blob(); }).then(function(blob){
-          video.src = URL.createObjectURL(blob); video.load();
-        }).catch(function(){
-          track.style.display = 'none';
-        });
-      }
-      function maybeLoad(){ if (loaded) return; var rect = track.getBoundingClientRect(), margin = window.innerHeight*1.5; if (rect.top < window.innerHeight+margin && rect.bottom > -margin) load(); }
+      video.addEventListener('error', function(){ seeking = false; });
+
+      // Marca quando o seek foi concluído
+      function onSeeked(){ seeking = false; }
+      video.addEventListener('seeked', onSeeked);
+
+      // ---------- CÁLCULO DE PROGRESSO ----------
       function update(){
         var rect = track.getBoundingClientRect(), vh = window.innerHeight;
-        if (rect.top <= 0 && rect.bottom >= vh){ stage.classList.add('vss-fixed'); stage.classList.remove('vss-end'); }
-        else if (rect.bottom < vh){ stage.classList.remove('vss-fixed'); stage.classList.add('vss-end'); }
-        else { stage.classList.remove('vss-fixed'); stage.classList.remove('vss-end'); }
-        var t = rect.height - vh, p = t>0 ? Math.min(1, Math.max(0, -rect.top/t)) : 0;
-        targetP = p; target = p*(duration||0);
+        if (rect.top <= 0 && rect.bottom >= vh){
+          stage.classList.add('vss-fixed');
+          stage.classList.remove('vss-end');
+        } else if (rect.bottom < vh){
+          stage.classList.remove('vss-fixed');
+          stage.classList.add('vss-end');
+        } else {
+          stage.classList.remove('vss-fixed');
+          stage.classList.remove('vss-end');
+        }
+        var total = rect.height - vh;
+        var p = total > 0 ? Math.min(1, Math.max(0, -rect.top/total)) : 0;
+        targetP = p;
+        target = p * (duration || 0);
       }
-      function tick(){ if (!running){ running=true; requestAnimationFrame(loop); } }
+
+      // ---------- LOOP PRINCIPAL ----------
+      function tick(){ if (!running){ running = true; requestAnimationFrame(loop); } }
+
       function loop(){
-        var k = reduceMotion ? 1 : EASE;
-        smoothP += (targetP - smoothP)*k;
-        current += (target - current)*k;
+        var now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+
+        // ✅ CORREÇÃO D: easing adaptativo — se velocity for alta, responde rápido
+        velocity = Math.abs(targetP - lastP);
+        lastP = smoothP;
+        var ease = BASE_EASE;
+        if (velocity > 0.01) ease = FAST_EASE;
+        else if (velocity < 0.001) ease = SLOW_EASE;
+
+        smoothP += (targetP - smoothP) * ease;
+        current += (target - current) * ease;
+
         updateReels(smoothP);
         if (bar) bar.style.width = (Math.max(0, Math.min(1, smoothP))*100) + '%';
-        if (duration && !seeking && Math.abs(current - (video.currentTime||0)) > 0.01){ seeking = true; try{ video.currentTime = current; }catch(e){ seeking=false; } }
-        if (Math.abs(target-current) > 0.001 || Math.abs(targetP-smoothP) > 0.0005) requestAnimationFrame(loop);
-        else running = false;
+
+        // ✅ CORREÇÃO A + C: seek só quando necessário e sem acumular
+        if (duration && available && video.readyState >= 1){
+          if (seeking){
+            // Se o seek travou por muito tempo, destrava
+            if (now - seekStart > STUCK_THRESHOLD*1000){ seeking = false; }
+          }
+          if (!seeking){
+            var targetTime = current;
+            var cur = video.currentTime || 0;
+            var delta = Math.abs(targetTime - cur);
+            // Só faz seek se a diferença for > 1 frame (evita 60 seeks/s inúteis)
+            if (delta > MIN_SEEK_DELTA){
+              seeking = true;
+              seekStart = now;
+              try { video.currentTime = targetTime; }
+              catch(e){ seeking = false; }
+            }
+          }
+        }
+
+        if (Math.abs(target-current) > 0.001 || Math.abs(targetP-smoothP) > 0.0005){
+          requestAnimationFrame(loop);
+        } else {
+          running = false;
+        }
       }
-      window.addEventListener('scroll', function(){ maybeLoad(); update(); tick(); }, { passive:true });
+
+      // ---------- EVENTOS ----------
+      var scrollRaf = 0;
+      function onScroll(){
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function(){
+          scrollRaf = 0;
+          maybeLoad(); update(); tick();
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
       window.addEventListener('resize', function(){ measureReels(); update(); tick(); }, { passive:true });
       window.addEventListener('load', function(){ update(); tick(); });
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measureReels(); update(); tick(); });
