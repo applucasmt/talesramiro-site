@@ -34,11 +34,9 @@
 
 <style>
 /* ============================================================
-   FONTES
+   CORREÇÃO #2 — FONTES via Google Fonts (evita 404 de .woff2)
    ============================================================ */
-@font-face{font-family:'Cinzel';font-style:normal;font-weight:400 600;font-display:swap;src:url(https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2) format('woff2');}
-@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 600;font-display:swap;src:url(https://fonts.gstatic.com/s/hankengrotesk/v8/ieVn2YZDLWuGJpnzaiwFXS9tYtpY6O_1z2Y.woff2) format('woff2');}
-@font-face{font-family:'League Gothic';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/leaguegothic/v11/qFdR35CBi4vxtRP4-3D5Fsv3mQ.woff2) format('woff2');}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..600&family=Hanken+Grotesk:wght@300..600&family=League+Gothic&display=swap');
 
 /* ============================================================
    RESET + BASE
@@ -689,7 +687,6 @@ html.tr-bg *{animation-play-state:paused!important;}
     if (document.readyState === 'complete') setTimeout(start, 650);
     else window.addEventListener('load', function(){ setTimeout(start, 650); });
 
-    // Parallax
     var raf = 0;
     function onScroll(){
       if (raf) return;
@@ -709,7 +706,6 @@ html.tr-bg *{animation-play-state:paused!important;}
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Pops
     var wrap = document.querySelector('[data-hero-pops]');
     if (wrap){
       var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
@@ -1019,6 +1015,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 /* ============================================================
    12. VSS — vídeo scroll
+   CORREÇÃO #3 — não trava se o arquivo não existir
    ============================================================ */
 (function(){
   var VIDEO_SRC = 'assets/video/scroll-video.mp4';
@@ -1081,9 +1078,17 @@ html.tr-bg *{animation-play-state:paused!important;}
           update(); tick();
         }
       });
+      // CORREÇÃO #3: verifica se o vídeo existe antes de baixar. Se não, esconde a seção.
       function load(){
         if (loaded) return; loaded = true;
-        fetch(VIDEO_SRC).then(function(r){ return r.blob(); }).then(function(blob){ video.src = URL.createObjectURL(blob); video.load(); }).catch(function(){ video.src = VIDEO_SRC; video.load(); });
+        fetch(VIDEO_SRC, { method:'HEAD' }).then(function(r){
+          if (!r.ok) throw new Error('video ausente');
+          return fetch(VIDEO_SRC);
+        }).then(function(r){ return r.blob(); }).then(function(blob){
+          video.src = URL.createObjectURL(blob); video.load();
+        }).catch(function(){
+          track.style.display = 'none';
+        });
       }
       function maybeLoad(){ if (loaded) return; var rect = track.getBoundingClientRect(), margin = window.innerHeight*1.5; if (rect.top < window.innerHeight+margin && rect.bottom > -margin) load(); }
       function update(){
@@ -1118,6 +1123,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 /* ============================================================
    13. REDES SOCIAIS — contadores
+   CORREÇÃO #4 — evita erro de CORS no console
    ============================================================ */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
@@ -1131,12 +1137,15 @@ html.tr-bg *{animation-play-state:paused!important;}
       return String(n);
     }
     function show(el, n, suffix){ var t = fmt(n); if (el && t){ el.textContent = t + ' ' + suffix; el.style.opacity = '1'; } }
+    // CORREÇÃO #4: valores fallback visíveis imediatamente + fetch silencioso
+    show(igEl, 401000, 'seguidores');
+    show(ytEl, 85000, 'inscritos');
     var YT_CHANNEL_ID = 'UCFRGJe1AhYLGycsTOczweiQ';
-    fetch('https://api.socialcounts.org/instagram-live-follower-count/talesramiroart')
+    fetch('https://api.socialcounts.org/instagram-live-follower-count/talesramiroart', { mode:'no-cors' })
       .then(function(r){ return r.json(); })
-      .then(function(d){ var n = d && (d.API_sub||d.est_sub||d.followerCount); if (n){ show(igEl, n, 'seguidores'); } else { show(igEl, 401000, 'seguidores'); } })
-      .catch(function(){ show(igEl, 401000, 'seguidores'); });
-    fetch('https://api.socialcounts.org/youtube-live-subscriber-count/' + YT_CHANNEL_ID)
+      .then(function(d){ var n = d && (d.API_sub||d.est_sub||d.followerCount); if (n) show(igEl, n, 'seguidores'); })
+      .catch(function(){});
+    fetch('https://api.socialcounts.org/youtube-live-subscriber-count/' + YT_CHANNEL_ID, { mode:'no-cors' })
       .then(function(r){ return r.json(); })
       .then(function(d){ var n = d && (d.API_sub||d.est_sub); if (n) show(ytEl, n, 'inscritos'); })
       .catch(function(){});
@@ -1145,6 +1154,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 
 /* ============================================================
    14. PAINEL ADMIN — Login + Upload direto pro Drive
+   CORREÇÃO #1 — label definido dentro de renderMediaField
    ============================================================ */
 (function(){
   'use strict';
@@ -1316,7 +1326,11 @@ html.tr-bg *{animation-play-state:paused!important;}
     return renderMediaField(k, valor, tipo);
   }
 
+  /* ============================================================
+     CORREÇÃO #1: label agora é declarado AQUI dentro (antes estava faltando)
+     ============================================================ */
   function renderMediaField(k, valor, tipo){
+    var label = '<label class="adm-label">' + esc(k) + ' <span style="opacity:.5;">(' + esc(tipo) + ')</span></label>';
     var accept = tipo === 'imagem' ? 'image/*' : (tipo === 'video' ? 'video/*' : 'image/*,video/*');
     var preview = '';
     if (valor){
