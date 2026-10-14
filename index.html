@@ -33,8 +33,10 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tales Ramiro","jobTitle":"Mentor, Creator e Professor","description":"Tales Ramiro — mentor, creator e professor. Mais de 35 mil alunos formados em mais de 20 países.","url":"https://www.talesramiro.com/","sameAs":["https://instagram.com/talesramiroart","https://youtube.com/talesramiroart"]}</script>
 
 <style>
+/* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..600&family=Hanken+Grotesk:wght@300..600&family=League+Gothic&display=swap');
 
+/* RESET + BASE */
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{margin:0;padding:0;background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;}
@@ -42,6 +44,7 @@ img{display:block;}
 ::selection{background:#a69b84;color:#0d1116;}
 a{text-decoration:none;}
 
+/* ANIMAÇÕES */
 @keyframes tr-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @keyframes tr-fadeup{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
 @keyframes tr-fadein{from{opacity:0;}to{opacity:1;}}
@@ -53,6 +56,18 @@ a{text-decoration:none;}
 @keyframes gooHoriz{0%{transform:translateX(-30%) translateY(-8%)}50%{transform:translateX(30%) translateY(8%)}100%{transform:translateX(-30%) translateY(-8%)}}
 @keyframes gooCircle{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
 @keyframes tr-ghostshift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* ✨ NOVO — animação de reveal automático mobile */
+@keyframes tr-auto-reveal{
+  0%   { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
+  10%  { --rv-r: 130px; }
+  25%  { --rv-x: 70%; --rv-y: 40%; --rv-r: 130px; }
+  40%  { --rv-x: 55%; --rv-y: 65%; --rv-r: 130px; }
+  60%  { --rv-x: 35%; --rv-y: 55%; --rv-r: 130px; }
+  80%  { --rv-x: 65%; --rv-y: 45%; --rv-r: 130px; }
+  90%  { --rv-r: 0px; }
+  100% { --rv-x: 30%; --rv-y: 45%; --rv-r: 0px; }
+}
 
 html.tr-bg *{animation-play-state:paused!important;}
 .cv-sec{content-visibility:auto;contain-intrinsic-size:auto 760px;}
@@ -111,6 +126,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .ic-dup{position:absolute;left:0;top:100%;}
 .social-ic:hover .ic-roll-in{transform:translateY(-100%);}
 
+/* MENU FLUTUANTE */
 .fmenu{position:fixed;top:clamp(16px,2.4vw,28px);left:clamp(16px,3vw,40px);z-index:9998;opacity:0;transform:translateY(-14px);pointer-events:none;transition:opacity .5s ease,transform .55s cubic-bezier(.16,1,.3,1);}
 .fmenu.show{opacity:1;transform:none;pointer-events:auto;}
 .fmenu-btn{position:relative;width:clamp(44px,3.4vw,52px);height:clamp(44px,3.4vw,52px);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;background:rgba(20,24,29,.55);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.28);transition:border-color .35s ease,background .35s ease;}
@@ -130,6 +146,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .gotop.show{opacity:1;transform:none;pointer-events:auto;}
 .gotop:hover{border-color:rgba(166,155,132,.55);background:rgba(26,30,36,.72);}
 
+/* REVEALS */
 .reveal{opacity:0;transform:translateY(34px);filter:blur(5px);transition:opacity 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1),filter 1.15s ease;}
 .reveal.in{opacity:1;transform:none;filter:blur(0);}
 .reveal-soft{opacity:0;transition:opacity 1.5s ease;}
@@ -137,6 +154,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .reveal-l{opacity:0;transform:translateX(-50px);filter:blur(5px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1),filter 1.2s ease;}
 .reveal-l.in{opacity:1;transform:none;filter:blur(0);}
 
+/* MARCAS */
 .marquee-track{display:flex;width:max-content;}
 .marquee-track:hover{animation-play-state:paused;}
 .logo-item{width:clamp(110px,12vw,168px);height:clamp(40px,4.4vw,58px);background-size:contain;background-position:center;background-repeat:no-repeat;opacity:.5;transition:opacity .45s ease;}
@@ -148,6 +166,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .lg5{background-image:url(assets/img/img15.webp);}
 .lg6{background-image:url(assets/img/img16.webp);}
 
+/* FACES */
 .face-circle{width:clamp(86px,9vw,128px);height:clamp(86px,9vw,128px);border-radius:50%;overflow:hidden;border:1px solid rgba(166,155,132,.22);box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;}
 .face-circle:hover{border-color:rgba(166,155,132,.5);}
 .face-img{width:100%;height:100%;background-size:cover;background-position:center;filter:grayscale(.5) sepia(.55) saturate(.75) brightness(.86) contrast(.97);transition:filter .7s ease;}
@@ -163,6 +182,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .fi9{background-image:url(assets/img/img09.webp);}
 .fi10{background-image:url(assets/img/img10.webp);}
 
+/* STATS */
 .stat-item{opacity:0;transform:translateY(46px) scale(.86);filter:blur(8px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.34,1.56,.64,1),filter .9s ease;}
 .stat-item.in{opacity:1;transform:none;filter:blur(0);}
 .stat-item .stat-lbl{opacity:0;transform:translateY(8px);transition:opacity .7s ease .25s,transform .7s ease .25s;}
@@ -170,6 +190,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .stat-num{font-family:'League Gothic Cond','League Gothic',sans-serif;font-weight:400;line-height:.86;letter-spacing:-.01em;font-size:clamp(74px,13vw,210px);color:#a69b84;}
 .stat-lbl{font-family:'Hanken Grotesk',sans-serif;font-weight:500;letter-spacing:.26em;text-transform:uppercase;font-size:clamp(9px,1vw,13px);color:#bdb39a;}
 
+/* CURSOS */
 #cursos{background:#0d1116;padding:clamp(70px,9vw,140px) clamp(18px,4vw,56px);}
 .off-wrap{max-width:1560px;margin:0 auto;}
 .off-head{display:flex;flex-direction:column;gap:clamp(8px,1vw,14px);margin:0 0 clamp(34px,4vw,64px);}
@@ -205,6 +226,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .crs-vid{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:0;pointer-events:none;}
 .courses-eyebrow{font-family:'Hanken Grotesk',sans-serif;font-weight:600;letter-spacing:.34em;text-transform:uppercase;font-size:clamp(10px,.9vw,13px);color:#a69b84;white-space:nowrap;}
 
+/* BIO */
 .bio-chip{display:inline-flex;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;font-weight:600;letter-spacing:.02em;color:#efe6cd;background:rgba(30,34,40,.34);backdrop-filter:blur(8px) saturate(150%);-webkit-backdrop-filter:blur(8px) saturate(150%);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 15px;font-size:clamp(12px,1.05vw,15px);white-space:nowrap;will-change:transform;transition:color .35s ease,border-color .35s ease;}
 .bio-chip:hover{color:#fff;border-color:rgba(255,255,255,.3);}
 .bio-chip.stat{font-size:clamp(13px,1.15vw,16px);color:#efe6cd;background:rgba(166,155,132,.18);border-color:rgba(166,155,132,.42);}
@@ -212,6 +234,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .bio-chips{display:flex;flex-wrap:wrap;gap:clamp(8px,1vw,13px);}
 .bio-p{transform:none;}
 
+/* VSS — vídeo scroll */
 .vss-track{position:relative;height:220vh;background:#000;}
 .vss-stage{position:absolute;top:0;left:0;width:100%;height:100vh;overflow:hidden;background:#000;}
 .vss-stage.vss-fixed{position:fixed;}
@@ -226,6 +249,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 .vss-progress{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(166,155,132,.2);z-index:3;}
 .vss-progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#a69b84;}
 
+/* ADMIN */
 #tr-admin-lock{position:fixed;left:50%;bottom:clamp(16px,2.4vw,28px);transform:translateX(-50%);z-index:9997;width:48px;height:48px;border-radius:50%;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;background:rgba(20,24,29,.6);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(166,155,132,.3);color:#cdbf99;transition:border-color .3s,background .3s,transform .3s;}
 #tr-admin-lock:hover{border-color:rgba(166,155,132,.6);background:rgba(26,30,36,.75);transform:translateX(-50%) scale(1.06);}
 #tr-admin-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(6,9,12,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;}
@@ -253,113 +277,119 @@ html.tr-bg *{animation-play-state:paused!important;}
    RESPONSIVO — MOBILE
    ============================================================ */
 @media (max-width:760px){
+  /* Hero background estático pra economizar bateria */
   .goo-blob{animation:none!important;}
   .ghost-grad{animation:none!important;}
   .hpop-pill{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:rgba(18,23,29,.86)!important;}
   .hero-gooey{filter:blur(22px)!important;opacity:.55!important;}
 
+  /* ✨ HERO MOBILE — layout respirável */
   #tr-hero{
     padding-top:env(safe-area-inset-top) !important;
     padding-bottom:env(safe-area-inset-bottom) !important;
   }
 
-  /* ✨ FOTO DO HERO — empurrada pra direita, encostada embaixo */
+  /* Foto do hero — reduzida, encostada embaixo, com margem à direita */
   [data-hero-photo]{
-    height:82% !important;
-    left:auto !important;
-    right:-18% !important;
-    bottom:0 !important;
-    transform:none !important;
-    opacity:.95 !important;
+    height:88% !important;
+    left:55% !important;
+    transform:translateX(-55%) !important;
+    opacity:0.92 !important;
   }
   [data-hero-reveal]{
-    height:82% !important;
-    left:auto !important;
-    right:-18% !important;
-    bottom:0 !important;
-    transform:none !important;
+    height:88% !important;
+    left:55% !important;
+    transform:translateX(-55%) !important;
+    animation:tr-auto-reveal 14s ease-in-out infinite !important;
   }
 
+  /* Ghost (TALES RAMIRO gigante) — menor */
   [data-hero-ghost]{
-    font-size:32vw !important;
-    top:2% !important;
-    left:50% !important;
-    opacity:.45 !important;
+    font-size:34vw !important;
+    top:3% !important;
+    opacity:.5 !important;
   }
 
-  /* Menu do hero — mais respiro e sobreposto à esquerda */
-  [data-hero-menu]{
-    padding:0 clamp(22px,6vw,32px) !important;
-  }
+  /* Menu links do hero — compacto e respirável */
   [data-hero-menu] nav{
-    gap:clamp(16px,4.5vw,24px) !important;
-    max-width:60% !important;
+    gap:clamp(14px,4vw,20px) !important;
   }
   .menu-link{
-    font-size:clamp(22px,7vw,32px) !important;
-    line-height:.94 !important;
+    font-size:clamp(22px,7.5vw,34px) !important;
+    line-height:.95 !important;
   }
-  [data-hero-nav]{ padding:clamp(18px,4.5vw,26px) clamp(22px,6vw,32px) !important; }
-  .nav-link{ font-size:9px !important; }
 
-  [data-hero-pops]{ display:none !important; }
-  .hero-social{ display:none !important; }
+  /* Nav topo — respiro */
+  [data-hero-nav]{
+    padding:clamp(18px,4.5vw,26px) clamp(18px,4.5vw,26px) !important;
+  }
+  .nav-link{font-size:9px !important;}
 
+  /* Esconde os "pops" (pills flutuantes) no mobile — bagunçavam */
+  [data-hero-pops]{display:none !important;}
+
+  /* Redes sociais do hero — coluna à direita, escondida */
+  .hero-social{display:none !important;}
+
+  /* Menu hero layout — coluna única */
   .hero-row{
     flex-direction:column !important;
     align-items:flex-start !important;
     gap:16px !important;
   }
 
-  /* Overlay mobile — mais escuro na esquerda pra destacar menu */
-  #tr-hero > div[style*="linear-gradient(90deg"]{
-    background:linear-gradient(90deg,rgba(13,17,22,.97) 0%,rgba(13,17,22,.85) 35%,rgba(13,17,22,.4) 60%,rgba(13,17,22,0) 78%) !important;
-  }
+  /* ═══ MENU FLUTUANTE ═══ */
+  .fmenu{top:clamp(12px,3.5vw,18px) !important; left:clamp(12px,3.5vw,18px) !important;}
+  .fmenu-btn{width:44px !important; height:44px !important;}
+  .fmenu-panel{min-width:220px !important; padding:18px 20px !important;}
+  .fmenu-link{font-size:clamp(18px,4.5vw,22px) !important;}
 
-  .fmenu{ top:clamp(12px,3.5vw,18px) !important; left:clamp(12px,3.5vw,18px) !important; }
-  .fmenu-btn{ width:44px !important; height:44px !important; }
-  .fmenu-panel{ min-width:220px !important; padding:18px 20px !important; }
-  .fmenu-link{ font-size:clamp(18px,4.5vw,22px) !important; }
-
+  /* ═══ BOTÃO TOPO + CADEADO — espaçados ═══ */
   .gotop{
     right:clamp(14px,4vw,20px) !important;
     bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
-    width:46px !important; height:46px !important;
+    width:46px !important;
+    height:46px !important;
   }
   #tr-admin-lock{
     left:auto !important;
     right:calc(clamp(14px,4vw,20px) + 60px) !important;
     bottom:calc(env(safe-area-inset-bottom) + 18px) !important;
     transform:none !important;
-    width:46px !important; height:46px !important;
+    width:46px !important;
+    height:46px !important;
   }
-  #tr-admin-lock:hover{ transform:scale(1.06) !important; }
+  #tr-admin-lock:hover{transform:scale(1.06) !important;}
 
-  .about-photoblock{ flex-direction:column!important; align-items:stretch!important; gap:16px!important; }
-  .about-vtext{ writing-mode:horizontal-tb!important; transform:none!important; font-size:clamp(52px,13vw,86px)!important; line-height:.86!important; }
+  /* ═══ SEÇÕES ═══ */
+  .about-photoblock{flex-direction:column!important;align-items:stretch!important;gap:16px!important;}
+  .about-vtext{writing-mode:horizontal-tb!important;transform:none!important;font-size:clamp(52px,13vw,86px)!important;line-height:.86!important;}
 
-  .off-grid{ grid-template-columns:1fr; max-width:440px; margin:0 auto; }
-  .off-name{ font-size:clamp(28px,7.4vw,38px)!important; }
-  .off-media{ aspect-ratio:4/3.4; }
+  .off-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
+  .off-name{font-size:clamp(28px,7.4vw,38px)!important;}
+  .off-media{aspect-ratio:4/3.4;}
 
-  .vss-track{ height:200vh; }
-  .vss-words{ left:7vw; }
+  .vss-track{height:200vh;}
+  .vss-words{left:7vw;}
 
+  /* Stats — 2 colunas */
   [data-stats]{
     gap:clamp(24px,7vw,40px) clamp(28px,9vw,46px) !important;
     padding:clamp(30px,9vw,60px) clamp(18px,5vw,32px) !important;
   }
-  [data-stats] .stat-num{ font-size:clamp(52px,15vw,88px) !important; }
-  [data-stats] .stat-lbl{ font-size:9px !important; letter-spacing:.18em !important; }
+  [data-stats] .stat-num{font-size:clamp(52px,15vw,88px) !important;}
+  [data-stats] .stat-lbl{font-size:9px !important; letter-spacing:.18em !important;}
 
-  .off-h2{ font-size:clamp(38px,10vw,68px) !important; }
-  .off-eyebrow{ font-size:10px !important; letter-spacing:.22em !important; }
+  /* Cursos — header menor */
+  .off-h2{font-size:clamp(38px,10vw,68px) !important;}
+  .off-eyebrow{font-size:10px !important; letter-spacing:.22em !important;}
 }
 
+/* Telas muito estreitas (iPhone SE) */
 @media (max-width:380px){
-  .menu-link{ font-size:clamp(20px,6.8vw,28px) !important; }
-  [data-hero-ghost]{ font-size:34vw !important; }
-  .off-name{ font-size:26px !important; }
+  .menu-link{font-size:clamp(20px,7vw,28px) !important;}
+  [data-hero-ghost]{font-size:36vw !important;}
+  .off-name{font-size:26px !important;}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -371,12 +401,14 @@ html.tr-bg *{animation-play-state:paused!important;}
 </head>
 <body>
 
+<!-- LOADER -->
 <div id="tr-loader" role="status" aria-label="Carregando" style="position:fixed;inset:0;z-index:99999;background:#0d1116;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease;">
   <div style="position:absolute;top:50%;left:0;transform:translateY(-50%);width:100%;height:3px;background:rgba(166,155,132,.1);overflow:hidden;">
     <div style="position:absolute;top:0;left:0;height:100%;width:34%;background:linear-gradient(90deg,transparent,#a69b84 22%,#cdbf99 50%,#a69b84 78%,transparent);animation:tr-sweep 1.25s cubic-bezier(.55,0,.35,1) infinite;"></div>
   </div>
 </div>
 
+<!-- MENU FLUTUANTE -->
 <div class="fmenu" data-fmenu="">
   <button class="fmenu-btn" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="fmenu-panel" aria-label="Menu">
@@ -387,12 +419,14 @@ html.tr-bg *{animation-play-state:paused!important;}
   </nav>
 </div>
 
+<!-- BOTÃO TOPO -->
 <button class="gotop" data-gotop="" type="button" aria-label="Voltar ao topo">
   <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"></path><path d="M6 11l6-6 6 6"></path></svg>
 </button>
 
 <div style="background:#0d1116;color:#a69b84;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;width:100%;">
 
+  <!-- HERO -->
   <section id="tr-hero" style="position:fixed;top:0;left:0;width:100%;height:100svh;z-index:1;overflow:hidden;background:radial-gradient(120% 90% at 50% 32%,#3b454a 0%,#262e32 38%,#13181b 72%,#0d1116 100%);display:flex;flex-direction:column;">
     <div class="hero-gooey" aria-hidden="true">
       <div class="goo-blob gb1"></div>
@@ -466,6 +500,7 @@ html.tr-bg *{animation-play-state:paused!important;}
 
   <div style="position:relative;z-index:2;background:#0d1116;">
 
+    <!-- MARCAS -->
     <section style="background:#0a0d12;border-top:1px solid rgba(166,155,132,.07);border-bottom:1px solid rgba(166,155,132,.07);padding:clamp(26px,4vw,46px) 0;overflow:hidden;">
       <div style="padding:0 clamp(22px,5vw,72px);margin-bottom:clamp(22px,3vw,38px);">
         <div class="reveal" style="display:flex;align-items:center;gap:clamp(14px,2vw,24px);">
@@ -478,6 +513,7 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
+    <!-- VÍDEO + STATS -->
     <section style="position:relative;width:100%;height:clamp(360px,56vw,680px);background:#0d1116;overflow:hidden;">
       <div data-video-cover="" class="reveal" style="position:absolute;inset:0;transform:scale(1.08);transition:opacity 1.3s ease,transform 1.8s ease;">
         <iframe data-video-iframe="" title="Vídeo de apresentação" data-src="https://www.youtube-nocookie.com/embed/pdoL5HBtW9Y?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=pdoL5HBtW9Y&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;border:0;pointer-events:none;"></iframe>
@@ -506,12 +542,14 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
+    <!-- FACES / CLIENTES -->
     <section class="cv-sec" style="background:#0d1116;padding:clamp(54px,8vw,110px) 0;overflow:hidden;">
       <div class="reveal-soft" style="mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
         <div class="marquee-track" style="animation:tr-marquee 50s linear infinite reverse;"><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi1" role="img" aria-label="tashacobbsleonard"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">tashacobbsleonard</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi2" role="img" aria-label="cindytrimm"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">cindytrimm</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi3" role="img" aria-label="stylistjbolin"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">stylistjbolin</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi4" role="img" aria-label="jaylakoriyan"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">jaylakoriyan</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi5" role="img" aria-label="thiagofinch"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">thiagofinch</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi6" role="img" aria-label="segredosdaaudiencia"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">segredosdaaudiencia</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi7" role="img" aria-label="carolcantelli"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">carolcantelli</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi8" role="img" aria-label="mclivinho"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">mclivinho</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi9" role="img" aria-label="deiveleonardo"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">deiveleonardo</span></div><div style="flex:none;padding:0 clamp(16px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;gap:14px;"><div class="face-circle"><div class="face-img fi10" role="img" aria-label="guilhermebatista"></div></div><span style="font-family:'Hanken Grotesk',sans-serif;font-size:clamp(12px,1.05vw,15px);letter-spacing:.01em;color:rgba(166,155,132,.6);white-space:nowrap;">guilhermebatista</span></div></div>
       </div>
     </section>
 
+    <!-- CURSOS -->
     <section id="cursos" class="cv-sec">
       <div class="off-wrap">
         <div class="off-head">
@@ -586,6 +624,7 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
+    <!-- BIO -->
     <section data-bio-seq class="cv-sec" style="background:#0d1116;padding:clamp(20px,4vw,60px) clamp(22px,5vw,72px) clamp(70px,9vw,130px);">
       <div style="max-width:1340px;margin:0 auto;">
         <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start;">
@@ -613,6 +652,7 @@ html.tr-bg *{animation-play-state:paused!important;}
       </div>
     </section>
 
+    <!-- VÍDEO SCROLL -->
     <section class="vss-track" data-vss data-screen-label="Tretas" data-words="TRETAS|VÃO|ROLAR">
       <div class="vss-stage">
         <video class="vss-video" muted playsinline webkit-playsinline preload="auto"></video>
@@ -624,6 +664,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   </div>
 </div>
 
+<!-- BOTÃO ADMIN + MODAL -->
 <button id="tr-admin-lock" type="button" aria-label="Painel administrativo">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="11" width="16" height="10" rx="2"></rect>
@@ -632,10 +673,9 @@ html.tr-bg *{animation-play-state:paused!important;}
 </button>
 <div id="tr-admin-modal" role="dialog" aria-modal="true"><div id="tr-admin-box"></div></div>
 
+<!-- JAVASCRIPT -->
 <script>
-/* ============================================================
-   1. LOADER
-   ============================================================ */
+/* 1. LOADER */
 (function(){
   var l = document.getElementById('tr-loader');
   if (!l) return;
@@ -649,95 +689,54 @@ html.tr-bg *{animation-play-state:paused!important;}
   setTimeout(hide, 6000);
 })();
 
-/* ============================================================
-   2. HERO — REVEAL (mouse desktop / auto mobile) + PARALLAX + DIGITAÇÃO
-   ============================================================ */
+/* 2. REVEAL DO HERO — mouse no desktop / automático no mobile */
+(function(){
+  var sec = document.querySelector('#tr-hero');
+  var rev = document.querySelector('[data-hero-reveal]');
+  if (!sec || !rev){ console.warn('[reveal] não achou elementos'); return; }
+
+  // Se for mobile (touch), não ativa o mouse — o CSS animation cuida
+  var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 760;
+  if (isTouch){
+    console.log('[reveal] mobile detectado — animação automática via CSS');
+    return;
+  }
+
+  var R = 165, hideTimer;
+  function move(e){
+    var pt = e.touches ? e.touches[0] : e;
+    if (!pt) return;
+    var r = rev.getBoundingClientRect();
+    rev.style.setProperty('--rv-x', (pt.clientX - r.left) + 'px');
+    rev.style.setProperty('--rv-y', (pt.clientY - r.top) + 'px');
+    rev.style.setProperty('--rv-r', R + 'px');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function(){ rev.style.setProperty('--rv-r', '0px'); }, 2200);
+  }
+  function leave(){ rev.style.setProperty('--rv-r', '0px'); }
+  sec.addEventListener('mousemove', move, { passive: true });
+  sec.addEventListener('mouseleave', leave);
+  sec.addEventListener('touchmove', move, { passive: true });
+  sec.addEventListener('touchend', leave);
+  console.log('[reveal] efeito desktop ativado ✓');
+})();
+
+/* 3. HERO — digitação + flash + parallax + pops */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
     var heroSec = document.querySelector('#tr-hero');
-    var rev = document.querySelector('[data-hero-reveal]');
+    if (!heroSec) return;
     var photo = document.querySelector('[data-hero-photo]');
     var ghost = document.querySelector('[data-hero-ghost]');
     var menu  = document.querySelector('[data-hero-menu]');
     var nav   = document.querySelector('[data-hero-nav]');
+    var rev   = document.querySelector('[data-hero-reveal]');
     var goo   = document.querySelector('.hero-gooey');
-    if (!heroSec || !rev) return;
-
-    var isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 760;
-    var full = ghost ? ghost.textContent : '';
-
-    var R = 165;
-    var autoActive = isMobile;
-
-    function setReveal(x, y, r){
-      rev.style.setProperty('--rv-x', x + 'px');
-      rev.style.setProperty('--rv-y', y + 'px');
-      rev.style.setProperty('--rv-r', r + 'px');
-    }
-
-    /* ---------- DESKTOP: mousemove ---------- */
-    if (!isMobile){
-      var hideTimer;
-      function move(e){
-        var pt = e.touches ? e.touches[0] : e;
-        if (!pt) return;
-        var r = rev.getBoundingClientRect();
-        setReveal(pt.clientX - r.left, pt.clientY - r.top, R);
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(function(){ setReveal(-999, -999, 0); }, 2200);
-      }
-      heroSec.addEventListener('mousemove', move, { passive:true });
-      heroSec.addEventListener('mouseleave', function(){ setReveal(-999, -999, 0); });
-      console.log('[reveal] modo desktop (mouse) ativo');
-    }
-
-    /* ---------- MOBILE: revelação automática fluida ---------- */
-    // Faz o círculo percorrer um caminho Lissajous SUAVE por cima
-    // SOMENTE da METADE DIREITA da foto (onde está o rosto/armadura),
-    // evitando cobrir o menu que fica à esquerda.
-    var autoT = 0;
-    var autoCycleT = 0;
-    var autoR = 0;
-    var lastTs = 0;
-
-    function loop(ts){
-      var dt = lastTs ? Math.min((ts - lastTs)/1000, 0.05) : 0.016;
-      lastTs = ts;
-
-      if (autoActive){
-        var rect = rev.getBoundingClientRect();
-        var w = rect.width  || window.innerWidth;
-        var h = rect.height || window.innerHeight;
-
-        // Avança tempo contínuo
-        autoT += dt * 0.55;
-        autoCycleT += dt * 0.32;
-
-        // Área de passeio: metade direita, entre 55% e 90% da largura
-        var xCenter = w * 0.72;                 // centro direito
-        var xRange  = w * 0.12;                 // amplitude horizontal pequena
-        var yCenter = h * 0.55;                 // centro vertical
-        var yRange  = h * 0.20;                 // amplitude vertical maior
-
-        var cx = xCenter + Math.sin(autoT * 1.0) * xRange;
-        var cy = yCenter + Math.cos(autoT * 1.3) * yRange;
-
-        // Fade in/out suave do raio (aparece 75% do tempo)
-        var cycle = (Math.sin(autoCycleT) + 1) / 2;    // 0..1
-        var visibility = Math.min(1, cycle * 1.4);
-        var targetR = R * visibility;
-        autoR += (targetR - autoR) * 0.08;
-
-        setReveal(cx, cy, autoR);
-      }
-
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-
-    /* ---------- Digitação + flash inicial ---------- */
+    var full  = ghost ? ghost.textContent : '';
     var links = menu ? [].slice.call(menu.querySelectorAll('.menu-link')) : [];
+    var isMobile = window.innerWidth <= 760;
+
     links.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(22px)'; l.style.transition='opacity .55s ease, transform .75s cubic-bezier(.16,1,.3,1)'; });
     if (ghost){ ghost.style.visibility='hidden'; }
     if (photo){ photo.style.opacity='0'; }
@@ -778,7 +777,6 @@ html.tr-bg *{animation-play-state:paused!important;}
     if (document.readyState === 'complete') setTimeout(start, 650);
     else window.addEventListener('load', function(){ setTimeout(start, 650); });
 
-    /* ---------- Parallax do scroll ---------- */
     var raf = 0;
     function onScroll(){
       if (raf) return;
@@ -786,18 +784,20 @@ html.tr-bg *{animation-play-state:paused!important;}
         raf = 0;
         var y = window.scrollY || window.pageYOffset || 0, vh = window.innerHeight || 1;
         var p = Math.min(y/vh, 1);
-
-        if (ghost){
-          ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')';
-          ghost.style.opacity = String(Math.max(0, 1-p*0.5));
-        }
+        if (ghost){ ghost.style.transform = 'translateX(-50%) translate3d(0,' + (y*-0.35) + 'px,0) scale(' + (1+p*0.05) + ')'; ghost.style.opacity = String(Math.max(0, 1-p*0.5)); }
         var phY = y * -0.70;
         if (photo){
           if (isMobile){
-            // mobile: mantém o right:-18% e aplica o parallax via translateY
-            photo.style.transform = 'translate3d(0,' + phY + 'px,0)';
+            photo.style.transform = 'translateX(-55%) translate3d(0,' + phY + 'px,0)';
           } else {
             photo.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
+          }
+        }
+        if (rev){
+          if (isMobile){
+            // não sobrescreve o transform do reveal (o CSS animation cuida da mask)
+          } else {
+            rev.style.transform = 'translateX(-50%) translate3d(0,' + phY + 'px,0)';
           }
         }
         if (goo && window.innerWidth > 760){ goo.style.transform = 'translate3d(0,' + (y*0.04) + 'px,0)'; }
@@ -808,7 +808,6 @@ html.tr-bg *{animation-play-state:paused!important;}
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ---------- Pops (só desktop) ---------- */
     var wrap = document.querySelector('[data-hero-pops]');
     if (wrap && !isMobile){
       var pops = [].slice.call(wrap.querySelectorAll('.hpop'));
@@ -828,28 +827,26 @@ html.tr-bg *{animation-play-state:paused!important;}
       setTimeout(check, 1100);
 
       var items = pops.map(function(w){ return { w: w, rep: w.querySelector('.hpop-rep'), py: parseFloat(w.getAttribute('data-py'))||0 }; });
-      var mxx = -99999, myy = -99999, rafM = 0;
+      var mx = -99999, my = -99999, rafM = 0;
       function applyRepel(){
         rafM = 0;
         for (var i=0;i<items.length;i++){
           var it = items[i], r = it.rep.getBoundingClientRect();
           var cx = r.left + r.width/2, cy = r.top + r.height/2;
-          var dx = cx-mxx, dy = cy-myy, dist = Math.sqrt(dx*dx+dy*dy), RR = 140;
-          if (dist < RR){
-            var f = 1-dist/RR, push = f*30;
+          var dx = cx-mx, dy = cy-my, dist = Math.sqrt(dx*dx+dy*dy), R = 140;
+          if (dist < R){
+            var f = 1-dist/R, push = f*30;
             var nx = dist>0?dx/dist:0, ny = dist>0?dy/dist:-1;
             it.rep.style.transform = 'translate(' + (nx*push).toFixed(1) + 'px,' + (ny*push).toFixed(1) + 'px)';
           } else it.rep.style.transform = 'translate(0,0)';
         }
       }
-      window.addEventListener('mousemove', function(e){ mxx=e.clientX; myy=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
+      window.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; if(!rafM) rafM=requestAnimationFrame(applyRepel); }, { passive:true });
     }
   });
 })();
 
-/* ============================================================
-   3. MENU FLUTUANTE + BOTÃO TOPO
-   ============================================================ */
+/* 4. MENU FLUTUANTE + BOTÃO TOPO */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -880,9 +877,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   4. REVEALS GENÉRICOS
-   ============================================================ */
+/* 5. REVEALS GENÉRICOS */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -895,9 +890,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   5. STATS
-   ============================================================ */
+/* 6. STATS — contadores */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -934,9 +927,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   6. CURSOS
-   ============================================================ */
+/* 7. CURSOS */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -971,9 +962,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   7. HERO — vídeo iframe lazy
-   ============================================================ */
+/* 8. HERO — vídeo iframe lazy */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1003,9 +992,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   8. BIO — slideshow
-   ============================================================ */
+/* 9. BIO — slideshow */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1019,9 +1006,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   9. BIO — chips + parágrafos
-   ============================================================ */
+/* 10. BIO — chips + parágrafos */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1090,9 +1075,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   10. MARCAS
-   ============================================================ */
+/* 11. MARCAS */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1116,9 +1099,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   11. VSS — vídeo scroll
-   ============================================================ */
+/* 12. VSS — vídeo scroll */
 (function(){
   var VIDEO_SRC = 'assets/video/scroll-video.mp4';
   var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$★';
@@ -1204,7 +1185,9 @@ html.tr-bg *{animation-play-state:paused!important;}
           video.preload = 'auto';
           video.src = VIDEO_SRC;
           video.load();
-        }).catch(function(){ track.style.display = 'none'; });
+        }).catch(function(){
+          track.style.display = 'none';
+        });
       }
       function maybeLoad(){
         if (loaded) return;
@@ -1247,6 +1230,7 @@ html.tr-bg *{animation-play-state:paused!important;}
           video.loop = true;
           video.currentTime = 0;
           try { video.play().catch(function(){}); } catch(e){}
+          console.log('[VSS] Modo fallback ativado. Re-encode o vídeo com keyint=10.');
         }
       }
 
@@ -1335,9 +1319,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   12. REDES SOCIAIS
-   ============================================================ */
+/* 13. REDES SOCIAIS */
 (function(){
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
   ready(function(){
@@ -1364,9 +1346,7 @@ html.tr-bg *{animation-play-state:paused!important;}
   });
 })();
 
-/* ============================================================
-   13. PAINEL ADMIN
-   ============================================================ */
+/* 14. PAINEL ADMIN */
 (function(){
   'use strict';
   var API_URL = 'https://script.google.com/macros/s/AKfycbwhya0vhAuPei9Bf2rOjf3KTGYjYrs8yMkdzk-vX01FUGuCUG7rUq9eyXW4XTDPcvaIRg/exec';
